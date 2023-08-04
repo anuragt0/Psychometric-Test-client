@@ -1,0 +1,82 @@
+
+.result-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .page-heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  .icon-bar-chart {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: #007BFF; /* Customize the icon color */
+  }
+  
+  .download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .download-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  
+  .chart-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .chart {
+    background-color: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .chart h4.chart-subtitle {
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  
+  .content-section {
+    
+    max-width: 80%;
+    margin: 5% auto;
+  }
+  
+  .content-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+
+  

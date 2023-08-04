@@ -1,0 +1,215 @@
+.bodyy{
+    height: 90vh;
+    width: 100%;
+    /* background-color: navy;  */
+    position: relative;
+    display: flex;
+    }
+     .image-handler{
+      height: 100%;
+      width: 50%;
+      /* background-color: green; */
+    }
+    .image-handler img{
+      height:700px;
+      width: 50%;
+      margin-left: 10px;
+      /* background-color: red; */
+      position:absolute;
+    }
+    
+    .container {
+      position: absolute;
+      z-index: 1;
+      width: 50%;
+      margin-top: 50px;
+      overflow: hidden;
+    }
+    
+    .question{
+      /* text-align: center; */
+      width: 100%;
+      min-height: 80px;
+      margin-top: 5px;
+      padding:5px;
+      font-size: 1.4rem;
+      font-weight: 550;
+      font-family: sans-serif;
+      margin-left: 10px;
+    }
+    
+    #question-number{
+      margin-right: 5px;
+    }
+    
+    .option-container{
+      display: row;
+      margin: 10px;
+    }
+    
+    .option-btn{
+      box-shadow: 1.5px 1.5px 2px 1px #333;
+      box-sizing: border-box;
+      /* background-color: rgb(179, 83, 179); */
+      background-color: rgb(212, 118, 212);
+      opacity: 0.7;
+      text-align: justify;
+      padding: 8px 15px;
+      font-size: 1.3rem;
+      border-radius: 35px;
+      outline: none;
+      transition: 0.3s;
+      margin: 8px;
+      min-height: 60px;
+      width: 90%;
+      margin-left: 30px;
+      font-family: sans-serif;
+      color: black;
+    }
+    
+    .checked{
+      background-color: #ff7bb2;
+      color:white;
+      box-shadow: 3px 3px 4px 1px rgb(78, 69, 78);
+    }
+    .option-btn:hover{
+      background-color: #ff7bb2;
+      color:white;
+    }
+    #next-button{
+      padding:10px;
+      border:none;
+      background-color: purple;
+      background-color: rgb(46, 4, 101);
+      color:white;
+      border-radius: 5px;
+      box-shadow: 1px 1px 4px 1px #333;
+      font-size: larger;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      transition: 0.2s;
+      width:100px;
+      margin-top: 10px;
+      margin-left: 500px;
+      position: absolute;
+    }
+    #prev-button{
+      padding:10px;
+      border:none;
+      background-color: purple;
+      background-color: rgb(46, 4, 101);
+      color:white;
+      border-radius: 5px;
+      box-shadow: 1px 1px 4px 1px #333;
+      font-size: larger;
+      font-weight: bold;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      transition: 0.2s;
+      width:100px;  
+      margin-top: 10px;
+      margin-left: 50px;
+    }
+    #next-button:active{
+      box-shadow:none;    
+    }
+    .right{
+      height: 100%;
+      width: 45%;
+      margin-left: 50px;
+      display: flex;
+    }
+    .right img{
+      margin-left: 60px;
+      margin-top: 30px;
+      height: 300px;
+      width: 450px;
+    }
+    .status-info{
+      background-color: white;
+      box-shadow: 3.5px 3.5px 4px 2px rgb(78, 69, 78);
+      height: 100px;
+      width: 20%;
+      margin-top: 400px;
+      margin-left:150px;
+      position: absolute;
+      z-index: 0;
+      display: flex;
+      padding-top: 20px;
+      text-align: center;
+      padding-left: 0px;
+    }
+    .status{
+      height: 80px;
+      z-index: 999;
+      font-size: 20px;
+      font-weight: 900;
+      fill: #f88;
+      padding-bottom: 10px;
+      /* dominant-baseline:middle ; */
+      text-anchor:middle; 
+      
+    }
+    .status-info h5{
+      margin-right: 50px;
+    }
+    
+    /* .show-score{
+      position: absolute;
+      top:40%;
+      font-size: 40px;
+      z-index: 999;
+      text-align: center;  
+    } */
+  
+    @media screen and (max-width: 767px) {
+      .bodyy {
+        flex-direction: column;
+        
+      }
+    .image-handler{
+      margin-top: 210px;
+    }
+      .image-handler img {
+        width: 98%;
+        min-height: 70%;
+      }
+    
+      .container {
+        width: 100%;
+        margin-top: 20px;
+      }
+    
+      .right {
+        width: 100%;
+        margin-left: 0;
+        position: absolute;
+      }
+    
+      .right img {
+        height: 200px;
+        width: 350px;
+        position: absolute;
+        align-items: center;
+      }
+    
+      #prev-button {
+        margin-left: 20px;
+        margin-top: 0px;
+      }
+      #next-button{
+        margin-left: 350px;
+        margin-top: 0px;
+      }
+      .status-info{
+       margin-top: 56rem;
+       width: 13.5rem;
+       min-height: 95px;
+       margin-left: 137px;
+      }
+      .status{
+        /* margin-top: 57rem; */
+        min-height:75px;
+        margin-left: 0px;
+      }
+    }
+

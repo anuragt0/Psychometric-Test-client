@@ -1,0 +1,113 @@
+.registration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .verification-status {
+    display: flex;
+    align-items: center;
+    color: green;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .verified-icon {
+    margin-left: 5px;
+  }
+  
+  .input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-field label {
+    margin-right: 10px;
+    min-width: 24px;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  select {
+    appearance: none;
+    background: transparent;
+  }
+  
+  .mobile-number-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mobile-number-field .input-field {
+    margin-bottom: 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #fb2576;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  button.disabled {
+    opacity: 0.5;
+    cursor: default !important;
+  }
+  
+  .verify-otp-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  #otp {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive styles for small mobile screens */
+  @media only screen and (max-width: 480px) {
+    form {
+      max-width: 100%;
+    }
+    
+    .input-field {
+      flex-direction: column;
+    }
+    
+    .input-field label {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+    
+    button {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+  

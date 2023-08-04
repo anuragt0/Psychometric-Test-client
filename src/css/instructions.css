@@ -1,0 +1,52 @@
+.instructions-page {
+    max-width: 800px; /* Widen the box */
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .instructions-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .instructions-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #666;
+  }
+  
+  .instructions-page ol {
+    text-align: left;
+  }
+  
+  .instructions-page ol li {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .start-button-container {
+    margin-top: 40px;
+  }
+  
+  .start-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .start-button:hover {
+    background-color: #0056b3;
+  }
+  
