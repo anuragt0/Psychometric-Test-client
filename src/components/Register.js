@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { server_origin } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 import "../css/register.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +16,7 @@ const RegistrationPage = () => {
     useEffect(() => {
         
         const getUser = async ()=>{
-            const response = await fetch(`http://localhost:5000/api/user/get-user`, {
+            const response = await fetch(`${server_origin}/api/user/get-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,7 +51,7 @@ const RegistrationPage = () => {
 
         console.log('Form submitted!', credentials);
 
-        const response = await fetch(`http://localhost:5000/api/user/register`, {
+        const response = await fetch(`${server_origin}/api/user/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

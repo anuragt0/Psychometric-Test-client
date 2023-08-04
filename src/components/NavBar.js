@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { server_origin } from '../utilities/constants';
 import {motion} from 'framer-motion'
 // import img from "../../assets/images/yi_logo.png";
 
@@ -17,7 +18,7 @@ const Navbar = () => {
 
     const verifyUser = async()=>{
         if(localStorage.getItem('token')){
-            const response = await fetch(`http://localhost:5000/api/user/verify-user`, {
+            const response = await fetch(`${server_origin}/api/user/verify-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

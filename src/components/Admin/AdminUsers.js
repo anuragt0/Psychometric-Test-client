@@ -1,4 +1,6 @@
 import {React, useEffect, useState} from 'react'
+import { server_origin } from '../../utilities/constants';
+
 
 const AdminUsers = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -13,7 +15,7 @@ const AdminUsers = () => {
 
     const verifyUser = async()=>{
         if(localStorage.getItem('token')){
-            const response = await fetch(`http://localhost:5000/api/user/verify-user`, {
+            const response = await fetch(`${server_origin}/api/user/verify-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +32,7 @@ const AdminUsers = () => {
 
     const getUsers = async ()=>{
         if(localStorage.getItem("token")){
-            const response = await fetch(`http://localhost:5000/api/admin/get-users`, {
+            const response = await fetch(`${server_origin}/api/admin/get-users`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

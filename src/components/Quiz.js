@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { server_origin } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 import "../css/quiz.css";
 import imgbg from "../images/bg.png";
@@ -23,7 +24,7 @@ function Quiz() {
     useEffect(() => {
         //*Validate the token to see if the page is accessible to the user
         const validateUserToken = async () => {
-            const response = await fetch(`http://localhost:5000/api/user/verify-user`, {
+            const response = await fetch(`${server_origin}/api/user/verify-user`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ function Quiz() {
 
     const getQuestions = async () => {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/user/get-questions`, {
+        const response = await fetch(`${server_origin}/api/user/get-questions`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -113,7 +114,7 @@ function Quiz() {
         // console.log("Submit quiz");
         // console.log(result);
 
-        const response = await fetch(`http://localhost:5000/api/user/update-response`, {
+        const response = await fetch(`${server_origin}/api/user/update-response`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

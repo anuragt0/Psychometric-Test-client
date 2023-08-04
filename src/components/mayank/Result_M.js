@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { useEffect, useState , useRef } from "react";
+import { server_origin } from "../../utilities/constants";
 import { useNavigate } from 'react-router-dom';
 
 import { FiDownload, FiBarChart2 } from 'react-icons/fi'; // Import the FiDownload and FiBarChart2 icons from react-icons
@@ -38,7 +39,7 @@ function Result_M() {
 
     const getResult = async () => {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/user/get-user`, {
+        const response = await fetch(`${server_origin}/api/user/get-user`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

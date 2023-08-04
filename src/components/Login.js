@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { server_origin } from '../utilities/constants';
 
 import { useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
@@ -23,7 +24,7 @@ const Login = () => {
 
     //*This function is called once the OTP is verified, to generate the token
     const loginUser = async ()=>{
-        const response = await fetch(`http://localhost:5000/api/user/login`, {
+        const response = await fetch(`${server_origin}/api/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

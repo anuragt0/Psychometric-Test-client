@@ -1,4 +1,5 @@
 import {React, useEffect, useState, useRef} from 'react'
+import { server_origin } from '../../utilities/constants';
 
 const AdminQuestions = () => {
     const [questions, setQuestions] = useState([]);
@@ -19,7 +20,7 @@ const AdminQuestions = () => {
 
     const verifyUser = async()=>{
         if(localStorage.getItem('token')){
-            const response = await fetch(`http://localhost:5000/api/user/verify-user`, {
+            const response = await fetch(`${server_origin}/api/user/verify-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,7 +37,7 @@ const AdminQuestions = () => {
 
 
     const getQuestions = async ()=>{
-        const response = await fetch(`http://localhost:5000/api/user/get-questions`, {
+        const response = await fetch(`${server_origin}/api/user/get-questions`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ const AdminQuestions = () => {
 
         //!TODO: Check if any question or options are empty or not entered by the admin
 
-        const response = await fetch(`http://localhost:5000/api/admin/add-question`, {
+        const response = await fetch(`${server_origin}/api/admin/add-question`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ const AdminQuestions = () => {
 
     const handleDelete = async (question)=>{
         if(window.confirm(`Are you sure to delete this question - ${question.questionText.length>50?question.questionText.substring(0,50)+"...":question.questionText}`)){
-                const response = await fetch(`http://localhost:5000/api/admin/delete-question/${question._id}`, {
+                const response = await fetch(`${server_origin}/api/admin/delete-question/${question._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -129,7 +130,7 @@ const AdminQuestions = () => {
             ]
         }
         console.log(clickedQuestion._id);
-        const response = await fetch(`http://localhost:5000/api/admin/update-question/${clickedQuestion._id}`, {
+        const response = await fetch(`${server_origin}/api/admin/update-question/${clickedQuestion._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

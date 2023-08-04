@@ -1,4 +1,5 @@
 import React from "react";
+import { server_origin } from '../utilities/constants';
 import {useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, } from "react-hot-toast";
@@ -11,7 +12,7 @@ function InstructionsPage() {
     useEffect(() => {
         //*Validate the token to see if the page is accessible to the user
         const validateUserToken = async () => {
-          const response = await fetch(`http://localhost:5000/api/user/verify-user`, {
+          const response = await fetch(`${server_origin}/api/user/verify-user`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
