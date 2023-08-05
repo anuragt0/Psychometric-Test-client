@@ -23,6 +23,7 @@ function Result_M() {
     const [responses, setResponses] = useState([])
     const [testDate, setTestDate] = useState("");
     const [loading, setLoading] = useState(true);
+    const [downloading, setDownloading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -86,6 +87,7 @@ function Result_M() {
     const pdfRef =useRef() ;
     const handleDownloadClick = () => {
         console.log ("Download Started...");
+        setDownloading(true);
         const input = pdfRef.current ;
         html2canvas(input).then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
@@ -99,8 +101,9 @@ function Result_M() {
             const imgY= 30;
             pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
             pdf.save('Result.pdf');
+            setDownloading(false);
+            toast.success("Test results downloaded!"); // Using toast from react-hot-toast for demonstration
         });
-        toast.success("Test results downloaded!"); // Using toast from react-hot-toast for demonstration
     };
     //* Download Functionallity Ends *//
 
@@ -178,9 +181,9 @@ function Result_M() {
                         </p>
                         {/* ... Add more content about the test results as needed ... */}
                     </div>
-                    <button className="download-button" onClick={handleDownloadClick}>
+                    <button  className="download-button" onClick={handleDownloadClick} disabled={downloading}>
                             <FiDownload className="download-icon" />
-                            Download Results
+                            {downloading?"Please wait...": "Download Results"} 
                         </button>
                 </div>
             ) : (

@@ -117,6 +117,13 @@ const Login = () => {
     };
 
     const handleSendOtpClick = () => {
+        if(mobileNumber==="9898989898"){
+            //DUMMY USER. Login without OTP
+            toast.success("Logged in as testing user");
+            localStorage.setItem('token', process.env.REACT_APP_TEST_TOKEN);
+            navigate("/");
+            return;
+        }
         onSignup();
     };
 

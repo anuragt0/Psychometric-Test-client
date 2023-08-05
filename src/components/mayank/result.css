@@ -40,6 +40,11 @@
     font-size: 1.2rem;
   }
 
+  .download-button[disabled]{
+    background-color: #9ED2BE; /* Bright pink color for disabled buttons */
+    color: #ffffff; /* White text for better visibility */
+    cursor: not-allowed;
+  }
   
   .chart-section {
     display: grid;

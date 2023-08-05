@@ -46,11 +46,6 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const handleRegisterClick = (e) => {
-    localStorage.removeItem("token");
-    navigate("/register");
-  };
-
   const listItemStyle = { fontSize: "0.9rem", fontWeight: "400" };
 
   return (
@@ -161,18 +156,7 @@ const Navbar = () => {
                 Login
                 </motion.p>
               </button>
-              <button
-                className={`${css.navBtn} text-ff1 navbar-right`}
-                onClick={handleRegisterClick}
-              >
-                 <motion.p
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-                Register
-                </motion.p>
-              </button>
+
             </>
           )}
         </ul>

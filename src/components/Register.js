@@ -86,7 +86,7 @@ const RegistrationPage = () => {
         <>
         {isRegistered?"":(
             <div className="registration-page">
-                <h1>Registration</h1>
+                <h1>Register to know your <span style={{color:"#e31b66"}}>results</span> </h1>
                 <form onSubmit={handleRegister}>
                     <div className="input-field">
                         <label htmlFor="name">
