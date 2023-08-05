@@ -14,10 +14,10 @@ import {
 } from 'recharts';
 
 const data = [
-  { x: 3, y: 7 , name:'Q1: Information Driven' ,fill: '#be8440'},
-  { x: 7.75, y: 9 , name:'Q2: Ideal Normative',fill: '#96b159'},
-  { x: 7, y: 3 , name:'Q3: Friendly Follower',fill: '#2369b1'},
-  { x: 1, y: 1,name:'Q4: Individualist Rebellion',fill: '#e52409'},
+  { x: 3, y: 7 , name:'Q1: Information Driven' ,fill: '#be8440'},   // option C 
+  { x: 7.75, y: 9 , name:'Q2: Ideal Normative',fill: '#96b159'},    // option A
+  { x: 7, y: 3 , name:'Q3: Friendly Follower',fill: '#2369b1'},     // option B
+  { x: 1, y: 1,name:'Q4: Individualist Rebellion',fill: '#e52409'}, // option D
 ];
 
 const Graph = ({responses}) => {
@@ -63,16 +63,6 @@ const Graph = ({responses}) => {
 
       {maxOption===1 ?
       <ReferenceArea
-        x1={0+0.09} y1={5+0.09}
-        x2={5-0.09} y2={10-0.09}
-        stroke="dotted"
-        strokeOpacity={0.7}
-        fill= "#6b7dab"
-        fillOpacity={0.3}
-      /> : <></>}
-
-      {maxOption===2 ?
-      <ReferenceArea
         x1={5+0.09} y1={5+0.09}
         x2={10-0.09} y2={10-0.09}
         stroke="dotted"
@@ -81,10 +71,20 @@ const Graph = ({responses}) => {
         fillOpacity={0.3}
       /> : <></>}
 
-      {maxOption===3 ?
+      {maxOption===2 ?
       <ReferenceArea
         x1={5+0.09} y1={0+0.09}
         x2={10-0.09} y2={5-0.09}
+        stroke="dotted"
+        strokeOpacity={0.7}
+        fill= "#6b7dab"
+        fillOpacity={0.3}
+      /> : <></>}
+
+      {maxOption===3 ?
+      <ReferenceArea
+        x1={0+0.09} y1={5+0.09}
+        x2={5-0.09} y2={10-0.09}
         stroke="dotted"
         strokeOpacity={0.7}
         fill= "#6b7dab"
