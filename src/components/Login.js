@@ -152,7 +152,7 @@ const Login = () => {
                 onClick={handleSendOtpClick}
                 disabled={loading} // Disable the button during OTP sending
               >
-                {loading ? "Please wait..." : "Send OTP"}
+                {loading ? "Please wait..." : "Login"}
               </button>
             ) : (
               <>
@@ -169,7 +169,7 @@ const Login = () => {
                   onClick={handleVerifyOtpClick}
                   disabled={loading} // Disable the button during OTP verification
                 >
-                  {loading ? "Please wait..." : "Verify"}
+                  {loading ? "Please wait..." : "Verify and login"}
                 </button>
               </>
             )}
