@@ -192,7 +192,7 @@ function Quiz() {
                 <div className="right my-5">
                     <img src={imageArray[currentQuestionIndex]} alt="img" />
 
-                    <div className="status-info">
+                    {/* <div className="status-info">
 
                         <CircularProgressbar
                             className="status"
@@ -205,7 +205,7 @@ function Quiz() {
                             })}
                         />
                         <h5>Question <br></br> Answered</h5>
-                    </div>
+                    </div> */}
 
 
                 </div>

@@ -37,6 +37,9 @@ function Result_M() {
 
     }, [])
 
+    
+    //!Make separate functions for fetching results and validation
+
     const getResult = async () => {
         setLoading(true);
         const response = await fetch(`${server_origin}/api/user/get-user`, {
@@ -53,6 +56,23 @@ function Result_M() {
             toast.error("Unable to fetch result. Please login again");
             navigate("/login");
             return;
+        }
+        if(response1.userDoc.isRegistered===false ){
+            // two conditions: 1. User given the test but not registered
+            // 2. User not given the test
+            if(response1.userDoc.testResponse.length!==0){
+                // user given the test
+                toast.error("Please register to view results");
+                navigate("/test/register");
+                return;
+            }
+            else{
+                //user has not given the test
+                toast.error("You have not given the test yet!");
+                navigate("/test/instructions");
+                return;
+            }
+
         }
         setResponses(response1.userDoc.testResponse);
         setTestDate(formatDateWithCustomTime(response1.userDoc.lastTestDate));

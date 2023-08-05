@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast, } from "react-hot-toast";
 import { faUser, faEnvelope, faMars, faCalendarAlt, faMapMarkerAlt, faCity, faMapPin,  } from '@fortawesome/free-solid-svg-icons';
 
-
+//!CHECK IF USER HAS GIVEN THE TEST, THEN ONLY ALLOW TO REGISTER
 //* get the user by using token in localstorage and then check if the user is registered or not
 const RegistrationPage = () => {
     const [credentials, setCredentials] = useState({ name: "", email: "", gender: "", age: "", address: "", city: "", pincode: "", country: ""});
@@ -24,9 +24,14 @@ const RegistrationPage = () => {
                 },
             });
             let response1 = await response.json();
-            console.log("getUser response: ", response1);
             if(response1.success===true){
                 // we get the user
+                if(response1.userDoc.testResponse.length===0){
+                    // Not given the test yet. 
+                    toast.error("You have not given the test yet!")
+                    navigate("/test/instructions");
+                    return;
+                }
                 if(response1.userDoc.isRegistered===true){
                     //Already registered
                     navigate('/test/result');
@@ -36,7 +41,9 @@ const RegistrationPage = () => {
                 }
             }
             else{
-                toast.error("Please refresh the page and try again.")
+                toast.error("Invalid token! Please login and try again.");
+                navigate("/login");
+                
             }
         }
 
