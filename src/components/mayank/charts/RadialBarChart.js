@@ -34,13 +34,13 @@ function RadialBarChartComponent({ responses }) {
       score: ((8 - (responses[17-1]-1)*2) + (8 - (responses[18-1]-1)*2)), 
     },
     {
-      name: 'Affected by Commitment and Consistency?',
+      name: 'Affected by Scarcity?',
       score: ((8 - (responses[21-1]-1)*2) + (8 - (responses[22-1]-1)*2)), 
     },
     { name: 'Affected by Authority/ commands ?', 
       score: ((8 - (responses[25-1]-1)*2) + (8 - (responses[26-1]-1)*2)),  },
 
-    { name: 'Max', score: 20 }, // Maximum Possible  value
+    { name: 'Max', score: 18.2 }, // Maximum Possible  value
   ];
 
 
