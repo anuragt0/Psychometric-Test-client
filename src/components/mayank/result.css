@@ -47,7 +47,11 @@
   }
   
   .chart-section {
-    display: grid;
+    display : flex ; 
+    flex-direction : row  ;
+    justify-content : space-around ;
+    flex-flow : wrap ;
+
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;

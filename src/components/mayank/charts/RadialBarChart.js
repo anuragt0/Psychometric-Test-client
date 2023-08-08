@@ -66,7 +66,7 @@ function RadialBarChartComponent({ responses }) {
   return (
     <RadialBarChart
       width={400} height={570} //size of div
-      cx={180} cy={190} // coordinates of origin or centre
+      cx={200} cy={190} // coordinates of origin or centre
       innerRadius={40} outerRadius={220}
       startAngle={90} endAngle={-270} data={sortedData} barSize={50}
 
@@ -75,7 +75,13 @@ function RadialBarChartComponent({ responses }) {
         background
         dataKey="score"
       />
-      <Legend iconSize={15} layout="vertical" verticalAlign="bottom" align="centre" />
+      <Legend 
+        iconSize={15} 
+        layout="vertical" 
+        verticalAlign="bottom" 
+        align="centre" 
+        wrapperStyle={{ paddingLeft: '40px' }} // Add padding here
+      />
     </RadialBarChart>
   );
 };

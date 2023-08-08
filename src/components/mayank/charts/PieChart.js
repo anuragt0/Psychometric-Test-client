@@ -56,9 +56,9 @@ function PieChartCom ({responses}) {
           data={data}
           dataKey="value"
           isAnimationActive={true}
-          cx={195} cy={220}
+          cx={200} cy={220}
           startAngle={90} endAngle={-270}
-          outerRadius={200} innerRadius={75}
+          outerRadius={195} innerRadius={75}
           labelLine={false}
           label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
             const radius = innerRadius + (outerRadius - innerRadius) * 0.15;
