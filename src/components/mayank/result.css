@@ -68,11 +68,15 @@
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
     color: #333;
+    text-align: center; /* Add this line to center-align the text */
+
   }
   
   .chart h4.chart-subtitle {
     margin-bottom: 1rem;
     color: #666;
+    text-align: center; /* Add this line to center-align the text */
+
   }
   
   .content-section {
