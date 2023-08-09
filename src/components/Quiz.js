@@ -158,8 +158,8 @@ function Quiz() {
 
             {isUserAuthenticated && questions.length !== 0 && !loading ? <>
 
-                <div className="image-handler">
-                    <div className="container">
+                <div className="left">
+                    
 
                         <div className="question">
                             <span id="question-number">{currentQuestionIndex + 1}. </span>
@@ -179,39 +179,26 @@ function Quiz() {
                                 )
                             })}
                         </div>
-                        <div>
+                    </div>
+
+                    <div className="buttons">
                             <input type="button" value="Next" id="next-button" onClick={nextQuestion} />
                             <input type="button" value="Prev" id="prev-button" onClick={previousQuestion} />
                         </div>
                         <button style={result.length !== questions.length ? { display: "none" } : {}} className='btn btn-success' onClick={handleSubmit}>Submit</button>
 
-                    </div>
-                    <img src={imgbg} alt="img" />
-                </div>
-
                 <div className="right my-5">
-                    <img src={imageArray[currentQuestionIndex]} alt="img" />
+                    <div className="box">
 
-                    {/* <div className="status-info">
-
-                        <CircularProgressbar
-                            className="status"
-                            value={26}
-                            text={`${currentQuestionIndex + 1} / ${totalQuestions}`}
-                            styles={buildStyles({
-                                pathColor: `rgba(62, 152, 199, ${progressPercentage / 100})`,
-                                textColor: '#f88',
-                                trailColor: 'pink',
-                            })}
-                        />
-                        <h5>Question <br></br> Answered</h5>
-                    </div> */}
-
-
+                    </div>
+                    {/* <div className="box1"> */}
+                    <img src={imageArray[currentQuestionIndex]} alt="img" /> 
+                    {/* </div> */}
+                    
                 </div>
 
             </> : <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-                {/* <SyncLoader size={30} color="#fb2576" /> */}
+                <SyncLoader size={30} color="#fb2576" />
             </div>
             }
         </div>

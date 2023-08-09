@@ -120,6 +120,7 @@ const Login = () => {
         if(mobileNumber==="9898989898"){
             //DUMMY USER. Login without OTP
             toast.success("Logged in as testing user");
+            console.log(process.env.REACT_APP_AUTH_DOMAIN);
             localStorage.setItem('token', process.env.REACT_APP_TEST_TOKEN);
             navigate("/");
             return;
