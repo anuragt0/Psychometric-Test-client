@@ -199,7 +199,7 @@ function Quiz() {
                             <button value="Next" id="next-button" onClick={nextQuestion}> {t('controls.next')}</button>
                             <button value="Prev" id="prev-button" onClick={previousQuestion}> {t('controls.previous')} </button>
                         </div>
-                        <button style={result.length !== questions.length ? { display: "none" } : {}} className='btn btn-success' onClick={handleSubmit}>{t('controls.submit')}</button>
+                        <button style={result.length !== questions.length ? { display: "none" } : {}} className='submit-button' onClick={handleSubmit}>{t('controls.submit')}</button>
 
                 <div className="right my-5">
                     <div className="box">

@@ -47,7 +47,7 @@
         "startTestButton": "ટેસ્ટ શરૂ કરો"
     },
     "login": {
-        "token": {
+        "toast": {
             "cannotUpdatePasswordToast": "પાસવર્ડ અપડેટ કરી શકાયું નથી. કૃપા કરીને પછી ફરી પ્રયાસ કરો",
             "passwordCreatedToast": "પાસવર્ડ સફળતાથી બનાવવામાં આવ્યો છે",
             "passwordNotMatchToast": "કૃપા કરીને ખાતરી કરો કે પાસવર્ડો મેળ ખાતરી આપો",
