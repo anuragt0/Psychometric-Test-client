@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { useEffect, useState , useRef } from "react";
+import React ,{ useEffect, useState , useRef } from "react";
 import { server_origin } from "../../utilities/constants";
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,31 @@ import jsPDF from 'jspdf';
 
 // import { UserData } from "./Data";
 
+
+//IMPORTS FOR Language change Functionality
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
+import '../../library/i18n';
+
 function Result_M() {
+
+//? Language Functionality Starts ............................................................
+  
+const { t } = useTranslation("translation", { keyPrefix: 'result' } );
+
+//used to get language Stored in LocalStorage //*should be in every Page having Language Functionality 
+useEffect(()=>{
+  let currentLang = localStorage.getItem('lang');
+  i18n.changeLanguage(currentLang);
+
+  // console.log(t('array'  , { returnObjects: true }));
+},[]);
+
+
+//? Language Functionality Ends .................................................................
+
+
+
     const [responses, setResponses] = useState([])
     const [testDate, setTestDate] = useState("");
     const [loading, setLoading] = useState(true);
@@ -54,7 +78,7 @@ function Result_M() {
         // console.log("response1: ", response1);
 
         if (response1.success === false) {
-            toast.error("Unable to fetch result. Please login again");
+            toast.error(t('toast.errorFetchResult'));
             navigate("/login");
             return;
         }
@@ -63,13 +87,13 @@ function Result_M() {
             // 2. User not given the test
             if(response1.userDoc.testResponse.length!==0){
                 // user given the test
-                toast.error("Please register to view results");
+                toast.error(t('toast.registerToViewResults'));
                 navigate("/test/register");
                 return;
             }
             else{
                 //user has not given the test
-                toast.error("You have not given the test yet!");
+                toast.error(t('toast.noTestTaken'));
                 navigate("/test/instructions");
                 return;
             }
@@ -102,7 +126,7 @@ function Result_M() {
             pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
             pdf.save('Result.pdf');
             setDownloading(false);
-            toast.success("Test results downloaded!"); // Using toast from react-hot-toast for demonstration
+            toast.success(t('toast.resultsDownloaded')); // Using toast from react-hot-toast for demonstration
         });
     };
     //* Download Functionallity Ends *//
@@ -143,47 +167,47 @@ function Result_M() {
                 <div className="result-page" ref={pdfRef}>
                     <div className="header">
                     <h2 className="page-heading" >
-                    <FiBarChart2 className="icon-bar-chart my-5" /> Test Results
+                    <FiBarChart2 className="icon-bar-chart my-5" />  {t('main.main_heading1')}
                     </h2>
                     </div>
                     <div className='chart-section'>
                         <div className="chart">
-                            <h1>Graph Chart Example</h1>
-                            <h4 className="chart-subtitle">Compliance vs. Social Pressure</h4>
+                            <h1>{t('graph.heading')}</h1>
+                            <h4 className="chart-subtitle">{t('graph.sub_heading')}</h4>
                             <Graph responses={responses} />
                         </div>
                         <div className="chart">
-                            <h1>PieChart Example</h1>
-                            <h4 className="chart-subtitle">Social Influence Breakdown</h4>
+                            <h1>{t('pie.heading')}</h1>
+                            <h4 className="chart-subtitle">{t('pie.sub_heading')}</h4>
                             <PieChart responses={responses} />
                         </div>
                         <div className="chart">
-                            <h1>RadialBar Chart Example</h1>
+                            <h1>{t('radialBar.heading')}</h1>
                             <RadialBarChartComponent responses={responses} />
                         </div>
                     </div>
                     <div className="content-section">
-                        <h3 style={{color:"#1D5B79"}}> Psychometric Test  Results</h3>
+                        <h3 style={{color:"#1D5B79"}}>{t('main.text_heading')}</h3>
                         <p>
-                            Congratulations! Here are the results of your psychometric test taken on <b>{testDate}</b> . The test assessed your personality traits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your strengths and areas for development, helping you understand yourself better.
+                            {t('main.text1')} <b>{testDate}</b> {t('main.text2')}
                         </p>
-                        <h3 style={{color:"#1D5B79"}}>Graph Chart</h3>
+                        <h3 style={{color:"#1D5B79"}}>{t('graph.text_heading')}</h3>
                         <p>
-                            The Graph Chart displays the comparison between your compliance and social pressure scores. The compliance score reflects your tendency to conform to social norms and expectations, while the social pressure score indicates the level of influence from others in decision-making.
+                            {t('graph.text_content')}
                         </p>
-                        <h3 style={{color:"#1D5B79"}}>Pie Chart</h3>
+                        <h3 style={{color:"#1D5B79"}}>{t('pie.text_heading')}</h3>
                         <p>
-                            The Pie Chart illustrates the breakdown of social influence categories. It provides an overview of the various factors affecting your decision-making process, including family, peers, and media influence.
+                            {t('pie.text_content')}
                         </p>
-                        <h3 style={{color:"#1D5B79"}}>Radial Bar Chart</h3>
+                        <h3 style={{color:"#1D5B79"}}>{t('radialBar.text_heading')}</h3>
                         <p>
-                            The Radial Bar Chart showcases your performance in different aspects, such as cognitive abilities, emotional intelligence, and adaptability. It presents a holistic view of your strengths and areas for improvement.
+                            {t('radialBar.text_content')}
                         </p>
                         {/* ... Add more content about the test results as needed ... */}
                     </div>
                     <button  className="download-button" onClick={handleDownloadClick} disabled={downloading}>
                             <FiDownload className="download-icon" />
-                            {downloading?"Please wait...": "Download Results"} 
+                            {downloading? t('toast.pleaseWait'): t('main.download') } 
                         </button>
                 </div>
             ) : (

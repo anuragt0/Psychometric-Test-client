@@ -1,4 +1,8 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
+
+import i18n, { changeLanguage } from "i18next";
+import { useTranslation } from 'react-i18next';
+
 
 import {
   XAxis,
@@ -13,15 +17,24 @@ import {
   // Rectangle
 } from 'recharts';
 
-const data = [
-  { x: 3, y: 7 , name:'Q1: Information Driven' ,fill: '#be8440'},   // option C 
-  { x: 7.75, y: 9 , name:'Q2: Ideal Normative',fill: '#96b159'},    // option A
-  { x: 7, y: 3 , name:'Q3: Friendly Follower',fill: '#2369b1'},     // option B
-  { x: 1, y: 1,name:'Q4: Individualist Rebellion',fill: '#e52409'}, // option D
-];
+
 
 const Graph = ({responses}) => {
+
+  const { t } = useTranslation("translation", { keyPrefix: 'result.graph' } );
+
+  useEffect(()=>{
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+  },[]);
   
+  const data = [
+  { x: 3, y: 7 , name: t('label1') ,fill: '#be8440'},   // option C 
+  { x: 7.75, y: 9 , name:t('label2'),fill: '#96b159'},    // option A
+  { x: 7, y: 3 , name:t('label3'),fill: '#2369b1'},     // option B
+  { x: 1, y: 1,name: t('label4'),fill: '#e52409'}, // option D
+];
 
   const optionCount = [0, 0, 0, 0]; // Array to store the count of each option
   // console.log(responses);
@@ -42,10 +55,10 @@ const Graph = ({responses}) => {
     <ScatterChart width={400} height={570} margin={{ top: 25, right: 10, bottom: 25, left: 5 }}>
       <CartesianGrid strokeDasharray="3 3" stroke ="#ffffff"/>
       <XAxis type="number" dataKey="x" domain={[0, 10]} tickCount={6}>
-        <Label value="Confirmity to Scale of Social Pressure" position="bottom" offset={-7} />
+        <Label value= {t('Xaxis_label')} position="bottom" offset={-7} />
       </XAxis>
       <YAxis type="number" dataKey="y" domain={[0, 10]} tickCount={11}>
-        <Label value="Confirmity to Scale of Compilance" angle={-90} position="insideLeft bottom" offset={25} />
+        <Label value= {t('Yaxis_label')}  angle={-90} position="insideLeft bottom" offset={25} />
       </YAxis>
       <Scatter data={data} fill={data.fill}>
         {data.map((point, index) => (

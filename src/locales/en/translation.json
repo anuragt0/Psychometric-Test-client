@@ -1,0 +1,379 @@
+{
+  "navBar": {
+    "Home": "Home",
+    "About": "About",
+    "More": "More",
+    "Analytics": "Analytics",
+    "Logout": "Logout",
+    "Login": "Login"
+  },
+  "footer": {
+    "Community": "Community",
+    "About_WEP": "About WEP",
+    "Partners": "Partners",
+    "Newsletter": "Newsletter",
+    "Events": "Events",
+    "Disclaimer": "Disclaimer",
+    "FAQ": "FAQ's",
+    "Feedback": "Feedback"
+  },
+  "home": {
+    "video_unsupported": "Sorry, your browser doesn't support videos.",
+    "take_a": "TAKE A",
+    "step_ahead": "STEP AHEAD",
+    "in_your": "IN YOUR",
+    "business": "BUSINESS",
+    "start_test": "START TEST",
+    "select_your_language": "Select Your Language"
+  },
+  "instruction": {
+    "toast": {
+      "loginToContinue": "Please Login to continue"
+    },
+    "testInstructions": "Test Instructions",
+    "welcomeMessage": "Welcome to the test! This test contains 26 questions, and for each question, you'll have four options to choose from.",
+    "instructionsHeader": "Instructions:",
+    "instructionList": [
+      "Ensure you are in a quiet environment to concentrate on the test.",
+      "Read each question carefully and choose the best option.",
+      "Once you select an option, you can also change it.",
+      "There is no time limit, so take your time and do your best!",
+      "After clicking the \"Start Test\" button, full-screen mode will be enabled.",
+      "This test is designed to assess your knowledge and skills in various areas.",
+      "Please answer each question to the best of your ability."
+    ],
+    "note": "Note:",
+    "noteMessage": " If you accidentally exit full-screen mode during the test, you can click the \"Go Full Screen\" button again to re-enable it.",
+    "startTestButton": "Start Test"
+  },
+  "login": {
+    "enterPhone": "Please enter your mobile number to continue",
+    "enterPasswordToLogin": "Please enter your password to continue",
+    "enterPasswordToCreate": "Please enter a password",
+    "enterOTP": "Please enter the OTP sent to your mobile number ",
+    "waitButton": "Please wait...",
+    "MobilePlaceholder": "Mobile Number",
+    "loginButton": "Login",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "PasswordNotMatch": "Passwords do not match",
+    "saveContinueButton": "Save and continue",
+    "forgotPassword": "Forgot Password?",
+    "submitButton": "Submit",
+    "otpPlaceholder": "Enter OTP",
+    "verifyOTPButton": "Verify and login",
+    "mobilePlaceholder": "Enter 10 digit mobile number",
+    "cannotUpdatePasswordToast": "Cannot update password. Please try again later",
+    "passwordCreatedToast": "Password created successfully",
+    "passwordNotMatchToast": "Please make sure passwords match",
+    "wrongPasswordToast": "Wrong password",
+    "loggedInToast": "Logged in successfully",
+    "enterCorrectOTPToast": "Please enter correct OTP",
+    "otpVerifiedToast": "OTP verified successfully",
+    "otpSentToast": "OTP sent successfully ",
+    "invalidMobileToast": "Please enter valid mobile number",
+    "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
+    "welcomeUser": "Welcome user"
+  },
+  "register": {},
+  "quiz": {
+    "toast": {
+      "loginToContinue": "Please Login to continue",
+      "selectAtLeastOneOption": "Please select atleast one option",
+      "answerAllQuestions": "Please answer all questions",
+      "testSubmittedSuccessfully": "Test submitted successfully.",
+      "submitError": "Unable to submit, please try again later.."
+    },
+    "question": [
+      {
+        "questionText": "Regarding the matter of facilitating Group Discussions and selecting between smaller groups versus larger groups:",
+        "options": [
+          "I find larger groups more comforting, as they let me follow the majority's ideas.",
+          "Both small and large groups have their merits, as everyone has something valuable to contribute.",
+          "Smaller groups may lead to better decisions since everyone has the chance to express their opinions.",
+          "I can uphold my individuality in any group size, but larger groups may cause biased outcomes."
+        ]
+      },
+      {
+        "questionText": "When everyone agrees with a single person's choice, I find it challenging to express a contrasting view because:",
+        "options": [
+          "It's nice to receive approval from our group by adhering to a unanimous decision.",
+          "Disagreeing might appear impolite. I could discuss my concerns individually without disrupting the group.",
+          "I believe everyone considers the best course of action, and it's unlikely that all of them are incorrect simultaneously.",
+          "I don't hesitate to share my thoughts, even if it means standing apart."
+        ]
+      },
+      {
+        "questionText": "Recently, some of my colleagues at office joined a CSR activity club where they plant trees and keep a track of their well being. They have gained a lot of popularity because of this. I believe I will also enrol my name:",
+        "options": [
+          "Because after I become a part of their group, I can become popular too.",
+          "Because I would love to learn from someone's good company and good habits.",
+          "Because preserving nature and taking action towards it is the right thing to do.",
+          "Because they can learn a lot from my gardening skills."
+        ]
+      },
+      {
+        "questionText": "Individuals with a lower status may find themselves readily persuaded by the viewpoints of those with a higher status, primarily due to the following reasons:",
+        "options": [
+          "They hold these individuals in high regard and aspire to emulate their success.",
+          "They seek guidance from these accomplished individuals in order to unlock their own potential and pursue growth.",
+          "The influence of status is minimal in this context; rather, the focus is on validating the accuracy of one's stance.",
+          "Personally, I remain indifferent to an individual's financial standing and do not hesitate to offer corrective feedback when necessary."
+        ]
+      },
+      {
+        "questionText": "The government has set up a color-coded dustbin system to help waste collectors. But it won't work unless we all do our part. When I need to throw away trash outside:",
+        "options": [
+          "I check out what others are doing. If nobody's using the bins, I wonder if it really matters if I follow the rules.",
+          "I do my best to use the right bins, but sometimes I might slip up when nobody's watching.",
+          "I make sure to put trash in the proper bin, even if it means walking to a trash can or carrying the waste with me until I get home if I can't find one.",
+          "There aren't enough bins provided by the government. If I can't find one right away, I don't want to waste my valuable time searching for one."
+        ]
+      },
+      {
+        "questionText": "When someone attempts to talk to me in a library:",
+        "options": [
+          "I don't want to upset them or break the library rules, so I have to find a balance.",
+          "I keep my voice low when responding, as they might need some assistance from me.",
+          "I gently discourage this behavior since it isn't appropriate.",
+          "I usually don't pay attention to people who do this because they're only wasting their time, and I won't let them waste mine."
+        ]
+      },
+      {
+        "questionText": "If I ever find myself in a situation where I have to choose a different direction from the crowd",
+        "options": [
+          "I might feel very afraid and unsure whether I can stay on that path for long.",
+          "I would want to double-check if my choice is right, since I believe people generally make wise decisions in life.",
+          "If I'm confident that my choice is correct, I will gladly go in that direction, even if I'm by myself.",
+          "I will show them that they were mistaken and that they should reconsider their group behavior."
+        ]
+      },
+      {
+        "questionText": "Challenging tasks can be quite puzzling. When several people mention how tough a task I'm about to undertake is",
+        "options": [
+          "I quickly ask if they can assist me with the task before even attempting it myself.",
+          "I'm open to giving it a shot, but if help is available along the way, I'm happy to accept it.",
+          "I'll figure out the proper approach to complete the task and only seek help from those who are doing it correctly.",
+          "I understand they're just afraid, but no task is too difficult for me."
+        ]
+      },
+      {
+        "questionText": "When faced with unclear situations",
+        "options": [
+          "I watch what others do and follow their lead.",
+          "I talk to people to understand their views and find a way to solve the problem.",
+          "I ask the person involved for more information so I can make the right decision.",
+          "I trust my judgment and move forward. If I'm struggling to understand, it's unlikely anyone else can help."
+        ]
+      },
+      {
+        "questionText": "When my work is vital and must be completely precise:",
+        "options": [
+          "I don't feel sure about the outcome until I ask 5-7 coworkers who are doing the same job.",
+          "I try my hardest and look at my coworkers' results to get better and be more precise.",
+          "I work hard on my job and aim for the right results, even if I need to start over.",
+          "I usually feel good about my work being correct, so I'll do it like any other task I have."
+        ]
+      },
+      {
+        "questionText": "When there's a disagreement and I need to choose between two groups (majority vs. minority), I usually pick",
+        "options": [
+          "The majority, since most people agree with them.",
+          "The majority, as I trust that people can make wise choices.",
+          "The side that's right, whether it's the majority or minority.",
+          "The minority, because they've stood up for their beliefs without giving in to pressure."
+        ]
+      },
+      {
+        "questionText": "A few months ago, a friend of mine bought a new car. After that, I noticed many others getting cars even if they had trouble affording them:",
+        "options": [
+          "I'm considering buying a car too, but I can only afford a used one; at least I'll have a car too.",
+          "I don't really need a car at the moment, but I want to ask my friends how having a car has made their lives better.",
+          "I'll only get a car when I can comfortably afford it, not because of pressure from others.",
+          "I can get a car whenever I choose. I won't let other people influence me."
+        ]
+      },
+      {
+        "questionText": "I am a good human being because of the following",
+        "options": [
+          "The community around me embraced and supported my true self.",
+          "My loved ones, friends, and coworkers showed me the way through their actions.",
+          "The positive habits and decisions I've made.",
+          "My own efforts."
+        ]
+      },
+      {
+        "questionText": "If I have a good friend",
+        "options": [
+          "I feel lucky and I'm ready to do my best to help them, showing how much I value our friendship.",
+          "I make sure to pay attention to their suggestions so I can make my life better.",
+          "I believe this is true because they choose to do what's right and have good habits.",
+          "They understand that I bring value to their life and they can learn many things from me."
+        ]
+      },
+      {
+        "questionText": "One of my really good friend is starting their new business. Last week he requested me if I am willing to invest in his new business as he was short of capital. I was startled at his request and immediately denied. Later this week, he came to check if I would like to contribute a small amount as donation:",
+        "options": [
+          "I thought it was an opportunity for me to feel good, so I quickly donated a large sum of money.",
+          "I realized they needed help because life isn't always fair for everyone.",
+          "Helping with a donation is the smallest thing I can do for him. Even though I didn't feel comfortable with his investment idea, I knew that donating for a good cause was something I could do. So, I decided to give a small gift to show my support.",
+          "If this person's actions are like this when the business is just beginning, I'm not sure how long it will last. Whenever they don't have enough money, will they keep asking me for more donations?"
+        ]
+      },
+      {
+        "questionText": "While I was just looking around, I noticed a person selling phones. He showed me a mobile phone. I said I didn't want to buy one. But he told me about a special offer with many extras like an exchange deal, screen protector, free earphones, a long warranty, and a TV streaming service for one year",
+        "options": [
+          "Even though I didn't really need a new phone, I bought it because the offer seemed too good to pass up.",
+          "I think it's a great deal and I've also heard good things about this phone from friends. I'll exchange it for my old one.",
+          "I'm sure this offer is great, but I don't need a new phone at the moment. I'll purchase one when necessary.",
+          "I'm familiar with salespeople. They're mostly similar. I won't allow a salesperson to dictate my choice of phone."
+        ]
+      },
+      {
+        "questionText": "When people ask me for help, they usually don't just ask once. It starts with one favor and then becomes a regular thing. In situations like these",
+        "options": [
+          "I don't want to say no because I'm worried it'll make me less liked, and I can't handle that.",
+          "I'll likely do what they need because they're asking for assistance since they truly need it.",
+          "I'll assess whether their requests are reasonable and fair. I will only focus on the fair requests.",
+          "I'll definitely disregard any additional requests. I don't want to provide too much help to anyone. They might lack a sense of independence if they ask for such favors."
+        ]
+      },
+      {
+        "questionText": "I've been searching for insurance when an agent offers me a policy with incredibly low premiums. I agree right away, but when we start putting the policy together, I find out that I need to pay extra for each rider I want to include. This makes the premium jump by around 50% from the original offer. So, what should I do in this situation?",
+        "options": [
+          "Since I've decided to get the insurance from him, it might be difficult for me to change my mind now.",
+          "I'll get the policy this time, but next time, I'll make sure to ask the agent about any hidden fees first.",
+          "That's not fair. They should have told me earlier. I'll cancel the policy and find agents who won't mislead me.",
+          "I won't buy insurance from an agent who tries to trick me."
+        ]
+      },
+      {
+        "questionText": "I enjoy sharing my life achievements on social media since:",
+        "options": [
+          "Receiving likes and comments from friends and family makes me happy. It shows they appreciate my accomplishments.",
+          "Social media is an easy way to keep loved ones informed about my important life events. It's quicker than calling everyone individually.",
+          "Sharing updates with everyone at once ensures nobody misses out on the news.",
+          "I continue to notice events on my profile from the past. Who shared them with others? I share for my personal memories."
+        ]
+      },
+      {
+        "questionText": "While driving, when I notice a police car behind me",
+        "options": [
+          "I quickly feel the need to move aside and start driving anxiously.",
+          "I understand they might be in a hurry to perform their job, so I gladly make room for them.",
+          "I continue driving as usual and will clear a path if they ask me to.",
+          "It doesn't matter if they're police or someone important. I'll just pay no attention to them."
+        ]
+      },
+      {
+        "questionText": "When I'm online shopping and I notice a flash sale ending soon:",
+        "options": [
+          "I think it's my final opportunity to get items, so I spend a lot of money and regret it afterward.",
+          "I look to see if the prices of items on my wishlist are lower. If they are, I'll buy them.",
+          "I understand it's just a trick to make me buy things. I know these sales will happen again.",
+          "I purchase what I want when I want. I don't let sales decide when I shop."
+        ]
+      },
+      {
+        "questionText": "When someone ignores me for no reason:",
+        "options": [
+          "I usually feel concerned and try my best to fix the issue.",
+          "I think they might be facing a difficult situation. I'm here to listen if they want to talk.",
+          "I'm sure I haven't done anything wrong to them.",
+          "Perhaps they're dealing with their own issues. I give them space, as I don't want to waste my time on others."
+        ]
+      },
+      {
+        "questionText": "A while ago, as I walked through a market, I saw a large group of people watching a man harshly hitting a kid. The reason was that the child had stolen a biscuit pack from his store, which only cost Rs. 5.",
+        "options": [
+          "I wanted to help the kid, but I couldn't act alone while everyone just stood there watching.",
+          "The kid's mistake wasn't that bad for such a harsh punishment. The shopkeeper seemed to be using his power to take out his anger.",
+          "It's true that the kid needs to learn from this, but it's the police's job, not for us to take the law into our hands.",
+          "I stepped in and rescued the kid. It wasn't fair for them to suffer because of a small mistake and having no one to defend them."
+        ]
+      },
+      {
+        "questionText": "When I drive and notice a traffic officer in uniform waving at me at a red light",
+        "options": [
+          "I get nervous and worry about being in trouble even if I didn't break any traffic rules.",
+          "I carefully look to see if the officer wants me to stop. Maybe they want to tell me about a flat tire.",
+          "I stop my car and park it to the side. If I broke a rule, I need to learn from my mistake.",
+          "Traffic officers are just doing their job to keep me safe. Either way, I won't worry too much about it."
+        ]
+      },
+      {
+        "questionText": "Recently, my boss got a promotion and moved to a higher position. I have noticed that now they are telling me what to do without thinking about whether I have enough time for it. What should I do?",
+        "options": [
+          "I might feel more afraid to share my thoughts because of his new role. I'll do my best to follow everything he says.",
+          "I will feel stressed and want to know if my coworkers feel the same and how they're handling it.",
+          "This seems like an abuse of power and not a good way to treat someone who works for you. I'll see if the company rules let me switch my supervisor.",
+          "Bosses like this can try to take away who you are. I'll stand up for myself."
+        ]
+      },
+      {
+        "questionText": "Your manager has given you a set of challenging deadlines at your job. How do you handle the stress?",
+        "options": [
+          "I might just follow all my boss's instructions, even if it means I'll be totally worn out for days on end.",
+          "I'll observe how others cope with tight deadlines and adapt my work approach accordingly.",
+          "I'll complete as much as I can during my standard work hours and let my boss know I'll tackle the remaining tasks the next day.",
+          "I might quit a job that gives me too much stress and doesn't appreciate my talents."
+        ]
+      }
+    ],
+    "controls": {
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit"
+    }
+  },
+  "result": {
+    "main": {
+      "main_heading1": "Test Results",
+      "download": "Download Result",
+      "text_heading": "Psychometric Test  Results",
+      "text1": "Congratulations! Here are the results of your psychometric test taken on",
+      "text2": ". The test assessed your personality traits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your strengths and areas for development, helping you understand yourself better."
+    },
+    "graph": {
+      "heading": "Graph Chart Example",
+      "sub_heading": "Compliance vs. Social Pressure",
+      "text_heading": "Graph Chart",
+      "text_content": "The Graph Chart displays the comparison between your compliance and social pressure scores. The compliance score reflects your tendency to conform to social norms and expectations, while the social pressure score indicates the level of influence from others in decision-making.",
+      "label1": "Q1: Information Driven",
+      "label2": "Q2: Ideal Normative",
+      "label3": "Q3: Friendly Follower",
+      "label4": "Q4: Individualist Rebellion",
+      "Xaxis_label": "Confirmity to Scale of Social Pressure ->",
+      "Yaxis_label": "Confirmity to Scale of Compilance ->"
+    },
+    "pie": {
+      "heading": "PieChart Example",
+      "sub_heading": "Social Influence Breakdown",
+      "text_heading": "Pie Chart",
+      "text_content": "The Pie Chart illustrates the breakdown of social influence categories. It provides an overview of the various factors affecting your decision-making process, including family, peers, and media influence.",
+      "label1": "Confirimity",
+      "label2": "Compliance",
+      "label3": "Obedience"
+    },
+    "radialBar": {
+      "heading": "RadialBarChart Example",
+      "sub_heading": "",
+      "text_heading": "Radial Bar Chart",
+      "text_content": "The Radial Bar Chart showcases your performance in different aspects, such as cognitive abilities, emotional intelligence, and adaptability. It presents a holistic view of your strengths and areas for improvement.",
+      "label1": "Affected by group size or unanimity?",
+      "label2": "Affected by cohesion or status of others?",
+      "label3": "Affected by Reciprocity?",
+      "label4": "Affected by Commitment and Consistency?",
+      "label5": "Affected by Scarcity?",
+      "label6": "Affected by Authority/ commands ?"
+    },
+    "toast": {
+      "errorFetchResult": "Unable to fetch result. Please login again",
+      "registerToViewResults": "Please register to view results",
+      "noTestTaken": "You have not given the test yet!",
+      "resultsDownloaded": "Test results downloaded!",
+      "pleaseWait": "Please wait...",
+      "resultDownloaded": "Result Downloaded"
+    }
+  }
+}

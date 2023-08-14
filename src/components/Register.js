@@ -58,7 +58,7 @@ const RegistrationPage = () => {
 
         console.log('Form submitted!', credentials);
 
-        const response = await fetch(`${server_origin}/api/user/register`, {
+        const response = await fetch(`${server_origin}/api/user/register-update-user`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

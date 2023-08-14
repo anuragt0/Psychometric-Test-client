@@ -1,4 +1,8 @@
-import React from 'react';
+import React , {useEffect }from 'react';
+
+import i18n, { changeLanguage } from "i18next";
+import { useTranslation } from 'react-i18next';
+
 import { 
   PieChart, 
   Pie, 
@@ -14,6 +18,15 @@ import {
 // ];
 
 function PieChartCom ({responses}) {
+
+  const { t } = useTranslation("translation", { keyPrefix: 'result.pie' } );
+
+  useEffect(()=>{
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+  },[]);
+
 
   // Defining Type values 
   var confirimity = 0 ;
@@ -43,9 +56,9 @@ function PieChartCom ({responses}) {
   obedience   = Math.round((obedience/total)*100);
 
   const data = [
-    { name: 'Confirimity',value: confirimity , fill:'#FFBA00' },
-    { name: 'Compliance', value: compilance , fill:'#6CA044'},
-    { name: 'Obedience', value: obedience , fill:'#A24F10'}
+    { name: t('label1'),value: confirimity , fill:'#FFBA00' },
+    { name: t('label2'), value: compilance , fill:'#6CA044'},
+    { name: t('label3'), value: obedience , fill:'#A24F10'}
   ];
   // console.log(data);
   

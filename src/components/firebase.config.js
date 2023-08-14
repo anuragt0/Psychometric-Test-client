@@ -18,6 +18,8 @@ try {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   auth = getAuth(app);
+  auth.useDeviceLanguage();
+
 } catch (error) {
   console.error("Error loading Firebase configuration:", error);
   // Handle the error gracefully (e.g., show a friendly error message)

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { server_origin } from '../utilities/constants';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+
 // import img from "../../assets/images/yi_logo.png";
 
 // My css
@@ -9,31 +13,74 @@ import css from "../css/navbar.module.css";
 import logo from "../assests/logo.png";
 
 
+//IMPORTS FOR Language change Functionality
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
+import '../library/i18n';
+import { MdOutlineArrowDropDown } from 'react-icons/md';
+
+import { useLanguage } from '../context/LanguageContext';
+
+
 const Navbar = () => {
-    const [isAdmin, setIsAdmin] = useState(false)
 
-    useEffect( () => {
-        verifyUser();
-    }, [])
+  const { pathname } = useLocation(); // Get the current route path
 
-    const verifyUser = async()=>{
-        if(localStorage.getItem('token')){
-            const response = await fetch(`${server_origin}/api/user/verify-user`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('token')
-                },
-            });
-    
-            const result = await response.json()
-            // console.log("here: ", result);
-            if(result.isAdmin===true){
-                setIsAdmin(true);
-            }
-        }
+  //? Language Functionality Starts *Translation* ............................................................
+
+
+
+  const { t } = useTranslation("translation", { keyPrefix: 'navBar' });
+
+  const { selectedLanguage , setSelectedLanguage , resetLanguage } = useLanguage();
+
+
+  const handleLanguageChange = (language) => {
+    i18n.changeLanguage(language);
+    resetLanguage();
+    setSelectedLanguage(language);
+    localStorage.setItem('lang', language);
+  };
+
+  //used to get language Stored in LocalStorage //*should be in every Page having Language Functionality 
+  useEffect(() => {
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+    // console.log(t('array'  , { returnObjects: true }));
+
+  }, []);
+
+
+  // //? Language Functionality Ends *Translation* .................................................................
+
+
+
+
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    verifyUser();
+  }, [])
+
+  const verifyUser = async () => {
+    if (localStorage.getItem('token')) {
+      const response = await fetch(`${server_origin}/api/user/verify-user`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': localStorage.getItem('token')
+        },
+      });
+
+      const result = await response.json()
+      // console.log("here: ", result);
+      if (result.isAdmin === true) {
+        setIsAdmin(true);
+      }
     }
-    
+  }
+
 
   const navigate = useNavigate();
 
@@ -50,115 +97,157 @@ const Navbar = () => {
 
   return (
     <nav className={`${css.outerNav} navbar navbar-expand-lg fixed-top`}
-    style={{ position: "sticky", top: 0, zIndex: 100 }}>
-      <Link to="/" style={{ marginRight: "1rem" }}>
-        <img src={logo} alt="yi-logo" style={{"width": "3rem",
-    "margin-right": "2%"}} />
-      </Link>
-      <button
-        type="button"
-        className="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+      style={{ position: "sticky", top: 0, zIndex: 100 }}>
+
+      <div className={`${css.hamDisplay}`}>
+        <Link to="/" style={{ marginRight: "1rem" }}>
+          <img src={logo} alt="yi-logo" style={{
+            "width": "3rem",
+            "marginRight": "2%"
+          }} />
+
+        </Link>
+        <button
+          type="button"
+          className={`${css.navStyle} navbar-toggler`}
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <ul className="navbar-nav mr-auto text-ff1">
           <li className="nav-item active">
-          <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-            <Link className="nav-link active" to="/" style={listItemStyle}>
-              Home
-            </Link>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{
+                type: 'spring', stiffness: 300
+              }}>
+              <Link className="nav-link active" to="/" style={listItemStyle}>
+                {t('Home')}
+              </Link>
             </motion.div>
           </li>
           <li className="nav-item active">
-          <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-            <Link
-              className="nav-link active"
-              to="/about"
-              style={listItemStyle}
-            >
-              About
-            </Link>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{
+                type: 'spring', stiffness: 300
+              }}>
+              <Link
+                className="nav-link active"
+                to="/about"
+                style={listItemStyle}
+              >
+                {t('About')}
+              </Link>
             </motion.div>
           </li>
           <li className="nav-item active">
-          <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-            <Link
-              className="nav-link active"
-              to="/more"
-              style={listItemStyle}
-            >
-              More
-            </Link>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{
+                type: 'spring', stiffness: 300
+              }}>
+              <Link
+                className="nav-link active"
+                to="/more"
+                style={listItemStyle}
+              >
+                {t('More')}
+              </Link>
             </motion.div>
           </li>
           {
             isAdmin && (
-                <li className="nav-item active">
-                   <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-                <Link
-                className="nav-link active"
-                to="/admin/analytics"
-                style={listItemStyle}
-                >
-                Analytics
-                </Link>
+              <li className="nav-item active">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{
+                    type: 'spring', stiffness: 300
+                  }}>
+                  <Link
+                    className="nav-link active"
+                    to="/admin/analytics"
+                    style={listItemStyle}
+                  >
+                    {t('Analytics')}
+                  </Link>
                 </motion.div>
-            </li>
+              </li>
             )
           }
         </ul>
 
+
+
+
         <ul className="navbar-nav ms-auto">
-          {localStorage.getItem("token") ? (
-            <button
-              className={`${css.navBtn} text-ff1 navbar-right`}
-              onClick={handleLogoutClick}
-            >
-              <motion.p
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-              Logout
-              </motion.p>
-            </button>
-          ) : (
-            <>
+          {/* Language Buttons Starts hit and try  */}
+
+          {pathname !== '/test/start' && (
+
+            <li className="nav-item active">
+              {/* <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{
+                          type: 'spring', stiffness: 300
+                        }}> */}
+              <div className={`${css.languageContainer} mx-3`}>
+              <FontAwesomeIcon icon={faGlobe} />
+                <select
+                  className={`language-select ${css.languageSelect} ${css.btnStyle}`}
+                  style={{cursor:"pointer"}}
+                  value={selectedLanguage}
+                  onChange={(e) => handleLanguageChange(e.target.value)}
+                >
+                  <option className="nav-item active" value="en">English</option>
+                  <option className="nav-item active" value="hi">  हिन्दी  </option>
+                  <option className="nav-item active" value="gu">  ગુજરાતી  </option>
+
+                  {/* Add more options for other languages */}
+
+                </select>
+            
+              </div>
+            </li>
+          )}
+          {/* Language Buttons Ends   */}
+
+          <li>
+            {localStorage.getItem("token") ? (
               <button
                 className={`${css.navBtn} text-ff1 navbar-right`}
-                onClick={handleLoginClick}
+                onClick={handleLogoutClick}
               >
                 <motion.p
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: 'spring', stiffness: 300
-                }}>
-                Login
+                  whileHover={{ scale: 1.1 }}
+                  transition={{
+                    type: 'spring', stiffness: 300
+                  }}>
+                  {t('Logout')}
                 </motion.p>
               </button>
+            ) : (
+              <>
+                <button
+                  className={`${css.navBtn} text-ff1 navbar-right`}
+                  onClick={handleLoginClick}
+                >
+                  <motion.p
+                    whileHover={{ scale: 1.1 }}
+                    transition={{
+                      type: 'spring', stiffness: 300
+                    }}>
+                    {t('Login')}
+                  </motion.p>
+                </button>
 
-            </>
-          )}
+              </>
+            )}
+          </li>
         </ul>
       </div>
     </nav>

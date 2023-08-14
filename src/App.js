@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect } from 'react';
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
@@ -14,9 +14,8 @@ import Analytics from "./components/Admin/Analytics";
 import AdminQuestions from "./components/Admin/AdminQuestions";
 import AdminUsers from "./components/Admin/AdminUsers";
 
-
-
 function App() {
+
   return (
     <Router>
       <div>

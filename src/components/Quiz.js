@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { server_origin } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 import "../css/quiz.css";
-import imgbg from "../images/bg.png";
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { SyncLoader } from 'react-spinners'; // Import the ClipLoader from "react-spinners"
 
 import 'react-circular-progressbar/dist/styles.css';
@@ -11,8 +9,30 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import { toast, Toaster } from "react-hot-toast";
 
+// IMPORTS for Language Functionlaity
+import i18n /*, { changeLanguage }*/ from "i18next";
+import { useTranslation } from 'react-i18next';
+
+
 
 function Quiz() {
+
+    const { t } = useTranslation("translation", { keyPrefix: 'quiz' } );
+
+    // when Page Refreshes
+    useEffect(()=>{
+      let currentLang = localStorage.getItem('lang');
+      i18n.changeLanguage(currentLang);
+    //   console.log(currentLang);
+    //! Storing Question Array According to the language in LocalStorage
+    const questions1 = t('question'  , { returnObjects: true });
+    console.log(questions1);
+    setQuestions(questions1);
+    setLoading(false);
+
+    },[]);
+
+
 
 
     const navigate = useNavigate();
@@ -36,7 +56,7 @@ function Quiz() {
             if (response1.success === true) {
               setIsUserAuthenticated(true);
             } else {
-              toast.error('Please Login to continue', {
+              toast.error(t('toast.loginToContinue'), {
                   style: {
                     border: '1px solid #713200',
                     padding: '16px',
@@ -54,25 +74,19 @@ function Quiz() {
           // Run the effect only once on component mount
           validateUserToken();
           getQuestions();
+
+         
     }, [])
 
-    const getQuestions = async () => {
-        setLoading(true);
-        const response = await fetch(`${server_origin}/api/user/get-questions`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
-            },
-        });
-        const result = await response.json()
-        const questions1 = result.questions;
 
+    // Dummy getQuestions
+    const getQuestions = ()=>{
+        //! Storing Question Array According to the language in LocalStorage
+        const questions1 = t('question'  , { returnObjects: true });
+        console.log(questions1);
         setQuestions(questions1);
         setLoading(false);
-
-    }
-
+    };
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [clickedOption, setClickedOption] = useState(5);
@@ -80,7 +94,7 @@ function Quiz() {
 
     const nextQuestion = () => {
         if (clickedOption === 5 && !result[currentQuestionIndex]) {
-            toast.error("Please select atleast one option");
+            toast.error(t('toast.selectAtLeastOneOption'));
             return;
         }
         if (currentQuestionIndex < questions.length - 1) {
@@ -108,7 +122,7 @@ function Quiz() {
 
     const handleSubmit = async () => {
         if (result.length !== questions.length) {
-            toast.error("Please answer all questions");
+            toast.error(t('toast.answerAllQuestions'));
             return;
         }
         // console.log("Submit quiz");
@@ -125,11 +139,11 @@ function Quiz() {
         let response1 = await response.json();
         // console.log( response1);
         if (response1.success == true) {
-            toast.success("Test submitted successfully.");
+            toast.success(t('toast.testSubmittedSuccessfully'));
             navigate("/test/register");
         }
         else {
-            toast.error("Unable to submit, please try again later.");
+            toast.error(t('toast.submitError'));
         }
 
         if (document.fullscreenElement) {
@@ -182,10 +196,10 @@ function Quiz() {
                     </div>
 
                     <div className="buttons">
-                            <input type="button" value="Next" id="next-button" onClick={nextQuestion} />
-                            <input type="button" value="Prev" id="prev-button" onClick={previousQuestion} />
+                            <button value="Next" id="next-button" onClick={nextQuestion}> {t('controls.next')}</button>
+                            <button value="Prev" id="prev-button" onClick={previousQuestion}> {t('controls.previous')} </button>
                         </div>
-                        <button style={result.length !== questions.length ? { display: "none" } : {}} className='btn btn-success' onClick={handleSubmit}>Submit</button>
+                        <button style={result.length !== questions.length ? { display: "none" } : {}} className='btn btn-success' onClick={handleSubmit}>{t('controls.submit')}</button>
 
                 <div className="right my-5">
                     <div className="box">

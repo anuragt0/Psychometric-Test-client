@@ -1,5 +1,8 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { RadialBarChart, RadialBar, Legend } from 'recharts';
+
+import i18n, { changeLanguage } from "i18next";
+import { useTranslation } from 'react-i18next';
 
 
 // const data = [
@@ -15,29 +18,37 @@ import { RadialBarChart, RadialBar, Legend } from 'recharts';
 function RadialBarChartComponent({ responses }) {
 
 
+  const { t } = useTranslation("translation", { keyPrefix: 'result.radialBar' } );
+
+  useEffect(()=>{
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+  },[]);
+
 
   const rawData = [
     {
-      name: 'Affected by group size or unanimity?',
+      name: t('label1'),
       score: ((8 - (responses[1-1]-1)*2) + (8 - (responses[2-1]-1)*2)) , 
     },
     {
-      name: 'Affected by cohesion or status of others?',
+      name: t('label2'),
       score: ((8 - (responses[3-1]-1)*2) + (8 - (responses[4-1]-1)*2)), 
     },
     {
-      name: 'Affected by Reciprocity?',
+      name: t('label3'),
       score: ((8 - (responses[15-1]-1)*2) + (8 - (responses[16-1]-1)*2)), 
     },
     {
-      name: 'Affected by Commitment and Consistency?',
+      name: t('label4'),
       score: ((8 - (responses[17-1]-1)*2) + (8 - (responses[18-1]-1)*2)), 
     },
     {
-      name: 'Affected by Scarcity?',
+      name: t('label5'),
       score: ((8 - (responses[21-1]-1)*2) + (8 - (responses[22-1]-1)*2)), 
     },
-    { name: 'Affected by Authority/ commands ?', 
+    { name: t('label6'), 
       score: ((8 - (responses[25-1]-1)*2) + (8 - (responses[26-1]-1)*2)),  },
 
     { name: 'Max', score: 18.2 }, // Maximum Possible  value

@@ -61,16 +61,98 @@
 /* Styling for disabled buttons */
 .send-otp-button[disabled],
 .login-button[disabled] {
-  background-color: #FF1493; /* Bright pink color for disabled buttons */
+  background-color: #d970a8; /* Bright pink color for disabled buttons */
   color: #ffffff; /* White text for better visibility */
   cursor: not-allowed;
 }
 
-/* Add a class for the error message */
-.error-message {
-  color: #FF0000;
-  margin-top: 10px;
+.login-input.password-mismatch {
+    border-color: #FF0000; /* Red border for mismatched passwords */
 }
+
+/* Styling for the password mismatch error message */
+.error-message {
+    color: #FF0000;
+    margin-top: 5px;
+}
+
+/* Styling for the "Save and continue" button */
+.save-password-button {
+    background-color: #FB2576;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.save-password-button:hover {
+    background-color: #FF1493;
+}
+
+
+.forgot-password-link{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.forgot-password-link span {
+    cursor: pointer;
+    color: #FB2576;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover span {
+    color: #e31b66;
+}
+
+
+.welcome-heading {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.fancy-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: transparent;
+    background-image: linear-gradient(45deg, #FB2576, #e36696);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animateText 3s linear infinite alternate-reverse;
+  }
+
+.custom-icon {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px; /* Add spacing between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+
+
+
+
+@keyframes animateText {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
   /* Media Query for Mobile View */
