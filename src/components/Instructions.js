@@ -103,19 +103,19 @@ function InstructionsPage() {
                     <div className="start-button-container">
                         <button onClick={() => {
                             navigate('/test/start');
-                            const element = document.documentElement;
-                            if (element.requestFullscreen) {
-                                element.requestFullscreen();
-                            } else if (element.mozRequestFullScreen) {
-                                // Firefox
-                                element.mozRequestFullScreen();
-                            } else if (element.webkitRequestFullscreen) {
-                                // Chrome, Safari, and Opera
-                                element.webkitRequestFullscreen();
-                            } else if (element.msRequestFullscreen) {
-                                // Internet Explorer and Edge
-                                element.msRequestFullscreen();
-                            }
+                            // const element = document.documentElement;
+                            // if (element.requestFullscreen) {
+                            //     element.requestFullscreen();
+                            // } else if (element.mozRequestFullScreen) {
+                            //     // Firefox
+                            //     element.mozRequestFullScreen();
+                            // } else if (element.webkitRequestFullscreen) {
+                            //     // Chrome, Safari, and Opera
+                            //     element.webkitRequestFullscreen();
+                            // } else if (element.msRequestFullscreen) {
+                            //     // Internet Explorer and Edge
+                            //     element.msRequestFullscreen();
+                            // }
                         }} className='btn btn-primary'>{t('startTestButton')}</button>
                     </div>
                 </>
