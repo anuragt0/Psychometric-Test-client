@@ -47,6 +47,18 @@
     "startTestButton": "Start Test"
   },
   "login": {
+    "toast": {
+      "cannotUpdatePasswordToast": "Cannot update password. Please try again later",
+      "passwordCreatedToast": "Password created successfully",
+      "passwordNotMatchToast": "Please make sure passwords match",
+      "wrongPasswordToast": "Wrong password",
+      "loggedInToast": "Logged in successfully",
+      "enterCorrectOTPToast": "Please enter correct OTP",
+      "otpVerifiedToast": "OTP verified successfully",
+      "otpSentToast": "OTP sent successfully ",
+      "invalidMobileToast": "Please enter valid mobile number",
+      "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later"
+    },
     "enterPhone": "Please enter your mobile number to continue",
     "enterPasswordToLogin": "Please enter your password to continue",
     "enterPasswordToCreate": "Please enter a password",
@@ -63,19 +75,31 @@
     "otpPlaceholder": "Enter OTP",
     "verifyOTPButton": "Verify and login",
     "mobilePlaceholder": "Enter 10 digit mobile number",
-    "cannotUpdatePasswordToast": "Cannot update password. Please try again later",
-    "passwordCreatedToast": "Password created successfully",
-    "passwordNotMatchToast": "Please make sure passwords match",
-    "wrongPasswordToast": "Wrong password",
-    "loggedInToast": "Logged in successfully",
-    "enterCorrectOTPToast": "Please enter correct OTP",
-    "otpVerifiedToast": "OTP verified successfully",
-    "otpSentToast": "OTP sent successfully ",
-    "invalidMobileToast": "Please enter valid mobile number",
-    "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
     "welcomeUser": "Welcome user"
   },
-  "register": {},
+  "register": {
+    "toast": {
+      "test_not_given": "You have not given the test yet!",
+      "not_login": "Invalid token! Please login and try again.",
+      "registered": "Thanks for registering!gender",
+      "not_registered": "Cannot register, try again later"
+    },
+    "register_to_view": "Register to know your ",
+    "results": "Results",
+    "name": "Name",
+    "email": "Email (optional)",
+    "gender": "Gender",
+    "select_gender": "Select Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "age": "Age",
+    "address": "Address",
+    "city": "City",
+    "pincode": "Pincode",
+    "country": "Country",
+    "register": "Register"
+  },
   "quiz": {
     "toast": {
       "loginToContinue": "Please Login to continue",

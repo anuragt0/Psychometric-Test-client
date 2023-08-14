@@ -77,7 +77,7 @@ const Login = () => {
                             onSignup();
                         },
                         'expired-callback': () => {
-                            toast.error(t('capthchaExpiredToast'))
+                            toast.error(t('toast.capthchaExpiredToast'))
                         }
                     },
                     auth
@@ -95,7 +95,7 @@ const Login = () => {
         //* Display EnterOTP component when OTP is sent successfully
         const mobLength = mobileNumber.length;
         if ((mobLength !== 10)) {
-            toast.error(t('invalidMobileToast'));
+            toast.error(t('toast.invalidMobileToast'));
             return;
         }
         setLoading(true);
@@ -148,7 +148,7 @@ const Login = () => {
                 setComponentState(2);
             })
             .catch((err) => {
-                toast.error(t('enterCorrectOTPToast'));
+                toast.error(t('toast.enterCorrectOTPToast'));
                 console.log(err);
                 if (err.code === "auth/code-expired") {
                     setOtpError("OTP has expired. Please request a new OTP.");
@@ -226,13 +226,13 @@ const Login = () => {
 
         if (response1.success === true) {
             //* Password is correct
-            toast.success(t('loggedInToast'));
+            toast.success(t('toast.loggedInToast'));
             localStorage.setItem('token', response1.token);
             navigate('/test/instructions');
         }
         else {
             //* Wrong password
-            toast.error(t('wrongPasswordToast'));
+            toast.error(t('toast.wrongPasswordToast'));
         }
 
         setLoading(false);
@@ -251,7 +251,7 @@ const Login = () => {
         //* After this user is logged in and token is saved
         console.log("Password: ", password);
         if (password !== confirmPassword) {
-            toast.warning(t('passwordNotMatchToast'));
+            toast.warning(t('toast.passwordNotMatchToast'));
             return;
         }
 
@@ -266,12 +266,12 @@ const Login = () => {
         });
         let response1 = await response.json();
         if (response1.success) {
-            toast.success(t('passwordCreatedToast'));
+            toast.success(t('toast.passwordCreatedToast'));
             localStorage.setItem("token", response1.token);
             navigate("/test/instructions");
         }
         else {
-            toast.error(t('cannotUpdatePasswordToast'));
+            toast.error(t('toast.cannotUpdatePasswordToast'));
 
         }
 

@@ -7,7 +7,7 @@
         "Logout": "लॉगआउट",
         "Login": "लॉगिन"
     },
-    "footer":{
+    "footer": {
         "Community": "समुदाय",
         "About_WEP": "वीडियो के बारे में",
         "Partners": "साथी",
@@ -16,7 +16,7 @@
         "Disclaimer": "अस्वीकरण",
         "FAQ": "सामान्य प्रश्न",
         "Feedback": "प्रतिक्रिया"
-      },
+    },
     "home": {
         "video_unsupported": "क्षमा करें, आपका ब्राउज़र वीडियो समर्थन नहीं करता।",
         "take_a": " एक कदम ",
@@ -25,7 +25,7 @@
         "business": " व्यवसाय में ",
         "start_test": "परीक्षण शुरू करें",
         "select_your_language": "अपनी भाषा का चयन करें"
-      },
+    },
     "instruction": {
         "toast": {
             "loginToContinue": "कृपया जारी रखने के लिए लॉगिन करें"
@@ -47,6 +47,18 @@
         "startTestButton": "परीक्षा शुरू करें"
     },
     "login": {
+        "toast": {
+            "cannotUpdatePasswordToast": "पासवर्ड अपडेट नहीं किया जा सकता। कृपया बाद में पुन: प्रयास करें",
+            "passwordCreatedToast": "पासवर्ड सफलतापूर्वक बनाया गया",
+            "passwordNotMatchToast": "कृपया सुनिश्चित करें कि पासवर्ड मेल खाता है",
+            "wrongPasswordToast": "गलत पासवर्ड",
+            "loggedInToast": "सफलतापूर्वक लॉग इन हो गया",
+            "enterCorrectOTPToast": "कृपया सही OTP दर्ज करें",
+            "otpVerifiedToast": "OTP सफलतापूर्वक सत्यापित हुआ",
+            "otpSentToast": "OTP सफलतापूर्वक भेजा गया",
+            "invalidMobileToast": "कृपया वैध मोबाइल नंबर दर्ज करें",
+            "capthchaExpiredToast": "कैप्चा समाप्त हो गया है। पृष्ठ को ताज़ा करें और बाद में पुन: प्रयास करें"
+        },
         "enterPhone": "कृपया जारी रखने के लिए अपना मोबाइल नंबर दर्ज करें",
         "enterPasswordToLogin": "कृपया जारी रखने के लिए अपना पासवर्ड दर्ज करें",
         "enterPasswordToCreate": "कृपया एक पासवर्ड दर्ज करें",
@@ -63,19 +75,31 @@
         "otpPlaceholder": "OTP दर्ज करें",
         "verifyOTPButton": "सत्यापित करें और लॉग इन करें",
         "mobilePlaceholder": "10 अंकों का मोबाइल नंबर दर्ज करें",
-        "cannotUpdatePasswordToast": "पासवर्ड अपडेट नहीं किया जा सकता। कृपया बाद में पुन: प्रयास करें",
-        "passwordCreatedToast": "पासवर्ड सफलतापूर्वक बनाया गया",
-        "passwordNotMatchToast": "कृपया सुनिश्चित करें कि पासवर्ड मेल खाता है",
-        "wrongPasswordToast": "गलत पासवर्ड",
-        "loggedInToast": "सफलतापूर्वक लॉग इन हो गया",
-        "enterCorrectOTPToast": "कृपया सही OTP दर्ज करें",
-        "otpVerifiedToast": "OTP सफलतापूर्वक सत्यापित हुआ",
-        "otpSentToast": "OTP सफलतापूर्वक भेजा गया",
-        "invalidMobileToast": "कृपया वैध मोबाइल नंबर दर्ज करें",
-        "capthchaExpiredToast": "कैप्चा समाप्त हो गया है। पृष्ठ को ताज़ा करें और बाद में पुन: प्रयास करें",
         "welcomeUser": "आपका स्वागत है"
     },
-    "register": {},
+    "register": {
+        "toast": {
+            "test_not_given": "आपने अभी तक परीक्षा नहीं दी है!",
+            "not_login": "अमान्य टोकन! कृपया लॉगिन करें और पुनः प्रयास करें।",
+            "registered": "रजिस्ट्रेशन के लिए धन्यवाद!",
+            "not_registered": "रजिस्टर नहीं किया जा सकता, बाद में पुन: प्रयास करें"
+        },
+        "register_to_view": "अपने जानने के लिए रजिस्टर करें ",
+        "results": "परिणाम",
+        "name": "नाम",
+        "email": "ईमेल (वैकल्पिक)",
+        "gender": "लिंग",
+        "select_gender": "लिंग चुनें",
+        "male": "पुरुष",
+        "female": "महिला",
+        "other": "अन्य",
+        "age": "आयु",
+        "address": "पता",
+        "city": "शहर",
+        "pincode": "पिनकोड",
+        "country": "देश",
+        "register": "रजिस्टर"
+    },
     "quiz": {
         "toast": {
             "loginToContinue": "कृपया जारी रखने के लिए लॉगिन करें",

@@ -47,6 +47,18 @@
         "startTestButton": "ટેસ્ટ શરૂ કરો"
     },
     "login": {
+        "token": {
+            "cannotUpdatePasswordToast": "પાસવર્ડ અપડેટ કરી શકાયું નથી. કૃપા કરીને પછી ફરી પ્રયાસ કરો",
+            "passwordCreatedToast": "પાસવર્ડ સફળતાથી બનાવવામાં આવ્યો છે",
+            "passwordNotMatchToast": "કૃપા કરીને ખાતરી કરો કે પાસવર્ડો મેળ ખાતરી આપો",
+            "wrongPasswordToast": "ખોટો પાસવર્ડ",
+            "loggedInToast": "સફળતાથી લૉગઇન થયેલ",
+            "enterCorrectOTPToast": "કૃપા કરીને યોગ્ય OTP દાખલ કરો",
+            "otpVerifiedToast": "OTP સફળતાથી ચકાસ્યો",
+            "otpSentToast": "OTP સફળતાથી મોકલ્યો છે",
+            "invalidMobileToast": "કૃપા કરીને માન્ય મોબાઇલ નંબર દાખલ કરો",
+            "capthchaExpiredToast": "કૅપ્ચા સમયસમાપ્ત થયેલ છે. પૃષ્ઠને રિફ્રેશ કરીને પછી ફરી પ્રયાસ કરો"
+        },
         "enterPhone": "મહેમાન બનાવવા માટે કૃપા કરીને તમારો મોબાઇલ નંબર દાખલ કરો",
         "enterPasswordToLogin": "મહેમાન બનાવવા માટે કૃપા કરીને તમારો પાસવર્ડ દાખલ કરો",
         "enterPasswordToCreate": "કૃપા કરીને પાસવર્ડ દાખલ કરો",
@@ -63,19 +75,31 @@
         "otpPlaceholder": "OTP દાખલ કરો",
         "verifyOTPButton": "OTP ચકાસો અને લૉગિન કરો",
         "mobilePlaceholder": "10 અંકનું મોબાઇલ નંબર દાખલ કરો",
-        "cannotUpdatePasswordToast": "પાસવર્ડ અપડેટ કરી શકાયું નથી. કૃપા કરીને પછી ફરી પ્રયાસ કરો",
-        "passwordCreatedToast": "પાસવર્ડ સફળતાથી બનાવવામાં આવ્યો છે",
-        "passwordNotMatchToast": "કૃપા કરીને ખાતરી કરો કે પાસવર્ડો મેળ ખાતરી આપો",
-        "wrongPasswordToast": "ખોટો પાસવર્ડ",
-        "loggedInToast": "સફળતાથી લૉગઇન થયેલ",
-        "enterCorrectOTPToast": "કૃપા કરીને યોગ્ય OTP દાખલ કરો",
-        "otpVerifiedToast": "OTP સફળતાથી ચકાસ્યો",
-        "otpSentToast": "OTP સફળતાથી મોકલ્યો છે",
-        "invalidMobileToast": "કૃપા કરીને માન્ય મોબાઇલ નંબર દાખલ કરો",
-        "capthchaExpiredToast": "કૅપ્ચા સમયસમાપ્ત થયેલ છે. પૃષ્ઠને રિફ્રેશ કરીને પછી ફરી પ્રયાસ કરો",
         "welcomeUser": "સ્વાગત છે, વપરાશકર્તા"
     },
-    "register": {},
+    "register": {
+        "toast": {
+            "test_not_given": "તમે હજી પરીક્ષણ આપ્યો નથી!",
+            "not_login": "અમાન્ય ટોકન! મહેરબાની કરીને પ્રવેશ કરો અને ફરીથી પ્રયાસ કરો.",
+            "registered": "રજિસ્ટર થવા માટે આભાર!",
+            "not_registered": "રજિસ્ટર થઈ શકતું નથી, પછી ફરીથી પ્રયાસ કરો"
+        },
+        "register_to_view": "તમારી જાણવા માટે રજિસ્ટર કરો  ",
+        "results": "પરિણામ",
+        "name": "નામ",
+        "email": "ઇમેઇલ (વૈકલ્પિક)",
+        "gender": "લિંગ",
+        "select_gender": "લિંગ પસંદ કરો",
+        "male": "પુરુષ",
+        "female": "સ્ત્રી",
+        "other": "અન્ય",
+        "age": "ઉંમર",
+        "address": "સરનામું",
+        "city": "શહેર",
+        "pincode": "પિનકોડ",
+        "country": "દેશ",
+        "register": "રજિસ્ટર"
+    },
     "quiz": {
         "toast": {
             "loginToContinue": "કૃપા કરીને લૉગિન કરો માટે જારી રાખો",
