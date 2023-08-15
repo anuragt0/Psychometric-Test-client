@@ -144,7 +144,7 @@ const Login = () => {
                 // console.log("RESRES: ", res);
                 setOtpVerified(true);
                 setLoading(false);
-                toast.success(t("otpVerifiedToast"))
+                toast.success(t("toast.otpVerifiedToast"))
                 // OTP is verified - Show Enter Password create component
                 setComponentState(2);
             })
@@ -152,9 +152,9 @@ const Login = () => {
                 toast.error(t('toast.enterCorrectOTPToast'));
                 console.log(err);
                 if (err.code === "auth/code-expired") {
-                    setOtpError("OTP has expired. Please request a new OTP.");
+                    setOtpError(t('toast.otpExpired'));
                 } else {
-                    setOtpError("Invalid OTP");
+                    setOtpError(t('toast.otpInvalid'));
                 }
                 setLoading(false);
             });
