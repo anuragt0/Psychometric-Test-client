@@ -55,7 +55,7 @@
             "loggedInToast": "सफलतापूर्वक लॉग इन हो गया",
             "enterCorrectOTPToast": "कृपया सही OTP दर्ज करें",
             "otpVerifiedToast": "OTP सफलतापूर्वक सत्यापित हुआ",
-            "otpSentToast": "OTP सफलतापूर्वक भेजा गया",
+            "otpSentToast": "OTP मोबाइल नंबर पर सफलतापूर्वक भेजा गया",
             "invalidMobileToast": "कृपया वैध मोबाइल नंबर दर्ज करें",
             "capthchaExpiredToast": "कैप्चा समाप्त हो गया है। पृष्ठ को ताज़ा करें और बाद में पुन: प्रयास करें"
         },

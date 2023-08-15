@@ -55,7 +55,7 @@
       "loggedInToast": "Logged in successfully",
       "enterCorrectOTPToast": "Please enter correct OTP",
       "otpVerifiedToast": "OTP verified successfully",
-      "otpSentToast": "OTP sent successfully ",
+      "otpSentToast": "OTP sent successfully to mobile number ",
       "invalidMobileToast": "Please enter valid mobile number",
       "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later"
     },

@@ -119,7 +119,8 @@ const Login = () => {
                 setLoading(false);
                 // setOTPSent(true);
                 setComponentState(0);
-                toast.success(`${t("otpSentToast")} to mobile number ${formatPh} `);
+                const str = t("toast.otpSentToast") + " " + formatPh ;
+                toast.success(str);
             })
             .catch((error) => {
                 // toast.error("Please refresh the page and try again!");
