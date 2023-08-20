@@ -195,6 +195,7 @@ function Quiz() {
         <LoadingBar
         color='#f11946'
         progress={progress}
+        height={4}
         onLoaderFinished={() => setProgress(0)}
       />
             {isUserAuthenticated && questions.length !== 0 && !loading ? <>
