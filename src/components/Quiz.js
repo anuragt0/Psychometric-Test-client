@@ -98,6 +98,7 @@ function Quiz() {
             return;
         }
         if (currentQuestionIndex < questions.length - 1) {
+            window.scrollTo(0,0);
             setCurrentQuestionIndex(currentQuestionIndex + 1);
             setClickedOption(5);
         }
@@ -106,6 +107,7 @@ function Quiz() {
     const previousQuestion = () => {
 
         if (currentQuestionIndex > 0) {
+            window.scrollTo(0,0);
             setCurrentQuestionIndex(currentQuestionIndex - 1);
             setClickedOption(5);
         }
@@ -168,13 +170,8 @@ function Quiz() {
     return (
 
         <div className='bodyy'>
-
-
             {isUserAuthenticated && questions.length !== 0 && !loading ? <>
-
-                <div className="left">
-                    
-
+                <div className="left">   
                         <div className="question">
                             <span id="question-number">{currentQuestionIndex + 1}. </span>
                             <span id="question-txt">{questions[currentQuestionIndex]["questionText"]}</span>
@@ -183,7 +180,6 @@ function Quiz() {
                             {questions[currentQuestionIndex].options.map((option, i) => {
                                 return (
                                     <button
-                                        // className="option-btn"
                                         className={`option-btn ${clickedOption === i + 1 || result[currentQuestionIndex] === i + 1 ? 'checked' : ''}`}
                                         key={i}
                                         onClick={() => { setClickedOption(i + 1); updateResult(i + 1) }}
@@ -193,23 +189,22 @@ function Quiz() {
                                 )
                             })}
                         </div>
-                    </div>
-
-                    <div className="buttons">
+                        <div className="buttons">
                             {
                                 currentQuestionIndex===questions.length-1?(
                                     //submit
                                     <button className='submit-button' onClick={handleSubmit}>{t('controls.submit')}</button>
-
                                 )
                                 :(
                                     //next button
                                     <button value="Next" id="next-button" onClick={nextQuestion}> {t('controls.next')}</button>
-
                                 )
                             }
                             <button value="Prev" id="prev-button" onClick={previousQuestion}> {t('controls.previous')} </button>
                         </div>
+                    </div>
+
+                    
 
                 <div className="right my-5">
                     <div className="box">
