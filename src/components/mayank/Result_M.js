@@ -8,7 +8,6 @@ import { toast, Toaster } from "react-hot-toast";
 import { SyncLoader } from 'react-spinners'; // Import the ClipLoader from "react-spinners"
 import { motion } from 'framer-motion'
 
-import { motion } from 'framer-motion'
 
 
 import Graph from "./charts/Graph";
