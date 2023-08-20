@@ -196,10 +196,20 @@ function Quiz() {
                     </div>
 
                     <div className="buttons">
-                            <button value="Next" id="next-button" onClick={nextQuestion}> {t('controls.next')}</button>
+                            {
+                                currentQuestionIndex===questions.length-1?(
+                                    //submit
+                                    <button className='submit-button' onClick={handleSubmit}>{t('controls.submit')}</button>
+
+                                )
+                                :(
+                                    //next button
+                                    <button value="Next" id="next-button" onClick={nextQuestion}> {t('controls.next')}</button>
+
+                                )
+                            }
                             <button value="Prev" id="prev-button" onClick={previousQuestion}> {t('controls.previous')} </button>
                         </div>
-                        <button style={result.length !== questions.length ? { display: "none" } : {}} className='submit-button' onClick={handleSubmit}>{t('controls.submit')}</button>
 
                 <div className="right my-5">
                     <div className="box">

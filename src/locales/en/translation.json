@@ -36,7 +36,7 @@
     "instructionList": [
       "Ensure you are in a quiet environment to concentrate on the test.",
       "Read each question carefully and choose the best option.",
-      "Once you select an option, you can also change it.",
+      "You can change an option only until you submit the test.",
       "There is no time limit, so take your time and do your best!",
       "After clicking the \"Start Test\" button, full-screen mode will be enabled.",
       "This test is designed to assess your knowledge and skills in various areas.",
@@ -267,7 +267,7 @@
       {
         "questionText": "I've been searching for insurance when an agent offers me a policy with incredibly low premiums. I agree right away, but when we start putting the policy together, I find out that I need to pay extra for each rider I want to include. This makes the premium jump by around 50% from the original offer. So, what should I do in this situation?",
         "options": [
-          "Since I've decided to get the insurance from him, it might be difficult for me to change my mind now.",
+          "Since I have decided to get the insurance from him now, it might be difficult for me to \"say no even if I want to\".",
           "I'll get the policy this time, but next time, I'll make sure to ask the agent about any hidden fees first.",
           "That's not fair. They should have told me earlier. I'll cancel the policy and find agents who won't mislead me.",
           "I won't buy insurance from an agent who tries to trick me."
@@ -354,7 +354,7 @@
   },
   "result": {
     "main": {
-      "main_heading1": "Test Results",
+      "main_heading1": "Psychometric Test results",
       "download": "Download Result",
       "text_heading": "Psychometric Test  Results",
       "text1": "Congratulations! Here are the results of your psychometric test taken on",
@@ -383,7 +383,7 @@
     },
     "radialBar": {
       "heading": "RadialBarChart Example",
-      "sub_heading": "",
+      "sub_heading": "Influence factor on decision making",
       "text_heading": "Radial Bar Chart",
       "text_content": "The Radial Bar Chart showcases your performance in different aspects, such as cognitive abilities, emotional intelligence, and adaptability. It presents a holistic view of your strengths and areas for improvement.",
       "label1": "Affected by group size or unanimity?",
