@@ -108,7 +108,8 @@
       "selectAtLeastOneOption": "Please select atleast one option",
       "answerAllQuestions": "Please answer all questions",
       "testSubmittedSuccessfully": "Test submitted successfully.",
-      "submitError": "Unable to submit, please try again later.."
+      "submitError": "Unable to submit, please try again later..",
+      "testCompleted": "Test completed. Please click submit button to continue."
     },
     "question": [
       {

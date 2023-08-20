@@ -3,6 +3,7 @@ import { server_origin } from '../utilities/constants';
 import { useNavigate } from 'react-router-dom';
 import "../css/quiz.css";
 import { SyncLoader } from 'react-spinners'; // Import the ClipLoader from "react-spinners"
+import LoadingBar from 'react-top-loading-bar'
 
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -40,6 +41,8 @@ function Quiz() {
     const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
+
+    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         //*Validate the token to see if the page is accessible to the user
@@ -93,24 +96,46 @@ function Quiz() {
 
 
     const nextQuestion = () => {
+        
+    
         if (clickedOption === 5 && !result[currentQuestionIndex]) {
             toast.error(t('toast.selectAtLeastOneOption'));
             return;
         }
         if (currentQuestionIndex < questions.length - 1) {
             window.scrollTo(0,0);
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setCurrentQuestionIndex((currentQuestionIndex)=>{
+                const totalQuestions = questions.length;
+                const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+                setProgress(progressPercentage);
+                return currentQuestionIndex + 1;
+            });
             setClickedOption(5);
         }
+        
     }
 
     const previousQuestion = () => {
-
         if (currentQuestionIndex > 0) {
             window.scrollTo(0,0);
-            setCurrentQuestionIndex(currentQuestionIndex - 1);
+            setCurrentQuestionIndex((currentQuestionIndex)=>{
+                const totalQuestions = questions.length;
+                const progressPercentage = ((currentQuestionIndex-1 ) / totalQuestions) * 100;
+                setProgress(progressPercentage);
+                return currentQuestionIndex-1;
+            });
             setClickedOption(5);
         }
+        
+    }
+
+    const handleChangeOption = (i) =>{
+        setClickedOption(i + 1); updateResult(i + 1);
+        if(currentQuestionIndex==questions.length-1){
+            setProgress(100);
+            toast.success(t("toast.testCompleted"))
+        }
+
     }
 
     const updateResult = (option) => {
@@ -163,13 +188,15 @@ function Quiz() {
         , require("../images/20.png"), require("../images/21.png"), require("../images/22.png"), require("../images/23.png")
         , require("../images/24.png"), require("../images/25.png"), require("../images/26.png")];
 
-    const totalQuestions = questions.length;
-    const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-
-
+   
     return (
 
         <div className='bodyy'>
+        <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
             {isUserAuthenticated && questions.length !== 0 && !loading ? <>
                 <div className="left">   
                         <div className="question">
@@ -182,7 +209,7 @@ function Quiz() {
                                     <button
                                         className={`option-btn ${clickedOption === i + 1 || result[currentQuestionIndex] === i + 1 ? 'checked' : ''}`}
                                         key={i}
-                                        onClick={() => { setClickedOption(i + 1); updateResult(i + 1) }}
+                                        onClick={()=>{handleChangeOption(i)}}
                                     >
                                         {option}
                                     </button>
