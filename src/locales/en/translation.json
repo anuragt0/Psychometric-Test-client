@@ -3,6 +3,7 @@
     "Home": "Home",
     "About": "About",
     "More": "More",
+    "Report": "View report",
     "Analytics": "Analytics",
     "Logout": "Logout",
     "Login": "Login"
@@ -83,9 +84,38 @@
     "toast": {
       "test_not_given": "You have not given the test yet!",
       "not_login": "Invalid token! Please login and try again.",
-      "registered": "Thanks for registering!gender",
-      "not_registered": "Cannot register, try again later"
+      "registered": "Thanks for registering",
+      "not_registered": "Cannot register, try again later",
+      "cannotUpdatePasswordToast": "Cannot update password. Please try again later",
+      "passwordCreatedToast": "Password created successfully",
+      "passwordNotMatchToast": "Please make sure passwords match",
+      "wrongPasswordToast": "Wrong password",
+      "loggedInToast": "Logged in successfully",
+      "enterCorrectOTPToast": "Please enter correct OTP",
+      "otpVerifiedToast": "OTP verified successfully",
+      "otpSentToast": "OTP sent successfully to mobile number ",
+      "invalidMobileToast": "Please enter valid mobile number",
+      "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
+      "otpExpired": "OTP has expired. Please request a new OTP.",
+      "otpInvalid": "Invalid OTP"
     },
+    "enterPhone": "Please enter your mobile number to continue",
+    "enterPasswordToLogin": "Please enter your password to continue",
+    "enterPasswordToCreate": "Please enter a password",
+    "enterOTP": "Please enter the OTP sent to your mobile number ",
+    "waitButton": "Please wait...",
+    "MobilePlaceholder": "Mobile Number",
+    "loginButton": "Login",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "PasswordNotMatch": "Passwords do not match",
+    "saveContinueButton": "Save and continue",
+    "forgotPassword": "Forgot Password?",
+    "submitButton": "Submit",
+    "otpPlaceholder": "Enter OTP",
+    "verifyOTPButton": "Verify and login",
+    "mobilePlaceholder": "Enter 10 digit mobile number",
+    "welcomeUser": "Welcome",
     "register_to_view": "Register to know your ",
     "results": "Results",
     "name": "Name",
@@ -362,10 +392,52 @@
       "text2": ". The test assessed your personality traits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your strengths and areas for development, helping you understand yourself better."
     },
     "graph": {
+      "text_content": {
+        "Information_Driven": {
+          "description": "You are an Information driven person. You have a strong desire to go for what you think and believe is right. You tend to feel low social pressure but may feel somewhat  high compliance pressure . You have an inclination to find facts through your own efforts and may even go on to learn if you need clarity on a topic. You may not be affected by what others are doing if you are sure what you are doing is the correct way accomplish a task. You are not intimidated by society and do not regret rejecting someone's idea or even say a NO to favours offered to you if it does not feel right. If you get the right knowledge, you can utilise it very well to become an extremely compliant individual.",
+          "qualities": [
+            "Information driven",
+            "Strong desire to do what is right",
+            "Low Social Pressure",
+            "High Compliance Pressure",
+            "OK to say NO if they fee it is right"
+          ]
+        },
+        "Ideal_Normative": {
+          "description": "You are an Ideal Normative person. You have a strong desire for approval from society. You tend to feel high social pressure and high compliance pressure. You like to follow the path carved out by the society from past several years and hesitate to take a different road. When someone asks you for favours more than once, you have a difficulty saying the word NO even if you get uncomfortable. While you are an ideal citizen and want to be compliant at all costs, you must also be open to seek guidance/ counseling from any available sources rather than considering the society as right [point blank]",
+          "qualities": [
+            "Ideal Normative",
+            "strong desire for approval from society",
+            "High Social Pressure",
+            "High Compliance Pressure",
+            "Difficulty saying NO when others ask you for a favour"
+          ]
+        },
+        "Friendly_Follower": {
+          "description": "You are a Friendly Follower person. You have a strong desire to listen, learn and adapt from others because you are flexible and believe that there is always something you can learn from others. You may feel high Social pressure at times but  low compliance pressure. If given a chance, you like to improve yourself by learning from anyone who is willing to offer you the help. When someone asks you for a favour, you have a tendency to help them to make their life better if it is in your capacity. You are not  rigid and quickly learn/adopt better compliance habits.",
+          "qualities": [
+            "Friendly Follower",
+            "strong desire to listen and learn from others",
+            "High Social Pressure",
+            "Low Compliance Pressure",
+            "Somewhat uncomfortable saying NO"
+          ]
+        },
+        "Individualist_Rebellion": {
+          "description": "You are an Individualist Rebellion person. You have a very strong desire to stick to your individuality and protect it. You tend to feel low or no social as well as compliance pressure. You have an inclination to never let the majority wipe out your or some minority's point of view or opinion. You are not affected by what society may think of you and sometimes even take a contrarian approach in doing things. While it is okay to protect your individuality, it mmay not hurt so much to follow the someone where can help you be a better compliant person without putting the pressure to do all by yourself.",
+          "qualities": [
+            "Individualist Rebellion",
+            "strong desire to stick to your individuality",
+            "Low Social Pressure",
+            "Low Compliance Pressure",
+            "Do not hesitate to say NO"
+          ]
+        }
+      },
+      "quality": "Qualities",
       "heading": "Graph Chart Example",
       "sub_heading": "Compliance vs. Social Pressure",
       "text_heading": "Graph Chart",
-      "text_content": "The Graph Chart displays the comparison between your compliance and social pressure scores. The compliance score reflects your tendency to conform to social norms and expectations, while the social pressure score indicates the level of influence from others in decision-making.",
       "label1": "Q1: Information Driven",
       "label2": "Q2: Ideal Normative",
       "label3": "Q3: Friendly Follower",
@@ -377,7 +449,14 @@
       "heading": "PieChart Example",
       "sub_heading": "Social Influence Breakdown",
       "text_heading": "Pie Chart",
-      "text_content": "The Pie Chart illustrates the breakdown of social influence categories. It provides an overview of the various factors affecting your decision-making process, including family, peers, and media influence.",
+      "text_content": {
+        "confirmity": "Confirmity is the lowest form of social pressure. Since you are most affected by confirmity social influence, you are sincere and get quickly affected by the social influences around you. You may even feel compelled to do things even if nobody is forcing them upon you.",
+        "compliance": "Compliance is a moderate form of social pressure. Since you are most affected by compliance social influence, you are affected by social influences around you. You feel the urge to do things right if possible and can make extra efforts to accomplish tasks even if there is no penalty for the same.",
+        "Obedience": "Obedience is the highest form of social pressure. Since you are most affected by obedience social influence, you may not be affected by lighter forms of social influence around you. You may not feel compelled to accomplish work unless it carries a penalty or punishment.",
+        "notObedience": "Confirmity is the lowest form of social pressure. Compliance is moderate form of social pressure. A dominant combination of confirmity and compliance implies you are highly influenced by little to moderate social pressure.",
+        "notCompliance": "Confirmity is the lowest form of social pressure. Obedience is the highest form of social pressure. A dominant combination of confirmity and obedience is rare but it implies you are either black or white. You may or may not be influenced by little to high social pressure.",
+        "notConfirmity": "Compliance is moderate form of social pressure. Obedience is the highest form of social pressure. A dominant combination of compliance and obedience implies you are influenced by moderate to high social pressure."
+      },
       "label1": "Confirimity",
       "label2": "Compliance",
       "label3": "Obedience"
@@ -386,7 +465,38 @@
       "heading": "RadialBarChart Example",
       "sub_heading": "Influence factor on decision making",
       "text_heading": "Radial Bar Chart",
-      "text_content": "The Radial Bar Chart showcases your performance in different aspects, such as cognitive abilities, emotional intelligence, and adaptability. It presents a holistic view of your strengths and areas for improvement.",
+      "text_content": {
+        "group_size_or_unanimity?": {
+          "lessthan_5": "Group Size or unanimity can imply that sometimes a large group of people agreeing unanimously can affect the decision of a person if it is otherwise. Your score tells that you are neutral when faced with a large group size and your decision does not get a lot influenced by their unanimous consent. Your score tells that you do not get influenced when faced with a large group size and your decision does not change as per the unanimous consent of the group.",
+          "equalto_5": "Group Size or unanimity can imply that sometimes a large group of people agreeing unanimously can affect the decision of a person if it is otherwise. Your score tells that you are neutral when faced with a large group size and your decision does not get a lot influenced by their unanimous consent.",
+          "morethan_5": "Group Size or unanimity can imply that sometimes a large group of people agreeing unanimously can affect the decision of a person if it is otherwise. Your score tells that you get influenced when faced with a large group size and your decision automatically inclines to the unanimous consent of the group."
+        },
+        "cohesion_or_status_of_others?": {
+          "lessthan_5": "Cohesion implies when two or more friends, colleagues or just people sitck to a decision and you are yet to decide on yours. Status of a person normally implies a person coming from a standing in society, or powerful in some way or the other. Your score tells that you do not  alter your decisions or options when faced with a situation like this and normally voice your opinion around these people as you would around anyone else.",
+          "equalto_5": "Cohesion implies when two or more friends, colleagues or just people sitck to a decision and you are yet to decide on yours. Status of a person normally implies a person coming from a standing in society, or powerful in some way or the other. Your score tells that you are neutral when faced with a situation like this and your decision does not get influenced by such people around you.",
+          "morethan_5": "Cohesion implies when two or more friends, colleagues or just people sitck to a decision and you are yet to decide on yours. Status of a person normally implies a person coming from a high standing in society, or powerful in some way or the other. Your score tells that you do alter your decisions or options when faced with a situation like this and although you may not like it you will normally not voice your opinion around these people."
+        },
+        "Reciprocity?": {
+          "lessthan_5": "Reciprocity can be explained by two techniques of compliance. (i) Door in the face  technique and (ii) That's not all technique. Door in the face technique is where someone comes with a huge request which you are sure to reject. Later the same person comes with a small request which you are bound to oblige because you feel guilty for rejecting one request already. That's Not All Technique refers a technique for gaining compliance in which a requester offers additional benefits to target persons before they have decided whether to comply with or reject specific requests.  Your score tells that you are not influenced when faced with such a situation and you are already aware of the technique of reciprocity.",
+          "equalto_5": "Reciprocity can be explained by two techniques of compliance. (i) Door in the face  technique and (ii) That's not all technique. Door in the face technique is where someone comes with a huge request which you are sure to reject. Later the same person comes with a small request which you are bound to oblige because you feel guilty for rejecting one request already. That's Not All Technique refers a technique for gaining compliance in which a requester offers additional benefits to target persons before they have decided whether to comply with or reject specific requests.  Your score tells that you are neutral when faced with a situation like this and your decision does not get a lot affected by reciprocity.",
+          "morethan_5": "Reciprocity can be explained by two techniques of compliance. (i) Door in the face  technique and (ii) That's not all technique. Door in the face technique is where someone comes with a huge request which you are sure to reject. Later the same person comes with a small request which you are bound to oblige because you feel guilty for rejecting one request already. That's Not All Technique refers a technique for gaining compliance in which a requester offers additional benefits to target persons before they have decided whether to comply with or reject specific requests.  Your score tells that you are influenced when faced with a situation like this and your decision gets affected by reciprocity."
+        },
+        "Commitment_and_Consistency?": {
+          "lessthan_5": "Commitment and consistency can be explained by two techniques of compliance. (i) Foot in the door technique and (ii)low ball technique. Foot in the door technique is where someone asks you for a favour and once you fulfil that they will come with another and so on. They have put  a foot in your door and will continue to make you do things until you realise this is a technique of compliance. Low ball technique is where sales people lure you with unbelievable offers first and once you want to buy them, they put extra costs to make it even.  Your score tells that you do not  alter your decisions or options when faced with a situation like this. You already recognise these compliance techniques and do not usually fall prey to them. Only when you feel it to be genuine, you will give in.",
+          "equalto_5": "Commitment and consistency can be explained by two techniques of compliance. (i) Foot in the door technique and (ii) low ball technique. Foot in the door technique is where someone asks you for a favour and once you fulfil that they will come with another and so on. They have put  a foot in your door and will continue to make you do things until you realise this is a technique of compliance. Low ball technique is where sales people lure you with unbelievable offers first and once you want to buy them, they put extra costs to make it even. Your score tells that you are neutral when faced with a situation like this and your decisions are not influenced by these compliance techniques.",
+          "morethan_5": "Commitment and consistency can be explained by two techniques of compliance. (i) Foot in the door technique and (ii) low ball technique. Foot in the door technique is where someone asks you for a favour and once you fulfil it they will come up with the next one and so on. They have put  a foot in your door and will continue to make you do things until you realise this is never ending. Low ball technique is where often sales people lure you with unbelievable offers first and once you want to buy them, they put extra costs to make it even. Your score tells that you do alter your decisions or options when faced with a situation like this. Start recognising these techniques in your work and make better compliance decisions."
+        },
+        "Scarcity?": {
+          "lessthan_5": "Scarcity can be explained by two techniques of compliance. (i) Deadline and (ii) Playing hard to get. (i) Deadline Technique is a technique for increasing compliance in which target persons are told that they have only limited time to take advantage of some offer or to obtain some item. Scarcity plays a chief role in persuading people to buy a certain item. (ii) Playing Hard to Get efforts to increase compliance by suggesting that a person or object is scarce and hard to obtain. Your score tells that you are not influenced by technique of scarcity.",
+          "equalto_5": "Scarcity can be explained by two techniques of compliance. (i) Deadline and (ii) Playing hard to get. (i) Deadline Technique is a technique for increasing compliance in which target persons are told that they have only limited time to take advantage of some offer or to obtain some item. Scarcity plays a chief role in persuading people to buy a certain item. (ii) Playing Hard to Get efforts to increase compliance by suggesting that a person or object is scarce and hard to obtain. Your score tells that you are neutral when faced with a situation like this and your decision does not get a lot affected by technique of scarcity.",
+          "morethan_5": "Scarcity can be explained by two techniques of compliance. (i) Deadline and (ii) Playing hard to get. (i) Deadline Technique is a technique for increasing compliance in which target persons are told that they have only limited time to take advantage of some offer or to obtain some item. Scarcity plays a chief role in persuading people to buy a certain item. (ii) Playing Hard to Get efforts to increase compliance by suggesting that a person or object is scarce and hard to obtain. Your score tells that you are influenced when faced with a situation like this and your decision gets affected by technique of scarcity."
+        },
+        "Authority/_commands?": {
+          "lessthan_5": "Commands from authority figures often carry punishment and (or)  penalty. It forces people to obey or get things done which they will otherwise skip or delay. Your score tells that you are not affected a lot by aquthority or commands. It may be so because you are already rational in your approach and more informationally driven. If you are a friendly follower or Ideal normative, you clearly do not need commands from authority figures to get things done. You are diligent enough to accomplish things.",
+          "equalto_5": "Commands from authority figures often carry punishment and (or)  penalty. It forces people to obey or get things done which they will otherwise skip or delay. Your score tells that you are neutral when faced with a situation like this and your decision does not get a lot intimidated by such commands from authority figures.",
+          "morethan_5": "Commands from authority figures often carry punishment and (or)  penalty. It forces people to obey or get things done which they will otherwise skip or delay. Your score tells that you do get affected by authority figure to get things done. In case you are an individualist rebellion, it is so because lighter forms of compliance and confirmity do not have a lot of affect on you in terms of getting things done."
+        }
+      },
       "label1": "Affected by group size or unanimity?",
       "label2": "Affected by cohesion or status of others?",
       "label3": "Affected by Reciprocity?",

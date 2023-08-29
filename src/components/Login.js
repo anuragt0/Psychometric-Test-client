@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { server_origin } from '../utilities/constants';
+// import { useLanguage } from '../context/LanguageContext';
 
 
 import { useNavigate } from "react-router-dom";
@@ -13,20 +14,18 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 //IMPORTS FOR Language change Functionality
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
-
-import namasteIcon from "../../src/assests/namaste.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faUnlock } from '@fortawesome/free-solid-svg-icons';
 
 
 const Login = () => {
 
     const navigate = useNavigate();
 
-    //* IMPORTANT State: -1: EnterPhoneComponent
-    //*                   0: EnterOTPComponenent
-    //*                   1: EnterPasswordCheckComponenent
-    //*                   2: EnterPasswordCreateComponenent
     const [componentState, setComponentState] = useState(-1);
     //*
+
+    // const { userTestResponses} = useLanguage();
 
 
     //* 3 Inputs mobile, otp and password
@@ -50,6 +49,8 @@ const Login = () => {
 
     const { t } = useTranslation("translation", { keyPrefix: 'login' });
 
+    const [userTestResponses, setUserTestResponses] = useState([]);
+
 
     //used to get language Stored in LocalStorage //*should be in every Page having Language Functionality 
     useEffect(() => {
@@ -59,6 +60,17 @@ const Login = () => {
         // console.log(t('array'  , { returnObjects: true }));
 
     }, []);
+
+    useEffect(() => {
+        let savedProgress = localStorage.getItem('testProgress');
+        savedProgress = JSON.parse(savedProgress);
+        // if(savedProgress===null || savedProgress.length!==26){
+        //     toast.error("Please complete the test to continue");
+        //     navigate("/test/instructions");
+        //     return;
+        // }
+        setUserTestResponses(savedProgress)
+    }, [])
 
 
     //? Language Functionality Ends .................................................................
@@ -126,6 +138,7 @@ const Login = () => {
                 // toast.error("Please refresh the page and try again!");
                 setOtpError(`Some error occured Please try again later. ${error.message}`)
                 console.log("error1: ", error.message);
+
                 // if(!otpError)
                 // toast(error.message);
                 // toast.error("Some error occured.");
@@ -178,32 +191,83 @@ const Login = () => {
         setPasswordMatch(event.target.value === password);
     };
 
-
-
-    const handleSendOtpClick = async () => {
+    // * Single function to handle complete login
+    const handleLoginClick = async () => {
         setLoading(true);
+        if(mobileNumber.length!==10){
+            toast.error("Please enter a valid mobile number");
+            setLoading(false);
+            return
+        }
 
         // Check if the mobile is already registered
         const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-
             },
             body: JSON.stringify({ mobile: mobileNumber })
         });
         let response1 = await response.json();
-        if (response1.success === true) {
-            // Already registered
-            // Render Password check component
-            setComponentState(1);
+        if(response1.success===false){
+            // Not registered before
+            navigate("/register");
+            toast.error("This number is not registered");
             setLoading(false);
             return;
         }
-        // Not registered before
-        // Render EnterOTP component
+        //* Registered
+        if(password.length===0){
+            toast.error("Please enter your password to login");
+            setLoading(false);
+            return;
+        }
+        //login user
+
+        // handleCheckPasswordButtonClick();
+         const responsee = await fetch(`${server_origin}/api/user/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ mobile: mobileNumber, password: password })
+        });
+        const responsee1 = await responsee.json();
+        if(responsee1.success===false){
+            toast.error(t('toast.wrongPasswordToast'));
+            setLoading(false);
+            return;
+        }
+        
+        //* Password is correct
+        const token = responsee1.token;
+        localStorage.setItem("token", token);
+
+        //* Update the responses only if test is given already (testProgress is in localStorage)
+        if(localStorage.getItem("testProgress")){
+            const responseUpdate = await fetch(`${server_origin}/api/user/update-response`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'auth-token': token
+                },
+                body: JSON.stringify({responses: userTestResponses})
+            });
+            let response2 = await responseUpdate.json();
+            if(response2.success===false){
+                toast.error("Please try again later");
+                setLoading(false);
+                return;
+            }
+    
+            localStorage.removeItem('testProgress');
+            toast.success(t('toast.loggedInToast'));
+            setLoading(false);
+            navigate('/test/result');
+            return;
+        }
+        navigate('/');
         setLoading(false);
-        onSignup();
     };
 
     const handleVerifyOtpClick = () => {
@@ -211,54 +275,58 @@ const Login = () => {
         onOTPVerify();
     };
 
-    const handleCheckPasswordButtonClick = async () => {
-        //* Check the password
-        setLoading(true);
-        // Check if the password is correct
-        const response = await fetch(`${server_origin}/api/user/check-password`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ mobile: mobileNumber, password: password })
-        });
-        let response1 = await response.json();
-        console.log("Check password response", response1);
+    // const handleCheckPasswordButtonClick = async () => {
+    //     //* Check the password
+    //     setLoading(true);
+    //     // Check if the password is correct
+    //     const response = await fetch(`${server_origin}/api/user/login`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ mobile: mobileNumber, password: password })
+    //     });
+    //     const response1 = await response.json();
+    //     const token = response1.token;
 
-        if (response1.success === true) {
-            //* Password is correct
-            toast.success(t('toast.loggedInToast'));
-            localStorage.setItem('token', response1.token);
-            navigate('/test/instructions');
-        }
-        else {
-            //* Wrong password
-            toast.error(t('toast.wrongPasswordToast'));
-        }
-
-        setLoading(false);
-
-    }
-
-    const handleForgotPasswordButtonClick = () => {
-        //* Show OTP 
-        //! Send the OTP as user forgots the password
-        onSignup();
-    }
-
+    //     if (response1.success === true) {
+    //         localStorage.setItem("token", token);
+    //         // console.log("response here: ", response1);
+    //         // console.log("Inside if block");
+            
+    //         //* Password is correct
+    //         //* Update the responses
+    //         const responseUpdate = await fetch(`${server_origin}/api/user/update-response`, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'auth-token': token
+    //             },
+    //             body: JSON.stringify({responses: userTestResponses})
+    //         });
+    //         let response2 = await responseUpdate.json();
+    //         toast.success(t('toast.loggedInToast'));
+    //         setLoading(false);
+    //         navigate('/test/result');
+    //     }
+    //     else {
+    //         //* Wrong password
+    //         toast.error(t('toast.wrongPasswordToast'));
+    //         setLoading(false);
+    //     }
+    // }
 
     const handleCreatePasswordButton = async () => {
         //* Create new password?
         //* After this user is logged in and token is saved
-        console.log("Password: ", password);
         if (password !== confirmPassword) {
             toast.warning(t('toast.passwordNotMatchToast'));
             return;
         }
+        setLoading(true);
 
         // Create password and generate token and login
-        //!Number already registered ??? update password and generate token ::: Create Password with mobile entry in DB and generate token
-        const response = await fetch(`${server_origin}/api/user/login-create-password`, {
+        const response = await fetch(`${server_origin}/api/user/update-password`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -268,14 +336,59 @@ const Login = () => {
         let response1 = await response.json();
         if (response1.success) {
             toast.success(t('toast.passwordCreatedToast'));
-            localStorage.setItem("token", response1.token);
-            navigate("/test/instructions");
+
+            const response = await fetch(`${server_origin}/api/user/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ mobile: mobileNumber, password: password })
+            });
+            const response1 = await response.json();
+            const token = response1.token;
+            if(response1.success){
+                localStorage.setItem("token", token);
+                navigate("/test/result");
+            }
+            setLoading(false);
         }
         else {
             toast.error(t('toast.cannotUpdatePasswordToast'));
-
+            setLoading(false);
         }
 
+    }
+
+
+    const handleForgotPasswordButtonClick = async () => {
+        //* Show OTP 
+        //* Have to check if the number is registered or not
+        setLoading(true);
+        if(mobileNumber.length!==10){
+            toast.error("Please enter a valid mobile number");
+            setLoading(false);
+            return
+        }
+
+         // Check if the mobile is already registered
+         const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ mobile: mobileNumber })
+        });
+        let response1 = await response.json();
+        if(response1.success===false){
+            // Not registered before
+            navigate("/register");
+            toast.error("This number is not registered");
+            setLoading(false);
+            return;
+        }
+
+
+        onSignup();
     }
 
     //components //* should start with capital letter
@@ -292,26 +405,10 @@ const Login = () => {
                         placeholder={t('mobilePlaceholder')}
                         value={mobileNumber}
                         onChange={handleMobileNumberChange}
-                    // disabled={loading} 
+                        disabled={loading} 
                     />
-                    <button
-                        className="send-otp-button"
-                        onClick={handleSendOtpClick}
-                    >
-                        {loading ? t('waitButton') : t('loginButton')}
-                    </button>
 
-                </div>
-            </>
-        )
-    }
-
-
-    const EnterPasswordCheckComponent = () => {
-        return (
-            <>
-                <div className="login-form">
-                    <h4>{t('enterPasswordToLogin')}</h4>
+                    {/*  */}
                     <input
                         type="password"
                         className="login-input"
@@ -320,14 +417,52 @@ const Login = () => {
                         onChange={handlePasswordChange}
                         disabled={loading}
                     />
-                    <p className="forgot-password-link" onClick={handleForgotPasswordButtonClick}>
-                        <span>{t('forgotPassword')}</span>
-                    </p>
+                        <div className="forgot-password-register">
+                            <p className="forgot-password-link" onClick={handleForgotPasswordButtonClick}>
+                                <span>{t('forgotPassword')}</span>
+                            </p>
+                            <p className="register-link" onClick={()=>{navigate("/register")}}>
+                                <span>Register</span>
+                            </p>
+                        </div>
+                    {/*  */}
                     <button
                         className="send-otp-button"
-                        onClick={handleCheckPasswordButtonClick}
+                        onClick={handleLoginClick}
+                        disabled = {loading}
                     >
-                        {loading ? t('waitButton') : t('submitButton')}
+                        {loading ? t('waitButton') : t('loginButton')} <FontAwesomeIcon icon={faUnlock} />
+                    </button>
+
+                </div>
+            </>
+        )
+    }
+
+
+
+    const EnterOTPComponent = () => {
+        return (
+            <>
+                <div className="login-form">
+                    <h4>{t('enterOTP')}</h4>
+                    <input
+                        type="text"
+                        className="login-input otp-input"
+                        placeholder={t("otpPlaceholder")}
+                        value={otp}
+                        onChange={handleOTPChange}
+                        disabled={loading}
+                    />
+                    {/* {otpError && <p className="error-message">{otpError}</p>} */}
+                    {/* {otpError && toast(otpError)} */}
+
+                    <button
+                        className="send-otp-button login-button"
+                        onClick={handleVerifyOtpClick}
+                        disabled={loading}
+                    >
+                        {loading ? t('waitButton') : t('verifyOTPButton')}
                     </button>
                 </div>
             </>
@@ -369,34 +504,6 @@ const Login = () => {
     }
 
 
-    const EnterOTPComponent = () => {
-        return (
-            <>
-                <div className="login-form">
-                    <h4>{t('enterOTP')}</h4>
-                    <input
-                        type="text"
-                        className="login-input otp-input"
-                        placeholder={t("otpPlaceholder")}
-                        value={otp}
-                        onChange={handleOTPChange}
-                        disabled={loading}
-                    />
-                    {/* {otpError && <p className="error-message">{otpError}</p>} */}
-                    {/* {otpError && toast(otpError)} */}
-
-                    <button
-                        className="send-otp-button login-button"
-                        onClick={handleVerifyOtpClick}
-                        disabled={loading}
-                    >
-                        {loading ? t('waitButton') : t('verifyOTPButton')}
-                    </button>
-                </div>
-            </>
-        )
-    }
-
 
 
 
@@ -404,17 +511,15 @@ const Login = () => {
     return (
         <>
             <div id="recaptcha-container"></div>
-
-            <div className='welcome-heading'>
-                <h2 className="fancy-text">
-                    {t('welcomeUser')} <img src={namasteIcon} alt="Custom Icon" className="custom-icon" />
-                </h2>
+            <div className="registration-heading">
+                <h1 style={{textDecoration: "underline"}}>Login</h1>
+                <h3 style={{color: "#5b564e"}}>Unlock Your Personalized Personality Insights Report
+                <p style={{ color: "#1A5D1A" }}>Discover a deeper understanding of yourself, <em> just a step away</em></p></h3>
             </div>
 
             <div className="component-slide">
                 {componentState === -1 && EnterPhoneComponent()}
                 {componentState === 0 && EnterOTPComponent()}
-                {componentState === 1 && EnterPasswordCheckComponent()}
                 {componentState === 2 && EnterPasswordCreateComponent()}
             </div>
 

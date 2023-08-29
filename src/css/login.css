@@ -9,32 +9,40 @@
   .login-form {
     width: 80%;
     max-width: 400px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+
+
     padding: 20px;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
     text-align: center;
-    margin: 10% auto; /* Center the form horizontally */
+    margin: 5% auto; /* Center the form horizontally */
   }
   
   
   .login-input,
   .otp-input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 25px;
+    border: 2px solid #5a5656eb;
+    border-radius: 15px;
     outline: none;
   }
   
   .login-input::placeholder,
   .otp-input::placeholder {
-    color: #ccc;
+    color: #988a8a;
   }
   
   .send-otp-button,
   .login-button {
-    background-color: #FB2576;
+    background-color: #63c62a;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -44,10 +52,20 @@
     outline: none;
     transition: background-color 0.3s ease;
   }
+
+  .registration-heading {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+  
+    text-align: center;
+    margin: 20px auto; /* Center the element horizontally and add spacing all around */
+    max-width: 100%; /* Limit the maximum width of the heading */
+  }
   
   .send-otp-button:hover,
   .login-button:hover {
-    background-color: #e31b66;
+    background-color: #45a110;
   }
   
 /* Styling for disabled inputs */
@@ -61,13 +79,13 @@
 /* Styling for disabled buttons */
 .send-otp-button[disabled],
 .login-button[disabled] {
-  background-color: #d970a8; /* Bright pink color for disabled buttons */
-  color: #ffffff; /* White text for better visibility */
+  background-color: #63c62a; 
+  color: #ffffff; 
   cursor: not-allowed;
 }
 
 .login-input.password-mismatch {
-    border-color: #FF0000; /* Red border for mismatched passwords */
+    border-color: #FF0000; 
 }
 
 /* Styling for the password mismatch error message */
@@ -78,7 +96,7 @@
 
 /* Styling for the "Save and continue" button */
 .save-password-button {
-    background-color: #FB2576;
+    background-color: #63c62a;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -90,23 +108,44 @@
 }
 
 .save-password-button:hover {
-    background-color: #FF1493;
+    background-color: #45a110;
 }
 
-
-.forgot-password-link{
+.forgot-password-register {
+    display: flex;
+    justify-content: space-between; /* Push items to both ends */
+    width: 100%; /* Full width of the login-form container */
+}
+/* .forgot-password-link{
     margin-top: 10px;
     font-weight: bold;
+    text-decoration: underline;
+} */
+.forgot-password-link {
+    flex: 1; /* Take up equal space */
+    text-align: left;
 }
 
 .forgot-password-link span {
     cursor: pointer;
-    color: #FB2576;
+    color: #63c62a;
     transition: color 0.3s ease;
+    font-weight:500;
 }
 
 .forgot-password-link:hover span {
-    color: #e31b66;
+    color: #45a110;
+}
+.register-link {
+    flex: 1; /* Take up equal space */
+    text-align: right;
+    font-weight:500;
+    cursor: pointer;
+    color: #63c62a;
+    transition: color 0.3s ease;
+}
+.register-link:hover span {
+    color: #45a110;
 }
 
 
@@ -115,15 +154,15 @@
     margin-top: 50px;
 }
 
-.fancy-text {
+/* .fancy-text {
     font-size: 32px;
     font-weight: bold;
     color: transparent;
-    background-image: linear-gradient(45deg, #FB2576, #e36696);
-    -webkit-background-clip: text;
+    /* background-image: linear-gradient(45deg, #71BF44, #e36696); */
+    /* -webkit-background-clip: text;
     background-clip: text;
     animation: animateText 3s linear infinite alternate-reverse;
-  }
+  } */ */
 
 .custom-icon {
     width: 40px; /* Adjust the width as needed */
@@ -131,28 +170,6 @@
     margin-right: 10px; /* Add spacing between the icon and text */
     vertical-align: middle; /* Align the icon vertically with the text */
 }
-
-
-
-
-
-@keyframes animateText {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-
-
-
-
-
-
-
-
 
 
   /* Media Query for Mobile View */

@@ -32,6 +32,8 @@ const Navbar = () => {
 
   const { t } = useTranslation("translation", { keyPrefix: 'navBar' });
 
+  const [loggedIn, setLoggedIn] = useState(false);
+  
   const { selectedLanguage , setSelectedLanguage , resetLanguage } = useLanguage();
 
 
@@ -74,11 +76,17 @@ const Navbar = () => {
       });
 
       const result = await response.json()
-      // console.log("here: ", result);
+      console.log("here: ", result);
       if (result.isAdmin === true) {
         setIsAdmin(true);
       }
+      if(result.success===true){
+        setLoggedIn(true);
+        return true;
+      }
+      return false;
     }
+    return false;
   }
 
 
@@ -90,10 +98,12 @@ const Navbar = () => {
 
   const handleLogoutClick = (e) => {
     localStorage.removeItem("token");
+    localStorage.removeItem("testProgress");
+    localStorage.removeItem("lang");
+    localStorage.removeItem("hasVisited");
     navigate("/login");
   };
 
-  const listItemStyle = { fontSize: "0.9rem", fontWeight: "400" };
 
   return (
     <nav className={`${css.outerNav} navbar navbar-expand-lg fixed-top`}
@@ -125,7 +135,7 @@ const Navbar = () => {
               transition={{
                 type: 'spring', stiffness: 300
               }}>
-              <Link className="nav-link active" to="/" style={listItemStyle}>
+              <Link className="nav-link active" to="/"  style={{color: "#333", fontWeight: "bold"}}>
                 {t('Home')}
               </Link>
             </motion.div>
@@ -139,7 +149,7 @@ const Navbar = () => {
               <Link
                 className="nav-link active"
                 to="/about"
-                style={listItemStyle}
+                style={{color: "#333", fontWeight: "bold"}}
               >
                 {t('About')}
               </Link>
@@ -154,12 +164,39 @@ const Navbar = () => {
               <Link
                 className="nav-link active"
                 to="/more"
-                style={listItemStyle}
+                style={{color: "#333", fontWeight: "bold"}}
               >
                 {t('More')}
               </Link>
             </motion.div>
           </li>
+          {localStorage.getItem("token") && verifyUser() && (
+  <li className="nav-item active">
+    <motion.div
+      whileHover={{ scale: 1.1,  }} // Add boxShadow and adjust values as needed
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
+      <Link
+        className="nav-link active"
+        to="/test/result"
+        // style={listItemStyle}
+        style={{
+          textDecoration: 'none',
+          color: '#333',
+          padding: '7px 13px', 
+          marginLeft:'1rem',
+          borderRadius: '10px', 
+          width: "fit-content",
+          background: 'linear-gradient(45deg, #beed6c, #3e950c)', 
+          boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)', 
+          fontWeight: 'bold',
+        }}
+      >
+        {t('Report')}
+      </Link>
+    </motion.div>
+  </li>
+)}
           {
             isAdmin && (
               <li className="nav-item active">
@@ -171,7 +208,6 @@ const Navbar = () => {
                   <Link
                     className="nav-link active"
                     to="/admin/analytics"
-                    style={listItemStyle}
                   >
                     {t('Analytics')}
                   </Link>
@@ -199,7 +235,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faGlobe} />
                 <select
                   className={`language-select ${css.languageSelect} ${css.btnStyle}`}
-                  style={{cursor:"pointer"}}
+                  style={{cursor:"pointer", fontWeight: "bold", color: "#333"}}
                   value={selectedLanguage}
                   onChange={(e) => handleLanguageChange(e.target.value)}
                 >
@@ -217,18 +253,18 @@ const Navbar = () => {
           {/* Language Buttons Ends   */}
 
           <li>
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token")  ? (
               <button
                 className={`${css.navBtn} text-ff1 navbar-right`}
                 onClick={handleLogoutClick}
               >
-                <motion.p
+                {/* <motion.p
                   whileHover={{ scale: 1.1 }}
                   transition={{
                     type: 'spring', stiffness: 300
-                  }}>
+                  }}> */}
                   {t('Logout')}
-                </motion.p>
+                {/* </motion.p> */}
               </button>
             ) : (
               <>
@@ -236,13 +272,12 @@ const Navbar = () => {
                   className={`${css.navBtn} text-ff1 navbar-right`}
                   onClick={handleLoginClick}
                 >
-                  <motion.p
+                  {/* <motion.p
                     whileHover={{ scale: 1.1 }}
                     transition={{
                       type: 'spring', stiffness: 300
-                    }}>
+                    }}> */}
                     {t('Login')}
-                  </motion.p>
                 </button>
 
               </>

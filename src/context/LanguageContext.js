@@ -10,8 +10,10 @@ export const LanguageProvider = ({ children }) => {
     setSelectedLanguage(localStorage.getItem('lang')); // Set to your default language
   };
 
+  const [userTestResponses, setUserTestResponses] = useState([]);
+
   return (
-    <LanguageContext.Provider value={{ selectedLanguage, setSelectedLanguage, resetLanguage }}>
+    <LanguageContext.Provider value={{ selectedLanguage, setSelectedLanguage, resetLanguage, userTestResponses, setUserTestResponses }}>
       {children}
     </LanguageContext.Provider>
   );

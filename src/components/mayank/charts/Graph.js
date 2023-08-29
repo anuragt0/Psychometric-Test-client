@@ -18,8 +18,32 @@ import {
 } from 'recharts';
 
 
+  // Option A : Ideal Normative	
+	// Option B: Friendly Follower		
+  // Option C: Information Driven		
+  // Option D: Individualist Rebellion	
 
-const Graph = ({responses}) => {
+
+// "label1": "Q1: Information Driven",
+// "label2": "Q2: Ideal Normative",
+// "label3": "Q3: Friendly Follower",
+// "label4": "Q4: Individualist Rebellion",
+
+const Graph = ({responses , onGraphData}) => {
+
+    useEffect(() => {
+    // Simulated personality name for demonstration
+    var personalityName = '';
+
+    if(maxOption==1)        personalityName = 'Ideal_Normative';
+    else if(maxOption == 2) personalityName='Friendly_Follower'
+    else if(maxOption == 3) personalityName='Information_Driven'
+    else if(maxOption == 4) personalityName='Individualist_Rebellion'
+
+    // Call the parent's callback function with the personality name
+    onGraphData(personalityName);
+  }, [onGraphData]);
+
 
   const { t } = useTranslation("translation", { keyPrefix: 'result.graph' } );
 
@@ -31,7 +55,7 @@ const Graph = ({responses}) => {
   
   const data = [
   { x: 3, y: 7 , name: t('label1') ,fill: '#be8440'},   // option C 
-  { x: 7.75, y: 9 , name:t('label2'),fill: '#96b159'},    // option A
+  { x: 7.75, y: 9 , name:t('label2'),fill: '#96b159'},    // option A 
   { x: 7, y: 3 , name:t('label3'),fill: '#2369b1'},     // option B
   { x: 1, y: 1,name: t('label4'),fill: '#e52409'}, // option D
 ];

@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 //   { name: 'F', uv: 74, pv: 4800, fill: '#df6000' },
 // ];
 
-function RadialBarChartComponent({ responses }) {
+function RadialBarChartComponent({ responses , onRadialData }) {
 
 
   const { t } = useTranslation("translation", { keyPrefix: 'result.radialBar' } );
@@ -53,6 +53,30 @@ function RadialBarChartComponent({ responses }) {
 
     { name: 'Max', score: 18.2 }, // Maximum Possible  value
   ];
+
+  useEffect(() => {
+    function blockChecker(score){
+      if(score==5) return "equalto_5"; 
+      else if(score < 5) return "lessthan_5" ;
+      else if(score > 5) return "morethan_5" ;
+    }
+  
+    const textCalcData = [
+      blockChecker((rawData[0].score)/2) ,
+      blockChecker((rawData[1].score)/2) ,
+      blockChecker((rawData[2].score)/2) ,
+      blockChecker((rawData[3].score)/2) ,
+      blockChecker((rawData[4].score)/2) ,
+      blockChecker((rawData[5].score)/2)
+    ]
+  
+    // console.log(textCalcData);
+
+    // Call the parent's callback function with the personality name
+    onRadialData(textCalcData);
+  }, [onRadialData]);
+
+
 
 
   const sortedData = rawData.sort((a, b) => a.score - b.score);

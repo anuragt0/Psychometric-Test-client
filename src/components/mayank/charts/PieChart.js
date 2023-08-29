@@ -17,7 +17,7 @@ import {
 //   { name: 'Obedience', value: 26 , fill:'#A24F10'}
 // ];
 
-function PieChartCom ({responses}) {
+function PieChartCom ({responses , onPieData}) {
 
   const { t } = useTranslation("translation", { keyPrefix: 'result.pie' } );
 
@@ -27,10 +27,11 @@ function PieChartCom ({responses}) {
 
   },[]);
 
+ 
 
   // Defining Type values 
   var confirimity = 0 ;
-  var compilance  = 0 ;
+  var compliance  = 0 ;
   var obedience   = 0 ;
 
   //multiplying the Social Pressure in the option choosen
@@ -42,7 +43,7 @@ function PieChartCom ({responses}) {
       confirimity+=  1 *(2- ((option-1)*factor))   ;
     }
     else if (index>=13 && index<=21){
-      compilance+=  1.44 *(2- ((option-1)*factor))   ;
+      compliance+=  1.44 *(2- ((option-1)*factor))   ;
     }
     else if (index>=22 && index<=25){
       obedience+=  3.25 *(2- ((option-1)*factor))   ;
@@ -50,17 +51,45 @@ function PieChartCom ({responses}) {
   }); 
 
   // converting Type Values in " % "
-  const total = confirimity + compilance + obedience ;
+  const total = confirimity + compliance + obedience ;
   confirimity = Math.round((confirimity/total)*100);
-  compilance  = Math.round((compilance/total)*100);
+  compliance  = Math.round((compliance/total)*100);
   obedience   = Math.round((obedience/total)*100);
 
   const data = [
     { name: t('label1'),value: confirimity , fill:'#FFBA00' },
-    { name: t('label2'), value: compilance , fill:'#6CA044'},
+    { name: t('label2'), value: compliance , fill:'#6CA044'},
     { name: t('label3'), value: obedience , fill:'#A24F10'}
   ];
-  // console.log(data);
+
+  useEffect(() => {
+    // Simulated personality name for demonstration
+    var categoryName = '';
+
+    var count_40 = 0 ;
+    if (confirimity >= 40 ) count_40++ ;
+    if (compliance >= 40 ) count_40++ ;
+    if (obedience >= 40 ) count_40++ ;
+
+    if (count_40 == 1){ //clear winner
+      if (confirimity >= 40 ) categoryName = 'confirmity' ;
+      else if (compliance  >= 40 ) categoryName = 'compliance' ;
+      else if (obedience   >= 40 ) categoryName = 'Obedience' ;
+    }
+    else { // unclear winner thus we will find loser
+      const min_value = Math.min(confirimity,compliance,obedience) ;
+      if (min_value == obedience ) categoryName = 'notObedience';
+      else if (min_value==compliance ) categoryName ='notCompliance';
+      else if(min_value== confirimity) categoryName ='notConfirmity';
+    }
+
+
+    
+    // Call the parent's callback function with the personality name
+    onPieData(categoryName);
+  }, [onPieData]);
+
+
   
   return (
     <div style={{ textAlign: 'center' }}>

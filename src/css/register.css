@@ -1,8 +1,32 @@
+.register-outer-div{
+    /* background: linear-gradient(135deg, #f2f4f3, #159337); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .registration-page {
     display: flex;
     flex-direction: column;
+    /* max-width: 400px; */
     align-items: center;
     padding: 20px;
+  }
+  .registration-heading {
+    background: linear-gradient(135deg, #f2f4f3, #3dcb4e);
+    /* background: linear-gradient(135deg, #E9F1EF, #45D756); */
+
+
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+  
+    text-align: center;
+    margin: 20px auto; /* Center the element horizontally and add spacing all around */
+    max-width: 70%; /* Limit the maximum width of the heading */
+  }
+
+  .input-field select {
+    background-color: #fff; /* Set the background color to white */
   }
   
   h1 {
@@ -16,28 +40,17 @@
     max-width: 500px;
     width: 100%;
   }
-
-  .verification-status {
-    display: flex;
-    align-items: center;
-    color: green;
-    font-weight: bold;
-    margin-left: 10px;
-  }
-  
-  .verified-icon {
-    margin-left: 5px;
-  }
   
   .input-field {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Update to flex-direction: column */
+    align-items: flex-start; /* Align items to the start */
     margin-bottom: 15px;
   }
   
   .input-field label {
-    margin-right: 10px;
-    min-width: 24px;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
   
   input[type='text'],
@@ -47,8 +60,9 @@
   select {
     padding: 10px;
     width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #5a5656eb;
+    border-radius: 15px;
+    /* box-shadow: none; Remove box shadow from input elements */
   }
   
   select {
@@ -56,38 +70,25 @@
     background: transparent;
   }
   
-  .mobile-number-field {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .mobile-number-field .input-field {
-    margin-bottom: 0;
-  }
-  
   button {
     padding: 10px 20px;
-    background-color: #fb2576;
+    background-color: #63c62a;
+    font-size: large;
+    font-weight: 400;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
   }
+  button:hover{
+    background-color: #45a110;
+  }
+  
   button.disabled {
     opacity: 0.5;
     cursor: default !important;
-  }
-  
-  .verify-otp-button {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  #otp {
-    width: 100%;
-    margin-bottom: 15px;
   }
   
   /* Responsive styles for small mobile screens */
@@ -95,16 +96,11 @@
     form {
       max-width: 100%;
     }
-    
+  
     .input-field {
-      flex-direction: column;
+      margin-bottom: 15px;
     }
-    
-    .input-field label {
-      margin-right: 0;
-      margin-bottom: 5px;
-    }
-    
+  
     button {
       width: 100%;
       margin-top: 15px;
