@@ -1,4 +1,3 @@
-/* LoginForm.css */
 .login-container {
     display: flex;
     justify-content: center;
@@ -68,7 +67,6 @@
     background-color: #45a110;
   }
   
-/* Styling for disabled inputs */
 .login-input[disabled],
 .otp-input[disabled] {
   background-color: #f2f2f2;
@@ -76,7 +74,6 @@
   cursor: not-allowed;
 }
 
-/* Styling for disabled buttons */
 .send-otp-button[disabled],
 .login-button[disabled] {
   background-color: #63c62a; 
@@ -88,7 +85,6 @@
     border-color: #FF0000; 
 }
 
-/* Styling for the password mismatch error message */
 .error-message {
     color: #FF0000;
     margin-top: 5px;
@@ -116,11 +112,7 @@
     justify-content: space-between; /* Push items to both ends */
     width: 100%; /* Full width of the login-form container */
 }
-/* .forgot-password-link{
-    margin-top: 10px;
-    font-weight: bold;
-    text-decoration: underline;
-} */
+
 .forgot-password-link {
     flex: 1; /* Take up equal space */
     text-align: left;
@@ -154,15 +146,7 @@
     margin-top: 50px;
 }
 
-/* .fancy-text {
-    font-size: 32px;
-    font-weight: bold;
-    color: transparent;
-    /* background-image: linear-gradient(45deg, #71BF44, #e36696); */
-    /* -webkit-background-clip: text;
-    background-clip: text;
-    animation: animateText 3s linear infinite alternate-reverse;
-  } */ */
+
 
 .custom-icon {
     width: 40px; /* Adjust the width as needed */
