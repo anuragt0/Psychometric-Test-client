@@ -31,7 +31,7 @@ const LanguageSelectorModal = ({ languages, onSelect }) => {
             className="language-option"
           >
             <label className='checkbox-label'>
-              <input
+              <input className='input'
                 type="radio"
                 checked={language.key === selectedLanguage}
                 readOnly

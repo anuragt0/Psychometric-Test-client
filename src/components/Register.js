@@ -478,13 +478,11 @@ const RegistrationPage = () => {
     return (
         <div className='register-outer-div'>
             <div id="recaptcha-container"></div>
-            <div className="registration-heading">
-                {/* <h1>{t('register_to_view')}<span style={{ color: "#e31b66" }}>{t('results')}</span> </h1> */}
+            {/* <div className="registration-heading">
                 <h1 style={{textDecoration: "underline"}}>Register</h1>
-                {/* <h3 style={{color: "#5b564e"}}>Your personalized <span style={{ color: "#37840b" }}>personality insights </span>report is just a step away. </h3> */}
                 <h3 style={{color: "#5b564e"}}>Unlock Your Personalized Personality Insights Report
                 <p style={{ color: "#1A5D1A" }}>Discover a deeper understanding of yourself, <em> just a step away</em></p></h3>
-            </div>
+            </div> */}
 
             {componentState === 1 && EnterPhoneComponent()}
             {componentState === 2 && EnterOTPComponent()}

@@ -358,7 +358,7 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
           </div>
         )}
 
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
 
       </>
 

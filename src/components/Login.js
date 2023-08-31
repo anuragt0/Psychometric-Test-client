@@ -115,15 +115,15 @@ const Login = () => {
         setComponentState(0);
 
         //* Generate window.recaptcha
-        if (captchaGenerated === false) {
+        // if (captchaGenerated === false) {
             // console.log("HERE");
             onCaptchVerify();
-        }
+        // }
 
         const appVerifier = window.recaptchaVerifier;
 
         const formatPh = "+91" + mobileNumber;
-        // console.log(formatPh);
+        console.log("formatPh: ", formatPh);
 
         signInWithPhoneNumber(auth, formatPh, appVerifier)
             .then((confirmationResult) => {
@@ -137,7 +137,7 @@ const Login = () => {
             .catch((error) => {
                 // toast.error("Please refresh the page and try again!");
                 setOtpError(`Some error occured Please try again later. ${error.message}`)
-                console.log("error1: ", error.message);
+                console.log("error1: ", error);
 
                 // if(!otpError)
                 // toast(error.message);
@@ -510,12 +510,15 @@ const Login = () => {
 
     return (
         <>
-            <div id="recaptcha-container"></div>
+            {/* <div id="recaptcha-container"></div>
             <div className="registration-heading">
                 <h1 style={{textDecoration: "underline"}}>Login</h1>
                 <h3 style={{color: "#5b564e"}}>Unlock Your Personalized Personality Insights Report
                 <p style={{ color: "#1A5D1A" }}>Discover a deeper understanding of yourself, <em> just a step away</em></p></h3>
-            </div>
+            </div> */}
+
+            {/* //!Important for OTP */}
+            <div id="recaptcha-container"></div>
 
             <div className="component-slide">
                 {componentState === -1 && EnterPhoneComponent()}

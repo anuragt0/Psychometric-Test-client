@@ -1,8 +1,10 @@
 .register-outer-div{
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background: linear-gradient(135deg, #f2f4f3, #159337); */
+    margin : 0 auto;
 }
+
 .registration-page {
+  background-image: url("../images/bg.png");
     display: flex;
     flex-direction: column;
     /* max-width: 400px; */
@@ -11,6 +13,7 @@
   }
   .registration-heading {
     background: linear-gradient(135deg, #f2f4f3, #3dcb4e);
+    /* background: linear-gradient(135deg, #E9F1EF, #45D756); */
 
 
 
@@ -60,6 +63,7 @@
     width: 100%;
     border: 2px solid #5a5656eb;
     border-radius: 15px;
+    /* box-shadow: none; Remove box shadow from input elements */
   }
   
   select {
@@ -88,6 +92,8 @@
     cursor: default !important;
   }
   
+  
+  /* Responsive styles for small mobile screens */
   @media only screen and (max-width: 480px) {
     form {
       max-width: 100%;

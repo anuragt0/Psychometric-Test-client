@@ -342,11 +342,13 @@ function Quiz() {
                 <div className="right my-5">
                     <div className="cont">
                          <Progress progress={progress}/>
+        
                     </div>
                     <div className="msg">
                     <p className="animate-charcter">Hey! Finish the complete quiz and I will <br></br>get back to you with your Report card. </p>
-                    <img src={image2} className="startImage" style={{height:"120px", marginTop:"4%"}}></img>
+                    <img src={image2} className="startImage" ></img>
                     </div>
+                    
                     <div className="box">
 
                     </div>

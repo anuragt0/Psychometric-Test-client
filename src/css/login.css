@@ -1,72 +1,77 @@
+/* LoginForm.css */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-form {
-    width: 80%;
-    max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Center items horizontally */
 
 
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin: 5% auto;
+  /* Center the form horizontally */
+}
 
 
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    margin: 5% auto; /* Center the form horizontally */
-  }
-  
-  
-  .login-input,
-  .otp-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #5a5656eb;
-    border-radius: 15px;
-    outline: none;
-  }
-  
-  .login-input::placeholder,
-  .otp-input::placeholder {
-    color: #988a8a;
-  }
-  
-  .send-otp-button,
-  .login-button {
-    background-color: #63c62a;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
-  }
+.login-input,
+.otp-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #5a5656eb;
+  border-radius: 15px;
+  outline: none;
+}
 
-  .registration-heading {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
-  
-    text-align: center;
-    margin: 20px auto; /* Center the element horizontally and add spacing all around */
-    max-width: 100%; /* Limit the maximum width of the heading */
-  }
-  
-  .send-otp-button:hover,
-  .login-button:hover {
-    background-color: #45a110;
-  }
-  
+.login-input::placeholder,
+.otp-input::placeholder {
+  color: #988a8a;
+}
+
+.send-otp-button,
+.login-button {
+  background-color: #63c62a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.registration-heading {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+
+  text-align: center;
+  margin: 20px auto;
+  /* Center the element horizontally and add spacing all around */
+  max-width: 100%;
+  /* Limit the maximum width of the heading */
+}
+
+.send-otp-button:hover,
+.login-button:hover {
+  background-color: #45a110;
+}
+
+/* Styling for disabled inputs */
 .login-input[disabled],
 .otp-input[disabled] {
   background-color: #f2f2f2;
@@ -74,78 +79,90 @@
   cursor: not-allowed;
 }
 
+/* Styling for disabled buttons */
 .send-otp-button[disabled],
 .login-button[disabled] {
-  background-color: #63c62a; 
-  color: #ffffff; 
+  background-color: #63c62a;
+  color: #ffffff;
   cursor: not-allowed;
 }
 
 .login-input.password-mismatch {
-    border-color: #FF0000; 
+  border-color: #FF0000;
 }
 
+/* Styling for the password mismatch error message */
 .error-message {
-    color: #FF0000;
-    margin-top: 5px;
+  color: #FF0000;
+  margin-top: 5px;
 }
 
 /* Styling for the "Save and continue" button */
 .save-password-button {
-    background-color: #63c62a;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
+  background-color: #63c62a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
 .save-password-button:hover {
-    background-color: #45a110;
+  background-color: #45a110;
 }
 
 .forgot-password-register {
-    display: flex;
-    justify-content: space-between; /* Push items to both ends */
-    width: 100%; /* Full width of the login-form container */
+  display: flex;
+  justify-content: space-between;
+  /* Push items to both ends */
+  width: 100%;
+  /* Full width of the login-form container */
 }
 
+/* .forgot-password-link{
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+} */
 .forgot-password-link {
-    flex: 1; /* Take up equal space */
-    text-align: left;
+  flex: 1;
+  /* Take up equal space */
+  text-align: left;
 }
 
 .forgot-password-link span {
-    cursor: pointer;
-    color: #63c62a;
-    transition: color 0.3s ease;
-    font-weight:500;
+  cursor: pointer;
+  color: #63c62a;
+  transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .forgot-password-link:hover span {
-    color: #45a110;
+  color: #45a110;
 }
+
 .register-link {
-    flex: 1; /* Take up equal space */
-    text-align: right;
-    font-weight:500;
-    cursor: pointer;
-    color: #63c62a;
-    transition: color 0.3s ease;
+  flex: 1;
+  /* Take up equal space */
+  text-align: right;
+  font-weight: 600;
+  cursor: pointer;
+  color: #63c62a;
+  transition: color 0.3s ease;
 }
+
 .register-link:hover span {
-    color: #45a110;
+  color: #45a110;
 }
 
 
 .welcome-heading {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
-
 
 
 .custom-icon {
@@ -156,10 +173,9 @@
 }
 
 
-  /* Media Query for Mobile View */
-  @media screen and (max-width: 600px) {
-    .login-form {
-      width: 90%;
-    }
+/* Media Query for Mobile View */
+@media screen and (max-width: 600px) {
+  .login-form {
+    margin: 50% auto;
   }
-  
+}

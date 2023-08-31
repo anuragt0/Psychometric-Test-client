@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './home.css'
-import Image1 from './images/8.png'
+import Image1 from './images/hero-img.png'
 
 // import { Footer } from './Footer'
 import { motion } from 'framer-motion'
@@ -95,7 +95,7 @@ const Home = () => {
             )}
 
 
-            <div className={`container-page1 page-container ${showModal ? 'blur-background' : ''}`}>
+            <div className={`container-page1 ${showModal ? 'blur-background' : ''}`}>
                 <div className='img-container'>
 
                     {/* <video className='image-top' controls={false} autoPlay muted
@@ -106,7 +106,7 @@ const Home = () => {
                         {t('video_unsupported')}
                     </video> */}
 
-                    <img src={Image1} className='img-home'></img>
+                    <img src={Image1} className='image-top'></img>
 
 
                 </div>

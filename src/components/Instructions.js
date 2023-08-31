@@ -83,6 +83,7 @@ function InstructionsPage() {
 
 
     return (
+        <div className="page">
         <div className="instructions-page">
             {/* {isUserAuthenticated && !loading ? ( */}
             { (
@@ -109,6 +110,7 @@ function InstructionsPage() {
                 </>
             )}
         </div>
+      </div>
     );
 }
 

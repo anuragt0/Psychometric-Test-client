@@ -4,6 +4,8 @@ import { server_origin } from '../utilities/constants';
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { toast, Toaster } from "react-hot-toast";
+
 
 
 // import img from "../../assets/images/yi_logo.png";
@@ -101,7 +103,9 @@ const Navbar = () => {
     localStorage.removeItem("testProgress");
     localStorage.removeItem("lang");
     localStorage.removeItem("hasVisited");
-    navigate("/login");
+    toast.success("Logged out successfully");
+    navigate("/")
+    // navigate("/login");
   };
 
 
@@ -109,7 +113,7 @@ const Navbar = () => {
     <nav className={`${css.outerNav} navbar navbar-expand-lg fixed-top`}
       style={{ position: "sticky", top: 0, zIndex: 100 }}>
 
-      <div className={`${css.hamDisplay}`}>
+      <div className={`${css.navDisplay}`}>
         <Link to="/" style={{ marginRight: "1rem" }}>
           <img src={logo} alt="yi-logo" style={{
             "width": "3rem",
@@ -119,7 +123,7 @@ const Navbar = () => {
         </Link>
         <button
           type="button"
-          className={`${css.navStyle} navbar-toggler`}
+          className={`${css.hamStyle} navbar-toggler`}
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
         >

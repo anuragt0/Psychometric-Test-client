@@ -25,15 +25,25 @@
 .language-option {
   cursor: pointer;
   margin-bottom: 10px;
-  color : #FB2576;
-  padding : 10px 0;
+  color: #FB2576;
+  padding: 10px 0;
   border-bottom: 1px solid #ccc;
+  transition: color 0.3s; /* Add a smooth transition for color change */
 }
 
+.language-option:hover {
+  color: #36a941; 
+}
+
+.checkbox-label, .input:hover{
+  cursor: pointer;
+}
 
 .language-option:last-child {
-  border-bottom: none; /* Remove the border from the last option */
+  border-bottom: none; 
 }
+
+
 
 /* Rest of your styles */
 
