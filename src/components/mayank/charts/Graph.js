@@ -16,6 +16,7 @@ import {
   ReferenceArea,
   // Rectangle
 } from 'recharts';
+import { BsAspectRatio } from 'react-icons/bs';
 
 
   // Option A : Ideal Normative	
@@ -76,6 +77,7 @@ const Graph = ({responses , onGraphData}) => {
   // const maxOption =4 ;
 
   return (
+ 
     <ScatterChart width={400} height={570} margin={{ top: 25, right: 10, bottom: 25, left: 5 }}>
       <CartesianGrid strokeDasharray="3 3" stroke ="#ffffff"/>
       <XAxis type="number" dataKey="x" domain={[0, 10]} tickCount={6}>
@@ -191,6 +193,8 @@ const Graph = ({responses , onGraphData}) => {
 
 
     </ScatterChart>
+
+    
   );
 };
 

@@ -161,29 +161,40 @@
   margin-left: 0%;
   margin-top: 10%;
   display: flex;
-}
-
-.msg {
+}    
+.msg,
+.msg2,
+.msg3,
+.msg4,
+.msg5{
   text-align: center;
   justify-content: center;
   font-weight: 900;
   display: flex;
-  /* background-color: red; */
+}
+.con{
+  position: relative;
 }
 
-.msg .startImage {
-  height: 100px;
-  margin-top: 5%;
-
+.msg .startImage,
+.msg2 .startImage,
+.msg3 .startImage,
+.msg4 .startImage,
+.msg5 .startImage{
+height: 100px;
+margin-top: 5%;
 }
 
-.animate-charcter {
-  text-transform: uppercase;
-  background-image: linear-gradient(-225deg,
-      black 0%,
-      black 29%,
-      rgb(46, 4, 101) 67%,
-      rgb(46, 4, 101)100%);
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    black 0%,
+    black 29%,
+    rgb(46, 4, 101) 67%,
+    rgb(46, 4, 101)100%
+  );
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -271,68 +282,64 @@
     position: relative;
   }
 
-  .box {
-    background-color: #63c62a;
-    height: 50%;
-    width: 95%;
-    margin-left: 0%;
-    margin-top: 18%;
-  }
-
-  .left {
-    width: 100%;
-    margin-top: 55%;
-    position: relative;
-    padding-top: 5%;
-  }
-
-  .question {
-    margin-top: 60%;
-  }
-
-  .buttons {
-    width: 100%;
-    margin-top: 2%;
-    padding: 0% 15%;
-    padding-bottom: 20%;
-  }
-
-  #next-button,
-  .submit-button {
-    margin-left: 50%;
-  }
-
-  .submit-button {
-    background-color: white;
-    color: #63c62a;
-    border: solid 2px #63c62a;
-  }
-
-  /* .cont{
-        height: 30%;
-        
+      .box{
+        background-color: #63c62a;
+        height: 50%;
         width: 95%;
-        padding-top: 70%;
-        position:absolute;
-      }   */
-  .option-container {
-    margin-left: 0%;
-    margin-right: 5%;
-  }
-
-  .cont {
-    position: absolute;
-    margin-top: 80%;
-  }
-
-  .msg {
-    position: absolute;
-    margin-top: 110%;
-  }
-
-  .msg .startImage {
-    position: absolute;
-    margin-top: 15%;
-  }
-
-}
+        margin-left: 0%;
+        margin-top: 18%;
+      }
+      .left{
+        width: 100%;
+        margin-top: 55%;
+        position: relative;
+        padding-top: 5%;
+      }
+      .question{
+        margin-top: 65%;
+      }
+      
+      .buttons{
+        width: 100%;
+        margin-top: 2%;
+        padding: 0% 15%;
+        padding-bottom: 20%;
+      }
+      #next-button,
+      .submit-button{
+        margin-left: 50%;
+      }
+      .submit-button{
+        background-color: white;
+        color: #63c62a;
+        border:solid 2px #63c62a;
+      }
+      
+      .option-container{
+        margin-left: 0%;
+        margin-right: 5%;
+      }
+      .cont{
+        position: absolute;
+        margin-top: 80%;
+      }
+      .msg,
+      .msg2,
+      .msg3,
+      .msg4,
+      .msg5{
+        position: absolute;
+        margin-top: 115%;
+      }
+      .msg .startImage,
+      .msg2 .startImage,
+      .msg3 .startImage,
+      .msg4 .startImage,
+      .msg5 .startImage{
+       position: absolute;
+       margin-top: 20%;
+      }
+     
+    }
+    
+    

@@ -201,7 +201,7 @@ const RegistrationPage = () => {
         if (response1.success === true) {
             // Already registered
             // Render Password check component
-            toast.success("This number is already registered, please login to continue");
+            toast.success(t('toast.mobileNo_already_register'));
             navigate("/login");
             return;
         }
@@ -214,15 +214,15 @@ const RegistrationPage = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         if(password !== confirmPassword){
-            toast.error("Passwords do not match");
+            toast.error(t('toast.passwordNotMatchToast'));
             return;
         }
         if(credentials.name.length === 0){
-            toast.error("Please enter name to register");
+            toast.error(t('toast.enterName'));
             return;
         }
         if(password.length<5){
-            toast.error("Password must be of atleast 5 characters");
+            toast.error(t('toast.atleast5CharPass'));
             return;
         }
         const updatedCreds = credentials;

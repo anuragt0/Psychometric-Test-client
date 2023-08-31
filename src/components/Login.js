@@ -195,7 +195,7 @@ const Login = () => {
     const handleLoginClick = async () => {
         setLoading(true);
         if(mobileNumber.length!==10){
-            toast.error("Please enter a valid mobile number");
+            toast.error(t('toast.invalidMobileToast'));
             setLoading(false);
             return
         }
@@ -212,13 +212,13 @@ const Login = () => {
         if(response1.success===false){
             // Not registered before
             navigate("/register");
-            toast.error("This number is not registered");
+            toast.error(t('toast.mobileNo_not_registered'));
             setLoading(false);
             return;
         }
         //* Registered
         if(password.length===0){
-            toast.error("Please enter your password to login");
+            toast.error(t('toast.enter_password'));
             setLoading(false);
             return;
         }
@@ -255,7 +255,7 @@ const Login = () => {
             });
             let response2 = await responseUpdate.json();
             if(response2.success===false){
-                toast.error("Please try again later");
+                toast.error(t('toast.tryAgain'));
                 setLoading(false);
                 return;
             }
@@ -365,12 +365,14 @@ const Login = () => {
         //* Have to check if the number is registered or not
         setLoading(true);
         if(mobileNumber.length!==10){
-            toast.error("Please enter a valid mobile number");
+            toast.error(t('toast.invalidMobileToast'));
             setLoading(false);
             return
         }
 
-         // Check if the mobile is already registered
+        //  Check if the mobile is already registered
+        //  Check if the mobile is already registered
+        //  Check if the mobile is already registered
          const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
             method: 'POST',
             headers: {
@@ -382,7 +384,7 @@ const Login = () => {
         if(response1.success===false){
             // Not registered before
             navigate("/register");
-            toast.error("This number is not registered");
+            toast.error(t('toast.mobileNo_not_registered'));
             setLoading(false);
             return;
         }
@@ -422,7 +424,7 @@ const Login = () => {
                                 <span>{t('forgotPassword')}</span>
                             </p>
                             <p className="register-link" onClick={()=>{navigate("/register")}}>
-                                <span>Register</span>
+                                <span>{t('register')}</span>
                             </p>
                         </div>
                     {/*  */}

@@ -7,6 +7,10 @@ import useWindowSize from "@rooks/use-window-size";
 import Confetti from 'react-confetti'
 import { toast, Toaster } from "react-hot-toast";
 
+//IMPORTS FOR Language change Functionality
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
+
 import "../css/congrats.css";
 
 
@@ -19,7 +23,7 @@ const Congrats = () => {
     let savedProgress = localStorage.getItem('testProgress');
     savedProgress = JSON.parse(savedProgress);
     if (savedProgress === null || savedProgress.length !== 26) {
-      toast.error("Please complete the test to continue");
+      toast.error(t('toast.incompleteTest'));
       navigate("/test/instructions");
       return;
     }
@@ -57,6 +61,23 @@ const Congrats = () => {
     navigate("/test/result")
   }
 
+
+ //? Language Functionality Starts ......................................................................
+  
+const { t } = useTranslation("translation", { keyPrefix: 'congrats' });
+
+//used to get language Stored in LocalStorage //*should be in every Page having Language Functionality 
+useEffect(()=>{
+  let currentLang = localStorage.getItem('lang');
+  i18n.changeLanguage(currentLang);
+
+  // console.log(t('array'  , { returnObjects: true }));
+},[]);
+
+
+//? Language Functionality Ends .................................................................
+
+
   const { width, height } = useWindowSize()
 
   return (
@@ -64,7 +85,7 @@ const Congrats = () => {
       <Confetti
          width={window.innerWidth}
          height={window.innerHeight}
-        //  numberOfPieces={600}
+         numberOfPieces={600}
         //  recycle={false}
  />
 
@@ -72,20 +93,20 @@ const Congrats = () => {
       {!loading &&
         <div className="congratulations-container">
           <div className="congratulations-content">
-            <h2 className='main-heading'>Congratulations!🎉</h2>
-            <p className='sub-heading'>You have successfully submitted the test.</p>
+            <h2 className='main-heading'>{t('congratulation')}<span>🎉</span></h2>
+            <p className='sub-heading'>{t('textCongrat')}</p>
             {
               !loggedIn ?
-                <p className='sub-heading'>PLEASE LOGIN OR REGISTER TO VIEW YOUR RESULT..</p>
-                : <p className='sub-heading'>Click on below button to view your report</p>
+                <p className='sub-heading'>{t('pleaseLogin')}</p>
+                : <p className='sub-heading'>{t('viewResult')}</p>
             }
             <div className="buttons-container">
               {
                 !loggedIn ? <>
-                  <button className="login-button" onClick={handleLogin}>Login</button>
-                  <button className="signup-button" onClick={handleRegister}>Sign Up</button>
+                  <button className="login-button" onClick={handleLogin}>{t('login_btn')}</button>
+                  <button className="signup-button" onClick={handleRegister}>{t('signUp_btn')} </button>
                 </>
-                  : <button className="signup-button" onClick={handleViewReport}>View Report</button>
+                  : <button className="signup-button" onClick={handleViewReport}>{t('viewResult_btn')} </button>
               }
             </div>
           </div>

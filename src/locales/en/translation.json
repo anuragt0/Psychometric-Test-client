@@ -6,7 +6,10 @@
     "Report": "View report",
     "Analytics": "Analytics",
     "Logout": "Logout",
-    "Login": "Login"
+    "Login": "Login",
+    "toast":{
+      "loggedOutToast":"Logged out successfully"
+    }
   },
   "footer": {
     "Community": "Community",
@@ -19,6 +22,8 @@
     "Feedback": "Feedback"
   },
   "home": {
+    "text1": "UNLOCK YOUR FULL POTENTIAL & THRIVE IN BUSINESS",
+    "text2": "Our comprehensive test and insightful PDF report will empower you to reach new heights in your entrepreneurial journey",
     "video_unsupported": "Sorry, your browser doesn't support videos.",
     "take_a": "TAKE A",
     "step_ahead": "STEP AHEAD",
@@ -47,6 +52,18 @@
     "noteMessage": " If you accidentally exit full-screen mode during the test, you can click the \"Go Full Screen\" button again to re-enable it.",
     "startTestButton": "Start Test"
   },
+  "congrats": {
+    "congratulation": "Congratulations! ",
+    "textCongrat": "You have successfully submitted the test.",
+    "pleaseLogin": "PLEASE LOGIN OR REGISTER TO VIEW YOUR RESULT..",
+    "viewResult": "Click on below button to view your report",
+    "login_btn": "login",
+    "signUp_btn": "Register",
+    "viewResult_btn": "View Report",
+    "toast": {
+      "incompleteTest": "Please complete the test to continue"
+    }
+  },
   "login": {
     "toast": {
       "cannotUpdatePasswordToast": "Cannot update password. Please try again later",
@@ -60,7 +77,10 @@
       "invalidMobileToast": "Please enter valid mobile number",
       "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
       "otpExpired": "OTP has expired. Please request a new OTP.",
-      "otpInvalid": "Invalid OTP"
+      "otpInvalid": "Invalid OTP",
+      "mobileNo_not_registered": "This number is not registered",
+      "enter_password": "Please enter your password to login",
+      "tryAgain": "Please try again later"
     },
     "enterPhone": "Please enter your mobile number to continue",
     "enterPasswordToLogin": "Please enter your password to continue",
@@ -75,6 +95,7 @@
     "saveContinueButton": "Save and continue",
     "forgotPassword": "Forgot Password?",
     "submitButton": "Submit",
+    "register": "Register",
     "otpPlaceholder": "Enter OTP",
     "verifyOTPButton": "Verify and login",
     "mobilePlaceholder": "Enter 10 digit mobile number",
@@ -91,13 +112,17 @@
       "passwordNotMatchToast": "Please make sure passwords match",
       "wrongPasswordToast": "Wrong password",
       "loggedInToast": "Logged in successfully",
+      "loggedOutToast": "Logged out successfully",
       "enterCorrectOTPToast": "Please enter correct OTP",
       "otpVerifiedToast": "OTP verified successfully",
       "otpSentToast": "OTP sent successfully to mobile number ",
       "invalidMobileToast": "Please enter valid mobile number",
       "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
       "otpExpired": "OTP has expired. Please request a new OTP.",
-      "otpInvalid": "Invalid OTP"
+      "otpInvalid": "Invalid OTP",
+      "enterName":"Please enter name to register",
+      "atleast5CharPass":"Password must be of atleast 5 characters",
+      "mobileNo_already_register" : "This number is already registered, please login to continue"
     },
     "enterPhone": "Please enter your mobile number to continue",
     "enterPasswordToLogin": "Please enter your password to continue",
@@ -381,6 +406,23 @@
       "previous": "Previous",
       "next": "Next",
       "submit": "Submit"
+    },
+    "prompt": {
+      "headingText1": "Your previous test ",
+      "headingText2": "progress was saved",
+      "headingPara": "Do you wish to continue or start over?",
+      "continue_btn": "Continue",
+      "start_btn": "Start Over"
+    },
+    "progressBar": {
+      "msg1A": " Hey! Finish the complete quiz and I will ",
+      "msg1B": "back to you with your Report card.",
+      "msg2A": "Great! You have completed 25% of the quiz ",
+      "msg2B": "keep doing... ",
+      "msg3A": "Fantastic progress! You're 50% done",
+      "msg3B": "keep it up!",
+      "wellcome_75per": "Well Done! You have completed 75% of the quiz",
+      "justFinish": "You're about to finish..."
     }
   },
   "result": {

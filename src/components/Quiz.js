@@ -5,8 +5,13 @@ import "../css/quiz.css";
 import LoadingBar from 'react-top-loading-bar'
 import Progress from '../components/Progress';
 import '../css/progress.css';
-import image2 from '../images/progressImage.svg';
+import image2 from '../images/progressImage2.svg';
+import image3 from '../images/progressImage3.svg';
+import image4 from '../images/progressImage4.svg';
+import image5 from '../images/progressImage5.svg';
 import 'react-circular-progressbar/dist/styles.css';
+import Confetti from 'react-confetti';
+// import useWindowSize from "@rooks/use-window-size";
 
 
 import { toast, Toaster } from "react-hot-toast";
@@ -26,7 +31,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import the CSS
 
 
 function Quiz() {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
     const { t } = useTranslation("translation", { keyPrefix: 'quiz' });
     const { userTestResponses, setUserTestResponses } = useLanguage();
@@ -263,11 +268,11 @@ function Quiz() {
       customUI: ({ onClose }) => {
         return (
             <div className="custom-ui">
-            <h2>Your previous test <span className="highlighted-text">progress was saved</span></h2>
-            <p>Do you wish to continue or start over?</p>
+            <h2>{t('prompt.headingText1')} <span className="highlighted-text">{t('prompt.headingText2')}</span></h2>
+            <p>{t('prompt.headingPara')}</p>
             <div className="button-container">
-              <button className="continue-button" onClick={() => { handleContinue(); onClose(); }}>Continue</button>
-              <button className="start-over-button" onClick={() => { handleStartOver(); onClose(); }}>Start Over</button>
+              <button className="continue-button" onClick={() => { handleContinue(); onClose(); }}>{t('prompt.continue_btn')}</button>
+              <button className="start-over-button" onClick={() => { handleStartOver(); onClose(); }}> {t('prompt.start_btn')}</button>
             </div>
           </div>
         );
@@ -286,6 +291,12 @@ function Quiz() {
         , require("../images/16.jpg"), require("../images/17.png"), require("../images/18.jpg"), require("../images/19.png")
         , require("../images/20.jpg"), require("../images/21.png"), require("../images/22.png"), require("../images/23.png")
         , require("../images/24.png"), require("../images/25.png"), require("../images/26.png")];
+
+        const showMsg = progress < 26 ? true : false;
+        const showMsg2 = (progress > 25 && progress < 50) ? true : false;
+        const showMsg3 = (progress >=50 && progress <76) ? true : false;
+        const showMsg4 = (progress >=76 && progress <100) ? true : false;
+        const showMsg5 = (progress ===100) ? true : false;
    
     return (
 
@@ -342,15 +353,52 @@ function Quiz() {
                 <div className="right my-5">
                     <div className="cont">
                          <Progress progress={progress}/>
-        
+                        
                     </div>
+                    {showMsg && (
                     <div className="msg">
-                    <p className="animate-charcter">Hey! Finish the complete quiz and I will <br></br>get back to you with your Report card. </p>
+                    <p className="animate-charcter">{t('progressBar.msg1A')}<br></br>{t('progressBar.msg1B')}</p>
                     <img src={image2} className="startImage" ></img>
                     </div>
+                    )}
+
+                    {showMsg2 && (
+                    <div className="msg2">
+                    <p className="animate-charcter">{t('progressBar.msg2A')} <br></br>{t('progressBar.msg2B')}</p>
+                    <img src={image3} className="startImage"></img>
+                    </div>
+                    )}
+
+                    {showMsg3 && (
+                    <div className="msg3" >
+                       <div className="con">
+                       <Confetti
+                           width={330}
+                           height={180}
+                           numberOfPieces={100}
+                        />
+                        </div> 
+                    <p className="animate-charcter">{t('progressBar.msg3A')}<br></br>{t('progressBar.msg2B')}</p>
+                    <img src={image4} className="startImage"></img>
+                    </div>
+                    )}
+
+                    {showMsg4 && (
+                    <div className="msg3">
+                    <p className="animate-charcter">{t('progressBar.wellcome_75per')}<br></br>{t('progressBar.justFinish')} </p>
+                    <img src={image3} className="startImage"></img>
+                    </div>
+                    )}
+
+                    {showMsg5 && (
+                    <div className="msg4">
+                    <p className="animate-charcter">Successfully Completed the quiz!</p>
+                    <img src={image5} className="startImage"></img>
+                    </div>
+                    )}
                     
                     <div className="box">
-
+                    
                     </div>
                     
                     <img src={imageArray[currentQuestionIndex]} alt="img" />

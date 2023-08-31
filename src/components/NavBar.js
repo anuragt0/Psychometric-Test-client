@@ -103,7 +103,7 @@ const Navbar = () => {
     localStorage.removeItem("testProgress");
     localStorage.removeItem("lang");
     localStorage.removeItem("hasVisited");
-    toast.success("Logged out successfully");
+    toast.success(t('toast.loggedOutToast'));
     navigate("/")
     // navigate("/login");
   };
@@ -114,7 +114,7 @@ const Navbar = () => {
       style={{ position: "sticky", top: 0, zIndex: 100 }}>
 
       <div className={`${css.navDisplay}`}>
-        <Link to="/" style={{ marginRight: "1rem" }}>
+        <Link to="/" style={{ marginRight: "1rem"}}>
           <img src={logo} alt="yi-logo" style={{
             "width": "3rem",
             "marginRight": "2%"
@@ -245,7 +245,7 @@ const Navbar = () => {
                 >
                   <option className="nav-item active" value="en">English</option>
                   <option className="nav-item active" value="hi">  हिन्दी  </option>
-                  <option className="nav-item active" value="gu">  ગુજરાતી  </option>
+                  {/* <option className="nav-item active" value="gu">  ગુજરાતી  </option> */}
 
                   {/* Add more options for other languages */}
 
