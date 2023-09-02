@@ -1,4 +1,7 @@
 /* LanguageSelectorModal.css */
+.modal-heading{
+  text-align: center;
+}
 
 .modal-container {
   /* width : 400px;
@@ -14,6 +17,8 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Sora', sans-serif;
   border-radius : 10px;
+  max-height: 40vh;
+  overflow-y: auto; 
   /* color: #A4ACFF; */
 }
 
@@ -25,14 +30,15 @@
 .language-option {
   cursor: pointer;
   margin-bottom: 10px;
-  color: #FB2576;
+  color: #36a941;
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
   transition: color 0.3s; /* Add a smooth transition for color change */
+  font-weight: bolder;
 }
 
 .language-option:hover {
-  color: #36a941; 
+  color: #008c10; 
 }
 
 .checkbox-label, .input:hover{
@@ -71,3 +77,15 @@
   align-items: center;
   gap: 8px; /* Adjust the gap as needed */
 }
+
+.disabled {
+  color: #aaa;
+  cursor: not-allowed; 
+  pointer-events: none; /* Prevent interactions with disabled labels */
+}
+
+/* @media screen and (max-width: 767px){
+  .language-option {
+   
+  }
+} */

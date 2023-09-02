@@ -22,18 +22,19 @@ const LanguageSelectorModal = ({ languages, onSelect }) => {
   
   return (
     <div className="modal-container">
-      <h4>{t('select_your_language')}</h4>
+      <h4 className='modal-heading'>{t('select_your_language')}</h4>
       <ul className="language-list">
         {languages.map(language => (
           <li
             key={language.key}
             onClick={() => handleLanguageClick(language.key)}
-            className="language-option"
+            className={`${language.disabled ? 'disabled' : ''} language-option`}
           >
             <label className='checkbox-label'>
               <input className='input'
                 type="radio"
                 checked={language.key === selectedLanguage}
+                disabled = {language.disabled}
                 readOnly
               />
               {language.value}
