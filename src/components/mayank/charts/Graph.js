@@ -12,7 +12,6 @@ import {
   Label, LabelList,
   Scatter,
   ScatterChart,
-  Text,
   ReferenceLine,
   ReferenceArea,
   // Rectangle

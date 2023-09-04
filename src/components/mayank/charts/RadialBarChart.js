@@ -74,7 +74,7 @@ function RadialBarChartComponent({ responses , onRadialData }) {
 
     // Call the parent's callback function with the personality name
     onRadialData(textCalcData);
-  }, [onRadialData]);
+  }, []);
 
 
 

@@ -77,7 +77,7 @@ const radial_uri = 'radialBar.text_content'  ;
 
 //t(pie_uri ) -> only one paragraph
 
-//! text guideline for designer --
+//* text guideline for designer --
 // graph --> 1 . content == t(graph_uri + '.description')  ***its just a String
 // console.log(t(graph_uri + '.description'));
 //           2.  quailties == t(graph_uri + '.qualities')  ***use .map because  its an array with exactly five Qualities in it 
