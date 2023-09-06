@@ -29,62 +29,62 @@ const Home = () => {
 
   const { t } = useTranslation("translation", { keyPrefix: 'home' });
 
-  useEffect(()=>{
+  useEffect(() => {
     let currentLang = localStorage.getItem('lang');
     i18n.changeLanguage(currentLang);
-  
+
     // console.log(t('array'  , { returnObjects: true }));
-  },[]);
+  }, []);
 
-    const [selectedLanguageM, setSelectedLanguageM] = useState({});
-    const languages = [{
-        value: "English",
-        key: "en",
-        disabled : false
-    },
-    {
-        value: "हिन्दी",
-        key: "hi",
-        disabled : false
+  const [selectedLanguageM, setSelectedLanguageM] = useState({});
+  const languages = [{
+    value: "English",
+    key: "en",
+    disabled: false
+  },
+  {
+    value: "हिन्दी",
+    key: "hi",
+    disabled: false
 
-    },
-    {
-        value: "বাংলা" ,
-        key: "ba",
-        disabled : true 
+  },
+  {
+    value: "ଓଡ଼ିଆ",
+    key: "od",
+    disabled: false
 
-    },
-    {
-        value: "ଓଡ଼ିଆ",
-        key: "od",
-        disabled : true 
+  },
+  {
+    value: "বাংলা",
+    key: "ba",
+    disabled: true
 
-    },
-    {
-        value: "ગુજરાતી",
-        key: "gu",
-        disabled : true 
+  },
+  {
+    value: "ગુજરાતી",
+    key: "gu",
+    disabled: true
 
-    },
-    {
-        value: "मराठी",
-        key: "ma",
-        disabled : true 
+  },
+  {
+    value: "मराठी",
+    key: "ma",
+    disabled: true
 
-    },
-    {
-        value: "தமிழ்",
-        key: "ta",
-        disabled : true 
+  },
+  {
+    value: "தமிழ்",
+    key: "ta",
+    disabled: true
 
-    },
-    {
-        value: "कोंकणी",
-        key: "ko",
-        disabled : true 
+  },
+  {
+    value: "कोंकणी",
+    key: "ko",
+    disabled: true
 
-    }
-    ];
+  }
+  ];
 
   const [showModal, setShowModal] = useState(false);
 
