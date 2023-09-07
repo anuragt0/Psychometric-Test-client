@@ -552,6 +552,7 @@
       "noTestTaken": "You have not given the test yet!",
       "resultsDownloaded": "Test results downloaded!",
       "pleaseWait": "Please wait...",
+      "inCompleteTest":"You have not completed the test yet!",
       "resultDownloaded": "Result Downloaded"
     }
   }

@@ -130,7 +130,7 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
         }
         console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
         if(!response1.userDoc.testResponse || response1.userDoc.testResponse.length!==26){
-            toast.error(`You have not completed the test yet!`);
+            toast.error(t('toast.inCompleteTest'));
             navigate("/test/instructions");
             return;
         }
