@@ -1,9 +1,9 @@
 // LanguageSelectorModal.js
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import './LanguageSelectorModal.css'; // Import your CSS file
 import { useLanguage } from '../../context/LanguageContext' ;
-import i18next from 'i18next';
+import i18n from 'i18next';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
 
@@ -11,10 +11,14 @@ import { useState } from 'react';
 const LanguageSelectorModal = ({ languages, onSelect }) => {
 
   const { t } = useTranslation("translation", { keyPrefix: 'home' });
+  
+  useEffect(()=>{
+    let currentLang = selectedLanguage ;
+    localStorage.setItem('lang' , currentLang);
+    i18n.changeLanguage(currentLang);
+  },[]);
 
-
- 
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const { selectedLanguage , setSelectedLanguage , resetLanguage } = useLanguage();
   const handleLanguageClick = (language_key) => {
     onSelect(language_key);
     setSelectedLanguage(language_key);

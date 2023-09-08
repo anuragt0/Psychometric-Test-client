@@ -4,13 +4,13 @@ import { server_origin } from "../../utilities/constants";
 import { useNavigate } from 'react-router-dom';
 
 import { FiDownload, FiBarChart2 } from 'react-icons/fi'; // Import the FiDownload and FiBarChart2 icons from react-icons
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { SyncLoader } from 'react-spinners'; // Import the ClipLoader from "react-spinners"
 import { motion } from 'framer-motion'
 import Graph from "./charts/Graph";
 import PieChart from "./charts/PieChart";
 import RadialBarChartComponent from './charts/RadialBarChart';
-import { Footer } from "../neha/Footer";
+// import { Footer } from "../neha/Footer";
 import "./result.css"
 
 //for Pdf downloadind Functionality
@@ -77,7 +77,7 @@ const radial_uri = 'radialBar.text_content'  ;
 
 //t(pie_uri ) -> only one paragraph
 
-//! text guideline for designer --
+//* text guideline for designer --
 // graph --> 1 . content == t(graph_uri + '.description')  ***its just a String
 // console.log(t(graph_uri + '.description'));
 //           2.  quailties == t(graph_uri + '.qualities')  ***use .map because  its an array with exactly five Qualities in it 
@@ -121,16 +121,16 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
             },
         });
         let response1 = await response.json();
-        console.log("response1asdfasdfasd: ", response1);
+        // console.log("response1asdfasdfasd: ", response1);
 
         if (response1.success === false) {
             toast.error(t('toast.errorFetchResult'));
             navigate("/login");
             return;
         }
-        console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
+        // console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
         if(!response1.userDoc.testResponse || response1.userDoc.testResponse.length!==26){
-            toast.error(`You have not completed the test yet!`);
+            toast.error(t('toast.inCompleteTest'));
             navigate("/test/instructions");
             return;
         }
