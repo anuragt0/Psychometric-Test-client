@@ -4,13 +4,13 @@ import { server_origin } from "../../utilities/constants";
 import { useNavigate } from 'react-router-dom';
 
 import { FiDownload, FiBarChart2 } from 'react-icons/fi'; // Import the FiDownload and FiBarChart2 icons from react-icons
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { SyncLoader } from 'react-spinners'; // Import the ClipLoader from "react-spinners"
 import { motion } from 'framer-motion'
 import Graph from "./charts/Graph";
 import PieChart from "./charts/PieChart";
 import RadialBarChartComponent from './charts/RadialBarChart';
-import { Footer } from "../neha/Footer";
+// import { Footer } from "../neha/Footer";
 import "./result.css"
 
 //for Pdf downloadind Functionality

@@ -5,6 +5,8 @@ import {initReactI18next } from "react-i18next";
 import tEn from '../locales/en/translation.json';
 import tHi from '../locales/hi/translation.json';
 import tOd from '../locales/od/translation.json';
+import tMa from '../locales/ma/translation.json';
+
 
 import tGu from '../locales/gu/translation.json';
 
@@ -24,6 +26,9 @@ i18n
       },
       od: {
         translation: tOd
+      },
+      ma: {
+        translation: tMa
       },
       gu: {
         translation: tGu
