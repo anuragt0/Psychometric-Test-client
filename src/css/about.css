@@ -1,0 +1,241 @@
+.about{
+    height: 350vh;
+    box-sizing: border-box;
+    background-color: white;
+}
+.page1{
+    height: 100vh;
+    background-image: url("../images/aboutBg.svg");
+    display: flex;
+    position: relative;
+}
+.extra{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+    background: linear-gradient(to right, black, #45a110);
+}
+.we-are{
+    margin-top: 20%;
+    margin-left: 44%;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 50px;
+    color: white;
+}
+.msg-about{
+    color: black;
+    font-size: 45px;
+    padding: 2%;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-weight: 600;
+}
+.page1 h1{
+    margin-top: 25%;
+    margin-left: 25%;
+    position: absolute;
+    font-size: 100px;
+    font-weight: bolder;
+    color: white;
+}
+
+.page1 .Greenbox{
+    height: 50%;
+    background-color: #45a110;
+    opacity: 0.9;
+    width: 35%;
+    margin-top: 38%;
+    margin-left: 5%;
+    position: absolute;
+}
+
+/*---------PAGE2-----------------*/
+.page2{
+    height: 90vh;
+    background-color: white;
+    display: flex;
+}
+.page2 .square1{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 35deg;
+    margin-top: 8%;
+    margin-left: 80%;
+    position: absolute;
+}
+.page2 .square2{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 80deg;
+    margin-top: 8%;
+    margin-left: 80%;
+    position: absolute;
+}
+.page2 .square2 h5{
+    margin-left: 2%;
+    font-weight: bold;
+    margin-top: 20%;
+    rotate: -80deg;
+}
+.page2 .about-box{
+    height: 50%;
+    width: 80%;
+    margin-top: 16%;
+    margin-left: 1%;
+    position: relative;
+    display: flex;
+    /* background-color: red; */
+}
+.page2 .about-box .about-img{
+    height: 100%;
+    width: 40%;
+    /* background-color: navy; */
+}
+.page2 .about-box .about-cont{
+    height: 100%;
+    width: 60%;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.page2 .about-box .about-cont p{
+    padding: 5%;
+    padding-left: 10%;
+    font-size: 20px;
+    text-align: justify;
+    color: black;
+}
+
+/*----------------PAGE3------------------- */
+.page3{
+    height: 80vh;
+    /* background-color: red; */
+}
+.extra2{
+    position: absolute;
+    background-color: #45a110;
+    height: 80%;
+    width: 100%;
+    opacity: 0.5;
+}
+.page3 .square1{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 35deg;
+    margin-top: 3%;
+    margin-left: 10%;
+    position: absolute;
+}
+.page3 .square2{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 80deg;
+    margin-top: 3%;
+    margin-left: 10%;
+    position: absolute;
+}
+.page3 .square2 h5{
+    margin-left: 2%;
+    font-weight: bold;
+    margin-top: 25%;
+    /* color: red; */
+    rotate: -80deg;
+    text-align: center;
+}
+.page3 .about-box{
+    height: 50%;
+    width: 80%;
+    margin-top: 12%;
+    margin-left: 14.5%;
+    position: absolute;
+    /* position: relative; */
+    display: flex;
+    /* background-color: red; */
+}
+.page3 .about-box .about-img{
+    height: 100%;
+    width: 40%;
+    /* background-color: red; */
+}
+.page3 .about-box .about-cont{
+    height: 100%;
+    width: 60%;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* background-color: white; */
+}
+.page3 .about-box .about-cont p{
+    padding: 5%;
+    padding-left: 10%;
+    font-size: 20px;
+    text-align: justify;
+    color: black;
+}
+
+
+/*--------PAGE4---------------------*/
+.page4{
+    height: 80vh;
+    background-color: white;
+    display: flex;
+}
+.page4 .square1{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 35deg;
+    margin-top: 5%;
+    margin-left: 80%;
+    position: absolute;
+}
+.page4 .square2{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    rotate: 80deg;
+    margin-top: 5%;
+    margin-left: 80%;
+    position: absolute;
+}
+.page4 .square2 h5{
+    margin-left: 2%;
+    font-weight: bold;
+    margin-top: 20%;
+    rotate: -80deg;
+    text-align: center;
+}
+.page4 .about-box{
+    height: 60%;
+    width: 80%;
+    margin-top: 13%;
+    margin-left: 1%;
+    position: relative;
+    display: flex;
+    /* background-color: red; */
+}
+.page4 .about-box .about-img{
+    height: 100%;
+    width: 40%;
+    /* background-color: navy; */
+}
+.page4 .about-box .about-cont{
+    height: 100%;
+    width: 60%;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; 
+}
+.page4 .about-box .about-cont p{
+    padding: 5%;
+    padding-left: 10%;
+    font-size: 20px;
+    text-align: justify;
+    color: black;
+}

@@ -121,14 +121,14 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
             },
         });
         let response1 = await response.json();
-        console.log("response1asdfasdfasd: ", response1);
+        // console.log("response1asdfasdfasd: ", response1);
 
         if (response1.success === false) {
             toast.error(t('toast.errorFetchResult'));
             navigate("/login");
             return;
         }
-        console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
+        // console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
         if(!response1.userDoc.testResponse || response1.userDoc.testResponse.length!==26){
             toast.error(t('toast.inCompleteTest'));
             navigate("/test/instructions");
