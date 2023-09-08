@@ -116,7 +116,7 @@ const Navbar = () => {
       <div className={`${css.navDisplay}`}>
         <Link to="/" style={{ marginRight: "1rem"}}>
           <img src={logo} alt="yi-logo" style={{
-            "width": "8rem",
+            "width": "3rem",
             "marginRight": "2%"
           }} />
 
