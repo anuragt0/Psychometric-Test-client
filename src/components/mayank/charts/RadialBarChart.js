@@ -1,7 +1,7 @@
 import React , {useEffect} from 'react';
 import { RadialBarChart, RadialBar, Legend } from 'recharts';
 
-import i18n, { changeLanguage } from "i18next";
+import i18n from "i18next";
 import { useTranslation } from 'react-i18next';
 
 

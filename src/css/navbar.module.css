@@ -10,17 +10,7 @@
   margin-right: 2%;
 }
 
-/* .navDisplay{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  } */
 
-
-/* .hamStyle{
-    margin-left: 200px;
-    margin-top: -2px;
-  } */
 
 .languageContainer {
   display: flex;
@@ -91,6 +81,9 @@
 
 @media (max-width: 576px) {
   .outerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.5rem 2rem;
   }
 
@@ -102,15 +95,24 @@
 
   .navDisplay {
     display: flex;
+    /* flex-basis: 200px; */
     justify-content: space-between;
+    flex-grow: 2; 
     align-items: center;
   }
 
 
   .hamStyle {
-    margin-left: 200px;
+    /* margin-left: 150px; */
     margin-top: -2px;
   }
+  .hamStyle:hover{
+    background:#fff !important ;
+  }
+
+  /* .toggler{
+    margin-left: 200px;
+  } */
 
 
 }

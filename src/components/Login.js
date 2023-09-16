@@ -123,7 +123,7 @@ const Login = () => {
         const appVerifier = window.recaptchaVerifier;
 
         const formatPh = "+91" + mobileNumber;
-        console.log("formatPh: ", formatPh);
+        // console.log("formatPh: ", formatPh);
 
         signInWithPhoneNumber(auth, formatPh, appVerifier)
             .then((confirmationResult) => {

@@ -7,8 +7,8 @@
     "Analytics": "Analytics",
     "Logout": "Logout",
     "Login": "Login",
-    "toast":{
-      "loggedOutToast":"Logged out successfully"
+    "toast": {
+      "loggedOutToast": "Logged out successfully"
     }
   },
   "footer": {
@@ -57,7 +57,7 @@
     "textCongrat": "You have successfully submitted the test.",
     "pleaseLogin": "PLEASE LOGIN OR REGISTER TO VIEW YOUR RESULT..",
     "viewResult": "Click on below button to view your report",
-    "login_btn": "login",
+    "login_btn": "Login",
     "signUp_btn": "Register",
     "viewResult_btn": "View Report",
     "toast": {
@@ -120,9 +120,9 @@
       "capthchaExpiredToast": "Captcha expired. Refresh the page and try again later",
       "otpExpired": "OTP has expired. Please request a new OTP.",
       "otpInvalid": "Invalid OTP",
-      "enterName":"Please enter name to register",
-      "atleast5CharPass":"Password must be of atleast 5 characters",
-      "mobileNo_already_register" : "This number is already registered, please login to continue"
+      "enterName": "Please enter name to register",
+      "atleast5CharPass": "Password must be of atleast 5 characters",
+      "mobileNo_already_register": "This number is already registered, please login to continue"
     },
     "enterPhone": "Please enter your mobile number to continue",
     "enterPasswordToLogin": "Please enter your password to continue",
@@ -421,13 +421,13 @@
       "msg2B": "keep doing... ",
       "msg3A": "Fantastic progress! You're 50% done",
       "msg3B": "keep it up!",
-      "wellcome_75per": "Well Done! You have completed 75% of the quiz",
+      "wellcome_75per": "Well Done! You have completed more than 75% of the quiz",
       "justFinish": "You're about to finish..."
     }
   },
   "result": {
     "main": {
-      "main_heading1": "Psychometric Test results",
+      "main_heading1": "Psychometric Test Results",
       "download": "Download Result",
       "text_heading": "Psychometric Test  Results",
       "text1": "Congratulations! Here are the results of your psychometric test taken on",
@@ -552,8 +552,18 @@
       "noTestTaken": "You have not given the test yet!",
       "resultsDownloaded": "Test results downloaded!",
       "pleaseWait": "Please wait...",
-      "inCompleteTest":"You have not completed the test yet!",
+      "inCompleteTest": "You have not completed the test yet!",
       "resultDownloaded": "Result Downloaded"
     }
+  },
+  "about": {
+    "weAre": "We Are",
+    "udyamUplift": "UDYAM UPLIFT",
+    "aboutWord": "ABOUT",
+    "discoverComplianceMindset": "Discover your compliance mindset and receive personalized\nstrategies to overcome barriers and achieve success. Our\ncomprehensive test and insightful PDF report will empower you to\nreach new heights in your entrepreneurial journey. Reduce drop-out\nrates and unlock your true potential with Compliance Self Help Test.",
+    "aboutWEP": "ABOUT WEP",
+    "WEPNetworkPartners": "WEP has a strong network of partners who provide\nsupport in various areas, including community growth,\ncontent creation, platform development, and outreach\nprograms and events. With the help of these partners,\nWEP aims to create a robust entrepreneurship\necosystem for women entrepreneurs.",
+    "partnerWith": "PARTNER WITH",
+    "caxpertDescription": "CAXPERT is an accounting start-up focussed on shifting\nthe book-keeping and tax filing needs of individual.\nfocussed on shifting the book-keeping and tax filing\nneeds of individual. focussed on shifting the book-\nkeeping and tax filing needs of individual."
   }
 }

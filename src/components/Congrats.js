@@ -81,11 +81,11 @@ useEffect(()=>{
   const { width, height } = useWindowSize()
 
   return (
-    <>
+    <div className="congrats">
       <Confetti
          width={window.innerWidth}
          height={window.innerHeight}
-         numberOfPieces={600}
+         numberOfPieces={300}
         //  recycle={false}
  />
 
@@ -114,7 +114,7 @@ useEffect(()=>{
 
       }
 
-    </>
+    </div>
   )
 }
 

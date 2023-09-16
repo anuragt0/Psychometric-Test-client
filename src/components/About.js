@@ -1,108 +1,105 @@
-import React from 'react';
-import '../css/about.css';
-import aboutImg from '../images/about-img.svg';
+import React ,{ useEffect }from "react";
+
+import i18n from "i18next";
+import { useTranslation } from 'react-i18next';
+
+import aboutImg from '../images/about-img.svg'
 import wepLogo from '../images/wep-logo.svg';
 import caXpert from '../images/caXpert.svg';
+import aboutBg from '../images/aboutBg.png';
+import "../css/about.css";
 
- function About() {
+const AboutPage = () => {
+
+  const { t } = useTranslation("translation", { keyPrefix: 'about' });
+
+  useEffect(() => {
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+  }, []);
+
   return (
-
-    <div className="about">
-
-       <div className="page1">
-       <div className="extra"></div>
-        <h3 className="we-are">WE ARE</h3>
-        <h1>UDYAM UPLIFT</h1>
-        
-          <div className="Greenbox">
-            <h3 className="msg-about">Uncover the<br></br> Path to Success <br></br>with<br></br> Personalized<br></br> Compliance<br></br> Solutions.</h3>
-          </div>
-       </div>
-       
-      
-       <div className="page2">
-        <div className="square1">
-            
+    <div className="u-about-page-outer-div">
+      <div className="u-about-page-landing-div">
+        <div className="u-about-page-landing-div-left">
+          <p className="u-about-page-landing-slogan">{t('weAre')}<br></br> {t('udyamUplift')} </p>
+          <p className="u-about-page-landing-about">Do not let psychological barriers hold you back.<br></br>
+                                                    Take the Compliance Self Help Test and gain personalized <br></br>
+                                                    insights to overcome obstacles and excel in your business ventures.</p>
         </div>
-        <div className="square2">
-            <h5>ABOUT</h5>
+        <div className="u-about-page-landing-div-right">
+          <img
+            src={aboutBg}
+            alt=""
+            className="u-about-page-landing-slogan-bg"
+          />
+          <div className="bg"></div>
         </div>
-        <div className="about-box">
-            <div className="about-img">
-                <img src={aboutImg} alt="img" style={{height:"100%", width:"100%", marginLeft:"10%"}}></img>
-            </div>
-            <div className="about-cont">
-            
-                <p>
-                Discover your compliance mindset and receive<br></br>
-                personalized strategies to overcome barriers<br></br>
-                and achieve success. Our comprehensive test<br></br> 
-                and insightful PDF report will empower you<br></br> 
-                to reach new heights in your entrepreneurial <br></br>
-                journey. Reduce drop-out rates and<br></br> 
-                unlock your true potential with Compliance<br></br> 
-                Self Help Test.<br></br>
-                </p>
-            </div>
+      </div>
+      <div>
+      </div>
+      {/* 1 hero */}
+      <div
+        className="u-about-page-landing-hero"
+        style={{ backgroundColor: "#E5E2D3" }}
+      >
+        <div className="u-about-page-landing-hero-left">
+          <p className="u-about-page-landing-hero-heading">{t('aboutWord')}</p>
+          <p className="u-about-page-landing-hero-subheading">
+            {t('discoverComplianceMindset')}
+          </p>
         </div>
-       </div>
-
-       <div className="page3">
-        <div className="extra2"></div>
-         <div className="square1">
-            
-         </div>
-         <div className="square2">
-                <h5>ABOUT<br></br> WEP</h5>
-         </div>
-         <div className="about-box">
-            
-            <div className="about-cont">
-                <p>
-                Discover your compliance mindset and receive<br></br>
-                personalized strategies to overcome barriers<br></br>
-                and achieve success. Our comprehensive test<br></br> 
-                and insightful PDF report will empower you<br></br> 
-                to reach new heights in your entrepreneurial <br></br>
-                journey. Reduce drop-out rates and<br></br> 
-                unlock your true potential with Compliance<br></br> 
-                Self Help Test.<br></br>
-                </p>
-            </div>
-            <div className="about-img">
-                <img src={wepLogo} alt="img" style={{height:"100%", width:"100%", marginLeft:"10%"}}></img>
-            </div>
+        <div className="u-about-page-landing-hero-right">
+          <img
+            src={aboutImg}
+            alt="about-1"
+            className="u-about-page-hero-img img-1"
+          />
         </div>
-       </div>
-
-       <div className="page4">
-       <div className="square1">
-            
-            </div>
-            <div className="square2">
-                <h5>PARTNER<br></br>WITH</h5>
-            </div>
-            <div className="about-box">
-                <div className="about-img">
-                    <img src={caXpert} alt="img" style={{height:"100%", width:"85%", marginLeft:"10%"}}></img>
-                </div>
-                <div className="about-cont">
-                    <p>
-                    Discover your compliance mindset and receive<br></br>
-                    personalized strategies to overcome barriers<br></br>
-                    and achieve success. Our comprehensive test<br></br> 
-                    and insightful PDF report will empower you<br></br> 
-                    to reach new heights in your entrepreneurial <br></br>
-                    journey. Reduce drop-out rates and<br></br> 
-                    unlock your true potential with Compliance<br></br> 
-                    Self Help Test.<br></br>
-                    </p>
-                </div>
-            </div>
-       </div>
-
+      </div>
+      {/* 2 hero */}
+      <div
+        className="u-about-page-landing-hero"
+        style={{ backgroundColor: "#71BF44" }}
+      >
+        <div className="u-about-page-hero-right">
+          <img
+            src={wepLogo}
+            alt="about-1"
+            className="u-about-page-hero-img img-2"
+          />
+        </div>
+        <div className="u-about-page-landing-hero-left">
+          <p className="u-about-page-landing-hero-heading">{t('aboutWEP')}</p>
+          <p className="u-about-page-landing-hero-subheading">
+            {t('WEPNetworkPartners')}
+          </p>
+        </div>
+      </div>
+      {/* 3 hero */}
+      <div
+        className="u-about-page-landing-hero"
+        style={{ backgroundColor: "#E5E2D3" }}
+      >
+        <div className="u-about-page-landing-hero-left">
+          <p className="u-about-page-landing-hero-heading">
+            {t('partnerWith')}
+          </p>
+          <p className="u-about-page-landing-hero-subheading">
+            {t('caxpertDescription')}
+          </p>
+        </div>
+        <div className="u-about-page-hero-right">
+          <img
+            src={caXpert}
+            alt="about-1"
+            className="u-about-page-hero-img img-1"
+          />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About;
+export default AboutPage;

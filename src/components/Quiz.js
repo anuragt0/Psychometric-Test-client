@@ -28,10 +28,9 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import the CSS
 
 
 
-
+ 
 
 function Quiz() {
-    window.scrollTo(0, 0);
 
     const { t } = useTranslation("translation", { keyPrefix: 'quiz' });
     const { userTestResponses, setUserTestResponses } = useLanguage();
@@ -45,7 +44,6 @@ function Quiz() {
         //   console.log(currentLang);
         //! Storing Question Array According to the language in LocalStorage
         const questions1 = t('question', { returnObjects: true });
-        console.log(questions1);
         setQuestions(questions1);
         // setLoading(false);
 
@@ -284,17 +282,18 @@ function Quiz() {
   
 
 
-    const imageArray = [require("../images/1.jpg"), require("../images/2.png"), require("../images/3.png")
-        , require("../images/4.png"), require("../images/5.jpg"), require("../images/6.jpg"), require("../images/7.png")
+    const imageArray = [require("../images/1.png"), require("../images/2.png"), require("../images/3.png")
+        , require("../images/4.png"), require("../images/5.png"), require("../images/6.png"), require("../images/7.png")
         , require("../images/8.png"), require("../images/9.png"), require("../images/10.png"), require("../images/11.png")
         , require("../images/12.png"), require("../images/13.png"), require("../images/14.png"), require("../images/15.png")
-        , require("../images/16.jpg"), require("../images/17.png"), require("../images/18.jpg"), require("../images/19.png")
-        , require("../images/20.jpg"), require("../images/21.png"), require("../images/22.png"), require("../images/23.png")
+        , require("../images/16.png"), require("../images/17.png"), require("../images/18.png"), require("../images/19.png")
+        , require("../images/20.png"), require("../images/21.png"), require("../images/22.png"), require("../images/23.png")
         , require("../images/24.png"), require("../images/25.png"), require("../images/26.png")];
 
         const showMsg = progress < 26 ? true : false;
         const showMsg2 = (progress > 25 && progress < 50) ? true : false;
-        const showMsg3 = (progress >=50 && progress <76) ? true : false;
+        const showMsg3 = (progress ==50 ) ? true : false;
+        const showMsg31 = (progress >50 && progress <76) ? true : false;
         const showMsg4 = (progress >=76 && progress <100) ? true : false;
         const showMsg5 = (progress ===100) ? true : false;
    
@@ -306,7 +305,7 @@ function Quiz() {
                 progress={progress2}
                 height={4}
                 shadow={false}
-                style={{ position: "absolute", top: "67px" }}
+                style={{ position: "absolute", top: "75px" }}
                 // onLoaderFinished={() => setProgress(0)}
             />
 
@@ -382,6 +381,19 @@ function Quiz() {
                     <img src={image4} className="startImage"></img>
                     </div>
                     )}
+                    {showMsg31 && (
+                    <div className="msg3" >
+                       <div className="con">
+                       {/* <Confetti
+                           width={330}
+                           height={180}
+                           numberOfPieces={100}
+                        /> */}
+                        </div> 
+                    <p className="animate-charcter">{t('progressBar.msg1A')}<br></br>{t('progressBar.msg1B')}</p>
+                    <img src={image2} className="startImage"></img>
+                    </div>
+                    )}
 
                     {showMsg4 && (
                     <div className="msg3">
@@ -397,11 +409,11 @@ function Quiz() {
                     </div>
                     )}
                     
-                    <div className="box">
+                    {/* <div className="box">
                     
-                    </div>
+                    </div> */}
                     
-                    <img src={imageArray[currentQuestionIndex]} alt="img" />
+                    <img src={imageArray[currentQuestionIndex]} alt="img"/>
                 </div>
 
             </> : <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -413,3 +425,30 @@ function Quiz() {
 }
 
 export default Quiz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

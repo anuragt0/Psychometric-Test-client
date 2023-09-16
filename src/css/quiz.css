@@ -7,7 +7,7 @@
 .bodyy {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #E5E2D3;
   height: 100vh;
   /* font-family: Arial, sans-serif; */
   display: flex;
@@ -91,7 +91,7 @@
 .submit-button {
   padding: 10px;
   border: none;
-  background-color: rgb(21, 95, 16);
+  background-color: #4ba94b;
   color: white;
   border-radius: 5px;
   box-shadow: 1px 1px 4px 1px #333;
@@ -105,13 +105,13 @@
 
 #next-button:hover,
 #prev-button:hover {
-  background-color: rgb(13, 67, 10);
+  background-color: #38a038;
 }
 
 .submit-button:hover {
-  background-color: rgb(8, 50, 5);
+  background-color: #389738;
   color: white;
-  border: rgb(8, 50, 5);
+  border: #4ba94b;
 }
 
 #next-button,
@@ -296,7 +296,7 @@ margin-top: 5%;
         padding-top: 5%;
       }
       .question{
-        margin-top: 65%;
+        margin-top: 70%;
       }
       
       .buttons{
@@ -337,7 +337,7 @@ margin-top: 5%;
       .msg4 .startImage,
       .msg5 .startImage{
        position: absolute;
-       margin-top: 20%;
+       margin-top: 22%;
       }
      
     }

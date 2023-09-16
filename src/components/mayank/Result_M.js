@@ -2,6 +2,7 @@
 import React ,{ useEffect, useState , useRef } from "react";
 import { server_origin } from "../../utilities/constants";
 import { useNavigate } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
 
 import { FiDownload, FiBarChart2 } from 'react-icons/fi'; // Import the FiDownload and FiBarChart2 icons from react-icons
 import { toast } from "react-hot-toast";
@@ -88,7 +89,12 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
 //?  text Content ends here  ..................................................................
 
 
-
+// REACT TO PDF
+const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: `your-name-udyam-uplift`
+  });
 
 
 
@@ -137,14 +143,14 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
         setResponses(response1.userDoc.testResponse);
         setTestDate(formatDateWithCustomTime(response1.userDoc.lastTestDate));
         setUserName(response1.userDoc.name);
-        console.log(formatDateWithCustomTime(response1.userDoc.lastTestDate));
+        // console.log(formatDateWithCustomTime(response1.userDoc.lastTestDate));
         setLoading(false);
     }
 
     //* Download Functionallity Start*//
     const pdfRef =useRef() ;
     const handleDownloadClick = () => {
-        console.log ("Download Started...");
+        // console.log ("Download Started...");
         setDownloading(true);
         const input = pdfRef.current ;
         html2canvas(input).then((canvas) => {
@@ -198,7 +204,7 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
 
 
         {responses.length !== 0 && !loading ? (
-          <div className="result-page" ref={pdfRef}>
+          <div className="result-page" ref={componentRef}>
             <div className="header">
               <motion.h2 className="page-heading"
                 whileHover={{ scale: 1.025 }} transition={{ type: 'spring', stiffness: 300 }}
@@ -280,16 +286,6 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
                 <p>{t(radial_uri+'.group_size_or_unanimity?.'+affectingFacttors[0])}</p>
               </div>
 
-{/*
-  
-  group_size_or_unanimity?
-  cohesion_or_status_of_others?
-  Reciprocity?
-  Commitment_and_Consistency?
-  Scarcity?
-  Authority/_commands? 
- 
- */}
               <div className="subheading">
                 <motion.h4 whileHover={{ scale: 1.01 }} transition={{ type: 'spring', stiffness: 300 }}
                 style={{ color: "#d78c00" }}>
@@ -332,29 +328,14 @@ const qualities_arr = t(graph_uri+'.qualities',{returnObjects: true});
 
               
               
-              
-              {/* <p>
-                {t('radialBar.text_content')}
-              </p>
-              ... Add more content about the test results as needed ... */}
             </div>
-            <motion.div
-              whileHover={{ scale: 1.01 }} transition={{ type: 'spring', stiffness: 300 }}
-            // whileTap={{ scale: 0.9 }}
-            >
-              <button className="download-button" onClick={handleDownloadClick} disabled={downloading}>
-                <FiDownload className="download-icon" />
+              <button className="download-button" onClick={handlePrint} disabled={downloading}>
                 {downloading ? t('toast.pleaseWait') : t('main.download')}
               </button>
-            </motion.div>
-            {/* <button  className="download-button" onClick={handleDownloadClick} disabled={downloading}>
-                            <FiDownload className="download-icon" />
-                            {downloading? t('toast.pleaseWait'): t('main.download') } 
-                    </button> */}
           </div>
         ) : (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-            <SyncLoader size={30} color="#fb2576" />
+            <SyncLoader size={30} color="#3e950c" />
           </div>
         )}
 

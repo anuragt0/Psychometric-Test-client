@@ -1,7 +1,9 @@
 import React , {useEffect }from 'react';
 
-import i18n, { changeLanguage } from "i18next";
+import i18n from "i18next";
 import { useTranslation } from 'react-i18next';
+
+
 
 import { 
   PieChart, 
@@ -94,13 +96,13 @@ function PieChartCom ({responses , onPieData}) {
   return (
     <div style={{ textAlign: 'center' }}>
       <PieChart width={400} height={570}>
-        <Pie
+        <Pie 
           data={data}
           dataKey="value"
           isAnimationActive={true}
           cx={200} cy={220}
           startAngle={90} endAngle={-270}
-          outerRadius={195} innerRadius={75}
+          outerRadius={180} innerRadius={75}
           labelLine={false}
           label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
             const radius = innerRadius + (outerRadius - innerRadius) * 0.15;
@@ -108,7 +110,7 @@ function PieChartCom ({responses , onPieData}) {
             const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
 
             return (
-              <text
+              <text 
                 x={x} y={y} fill="#000000"
                 textAnchor={x > cx ? 'start' : 'end'}
                 dominantBaseline="central"

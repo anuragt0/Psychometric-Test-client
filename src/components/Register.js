@@ -141,7 +141,7 @@ const RegistrationPage = () => {
             .catch((error) => {
                 // toast.error("Please refresh the page and try again!");
                 setOtpError(`Some error occured Please try again later. ${error.message}`)
-                console.log("error1: ", error.message);
+                // console.log("error1: ", error.message);
                 // if(!otpError)
                 // toast(error.message);
                 // toast.error("Some error occured.");
@@ -161,7 +161,6 @@ const RegistrationPage = () => {
                 setOtpVerified(true);
                 setLoading(false);
                 toast.success(t("toast.otpVerifiedToast"))
-                console.log("HERHERHEHREH");
                 setComponentState(3);
                 // OTP is verified - Show Enter Password create component
             })
@@ -239,7 +238,6 @@ const RegistrationPage = () => {
             body: JSON.stringify(updatedCreds)
         });
         let response1 = await response.json();
-        console.log("Register response: ", response1);
         if (response1.success == true) {
             localStorage.setItem("token", response1.token);
             toast.success(t('toast.registered'));

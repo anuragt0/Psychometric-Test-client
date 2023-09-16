@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     margin : 10% 0;
+    z-index: 999;
   }
-  
   .congratulations-content {
     text-align: center;
     margin : 10px;

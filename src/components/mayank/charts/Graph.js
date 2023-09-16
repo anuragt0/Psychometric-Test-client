@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 
-import i18n, { changeLanguage } from "i18next";
+import i18n from "i18next";
 import { useTranslation } from 'react-i18next';
+import "./graph.css";
 
 
 import {
@@ -54,9 +55,16 @@ const Graph = ({ responses, onGraphData }) => {
 
   }, []);
 
+  // const data = [
+  //   { x: 3.00, y: 7.00, name: t('label1'), fill: '#be8440' },    // option C 
+  //   { x: 7.75, y: 9.00, name: t('label2'), fill: '#96b159' },    // option A 
+  //   { x: 7.00, y: 3.00, name: t('label3'), fill: '#2369b1' },    // option B
+  //   { x: 1.00, y: 1.00, name: t('label4'), fill: '#e52409' },    // option D
+  // ];
+
   const data = [
-    { x: 3.00, y: 7.00, name: t('label1'), fill: '#be8440' },    // option C 
-    { x: 7.75, y: 9.00, name: t('label2'), fill: '#96b159' },    // option A 
+    { x: 2.00, y: 7.50, name: t('label1'), fill: '#be8440' },    // option C 
+    { x: 7.50, y: 9.00, name: t('label2'), fill: '#96b159' },    // option A 
     { x: 7.00, y: 3.00, name: t('label3'), fill: '#2369b1' },    // option B
     { x: 1.00, y: 1.00, name: t('label4'), fill: '#e52409' },    // option D
   ];
@@ -77,76 +85,75 @@ const Graph = ({ responses, onGraphData }) => {
   // const maxOption =4 ;
 
   return (
+    <>
+      <ScatterChart  width={400} height={570} margin={{ top: 25, right: 10, bottom: 25, left: 5 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" />
+        <XAxis className="chart-label" type="number" dataKey="x" domain={[0, 10]} tickCount={6}>
+          <Label className="chart-label" value={t('Xaxis_label')} position="bottom" offset={-7} />
+        </XAxis>
+        <YAxis className="chart-label" type="number" dataKey="y" domain={[0, 10]} tickCount={11}>
+          <Label className="chart-label" value={t('Yaxis_label')} angle={-90} position="insideLeft bottom" offset={25} />
+        </YAxis>
+        <Scatter data={data} fill={data.fill}>
+          {data.map((point, index) => (
+            <ReferenceLine key={index} x={point.x} y={point.y} stroke="#ccc" strokeDasharray="3 3" />
 
-    <ScatterChart width={400} height={570} margin={{ top: 25, right: 10, bottom: 25, left: 5 }}>
-      <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" />
-      <XAxis type="number" dataKey="x" domain={[0, 10]} tickCount={6}>
-        <Label value={t('Xaxis_label')} position="bottom" offset={-7} />
-      </XAxis>
-      <YAxis type="number" dataKey="y" domain={[0, 10]} tickCount={11}>
-        <Label value={t('Yaxis_label')} angle={-90} position="insideLeft bottom" offset={25} />
-      </YAxis>
-      <Scatter data={data} fill={data.fill}>
-        {data.map((point, index) => (
-          <ReferenceLine key={index} x={point.x} y={point.y} stroke="#ccc" strokeDasharray="3 3" />
+          ))}
+          <LabelList className="chart-label"
+            dataKey="name"
+            position="right"
+          // style={{
+          //   fontWeight: 'bold',
+          //   letterSpacing: '-0.75px',
+          // }}
+          />
 
-        ))}
-        <LabelList
-          dataKey="name"
-          position="right"
-          style={{
-            fontSize: 12,
-            fontWeight: 'bold',
-            letterSpacing: '-0.75px',
-          }}
-        />
-
-      </Scatter>
-      <ReferenceLine y={5} stroke="#f8bb1e" strokeWidth={4} />
-      <ReferenceLine x={5} stroke="#6b7dab" strokeWidth={4} />
+        </Scatter>
+        <ReferenceLine className="reference-line" y={5} stroke="#f8bb1e" strokeWidth={4} />
+        <ReferenceLine className="reference-line" x={5} stroke="#6b7dab" strokeWidth={4} />
 
       //! for Single Quadrant
-      {/* Creating the rectangles with dotted border */}
+        {/* Creating the rectangles with dotted border */}
 
-      {maxOption === 1 ?
-        <ReferenceArea
-          x1={5 + 0.09} y1={5 + 0.09}
-          x2={10 - 0.09} y2={10 - 0.09}
-          stroke="dotted"
-          strokeOpacity={0.7}
-          fill="#6b7dab"
-          fillOpacity={0.3}
-        /> : <></>}
+        {maxOption === 1 ?
+          <ReferenceArea
+            x1={5 + 0.09} y1={5 + 0.09}
+            x2={10 - 0.09} y2={10 - 0.09}
+            stroke="dotted"
+            strokeOpacity={0.7}
+            fill="#6b7dab"
+            fillOpacity={0.3}
+          /> : <></>}
 
-      {maxOption === 2 ?
-        <ReferenceArea
-          x1={5 + 0.09} y1={0 + 0.09}
-          x2={10 - 0.09} y2={5 - 0.09}
-          stroke="dotted"
-          strokeOpacity={0.7}
-          fill="#6b7dab"
-          fillOpacity={0.3}
-        /> : <></>}
+        {maxOption === 2 ?
+          <ReferenceArea
+            x1={5 + 0.09} y1={0 + 0.09}
+            x2={10 - 0.09} y2={5 - 0.09}
+            stroke="dotted"
+            strokeOpacity={0.7}
+            fill="#6b7dab"
+            fillOpacity={0.3}
+          /> : <></>}
 
-      {maxOption === 3 ?
-        <ReferenceArea
-          x1={0 + 0.09} y1={5 + 0.09}
-          x2={5 - 0.09} y2={10 - 0.09}
-          stroke="dotted"
-          strokeOpacity={0.7}
-          fill="#6b7dab"
-          fillOpacity={0.3}
-        /> : <></>}
+        {maxOption === 3 ?
+          <ReferenceArea
+            x1={0 + 0.09} y1={5 + 0.09}
+            x2={5 - 0.09} y2={10 - 0.09}
+            stroke="dotted"
+            strokeOpacity={0.7}
+            fill="#6b7dab"
+            fillOpacity={0.3}
+          /> : <></>}
 
-      {maxOption === 4 ?
-        <ReferenceArea
-          x1={0 + 0.09} y1={0 + 0.09}
-          x2={5 - 0.09} y2={5 - 0.09}
-          stroke="dotted"
-          strokeOpacity={0.7}
-          fill="#6b7dab"
-          fillOpacity={0.3}
-        /> : <></>}
+        {maxOption === 4 ?
+          <ReferenceArea
+            x1={0 + 0.09} y1={0 + 0.09}
+            x2={5 - 0.09} y2={5 - 0.09}
+            stroke="dotted"
+            strokeOpacity={0.7}
+            fill="#6b7dab"
+            fillOpacity={0.3}
+          /> : <></>}
 
 
 
@@ -157,10 +164,10 @@ const Graph = ({ responses, onGraphData }) => {
 
         //! for all the quadrant
 
-      {/* Creating the rectangles with dotted border */}
+        {/* Creating the rectangles with dotted border */}
 
 
-      {/* <ReferenceArea
+        {/* <ReferenceArea
         x1={0+0.09} y1={5+0.09}
         x2={5-0.09} y2={10-0.09}
         stroke="dotted"
@@ -200,8 +207,8 @@ const Graph = ({ responses, onGraphData }) => {
 
 
 
-    </ScatterChart>
-
+      </ScatterChart>
+    </>
 
   );
 };

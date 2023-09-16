@@ -1,114 +1,137 @@
-
 .result-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.page-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.icon-bar-chart {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  color: #007BFF;
+  /* Customize the icon color */
+}
+
+
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  /* background-color: #007BFF; */
+
+  background: linear-gradient(180deg, #007BFF 0%, #0056b3 100%);
+  transition: background 0.2s ease;
+
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background: linear-gradient(180deg, #0056b3 0%, #007BFF 100%);
+}
+
+.download-button[disabled] {
+  background: linear-gradient(180deg, #019840 0%, #00ff5e98 100%);
+
+  /* Bright pink color for disabled buttons */
+  color: #ffffff;
+  /* White text for better visibility */
+  cursor: not-allowed;
+
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+
+.download-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+
+
+.chart-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart {
+  background-color: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  /* Add this line to center-align the text */
+
+}
+
+.chart h4.chart-subtitle {
+  margin-bottom: 1rem;
+  color: #666;
+  text-align: center;
+  /* Add this line to center-align the text */
+
+}
+
+.content-section {
+
+  max-width: 80%;
+  margin: 5% auto;
+}
+
+.content-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 2rem;
   }
   
-  .page-heading {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
   .icon-bar-chart {
     font-size: 2rem;
     margin-right: 0.5rem;
-    color: #007BFF; /* Customize the icon color */
   }
+}
 
-
-  
-  .download-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    /* background-color: #007BFF; */
-
-    background: linear-gradient(180deg, #007BFF 0%, #0056b3 100%);
-    transition: background 0.2s ease;
-
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .download-button:hover {
-    background: linear-gradient(180deg, #0056b3 0%, #007BFF 100%);    
-  }
-  
-  .download-button[disabled]{
-    background: linear-gradient(180deg, #019840 0%, #00ff5e98 100%);    
-    
-    /* Bright pink color for disabled buttons */
-    color: #ffffff;    /* White text for better visibility */
-    cursor: not-allowed;
-
-    transform: scale(0.9);
-    opacity: 0.8;
-  }
-
-
-  .download-icon {
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-
-  
-  .chart-section {
-    display : flex ; 
-    flex-direction : row  ;
-    justify-content : space-around ;
-    flex-flow : wrap ;
-
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .chart {
-    background-color: #f7f7f7;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chart h1 {
-    margin-bottom: 0.5rem;
+@media (max-width: 500px) {
+  .page-heading {
     font-size: 1.5rem;
-    color: #333;
-    text-align: center; /* Add this line to center-align the text */
-
+    letter-spacing: -0.8px;
   }
   
-  .chart h4.chart-subtitle {
-    margin-bottom: 1rem;
-    color: #666;
-    text-align: center; /* Add this line to center-align the text */
-
+  .icon-bar-chart {
+    font-size: 1.5rem;
+    margin-right: 0.15rem;
   }
-  
-  .content-section {
-    
-    max-width: 80%;
-    margin: 5% auto;
-  }
-  
-  .content-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #666;
-  }
-
-
-
-
-
-
- 
+}
