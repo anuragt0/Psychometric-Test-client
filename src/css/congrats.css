@@ -1,9 +1,11 @@
 /* CongratulationsPage.css */
 .congratulations-container {
     display: flex;
+    background-color: #E5E2D3;
+    height: 87vh;
     justify-content: center;
     align-items: center;
-    margin : 10% 0;
+    margin : 0% 0;
     z-index: 999;
   }
   .congratulations-content {

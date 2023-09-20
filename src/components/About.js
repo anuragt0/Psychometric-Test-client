@@ -42,7 +42,7 @@ const AboutPage = () => {
       {/* 1 hero */}
       <div
         className="u-about-page-landing-hero"
-        style={{ backgroundColor: "#E5E2D3" }}
+        style={{ backgroundColor: "white" }}
       >
         <div className="u-about-page-landing-hero-left">
           <p className="u-about-page-landing-hero-heading">{t('aboutWord')}</p>
@@ -61,7 +61,7 @@ const AboutPage = () => {
       {/* 2 hero */}
       <div
         className="u-about-page-landing-hero"
-        style={{ backgroundColor: "#71BF44" }}
+        style={{ backgroundColor: "white" }}
       >
         <div className="u-about-page-hero-right">
           <img
@@ -80,7 +80,7 @@ const AboutPage = () => {
       {/* 3 hero */}
       <div
         className="u-about-page-landing-hero"
-        style={{ backgroundColor: "#E5E2D3" }}
+        style={{ backgroundColor: "white" }}
       >
         <div className="u-about-page-landing-hero-left">
           <p className="u-about-page-landing-hero-heading">

@@ -2,13 +2,14 @@
 import i18n from "i18next";
 import {initReactI18next } from "react-i18next";
 
-import tEn from '../locales/en/translation.json';
-import tHi from '../locales/hi/translation.json';
-import tOd from '../locales/od/translation.json';
-import tMa from '../locales/ma/translation.json';
+import tEnglish from '../locales/english/translation.json';
+import tHindi from '../locales/hindi/translation.json';
+import tOdia from '../locales/odia/translation.json';
+import tMarathi from '../locales/marathi/translation.json';
+import tBangla from '../locales/bangla/translation.json';
 
 
-import tGu from '../locales/gu/translation.json';
+import tGujarati from '../locales/gujarati/translation.json';
 
 
 i18n
@@ -19,19 +20,22 @@ i18n
     // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
     resources: {
       en: {
-        translation: tEn
+        translation: tEnglish
       },
       hi: {
-        translation: tHi
+        translation: tHindi
       },
       od: {
-        translation: tOd
+        translation: tOdia
       },
       ma: {
-        translation: tMa
+        translation: tMarathi
+      },
+      ba: {
+        translation: tBangla
       },
       gu: {
-        translation: tGu
+        translation: tGujarati
       }
     },
     lng: "en", // if you're using a language detector, do not define the lng option

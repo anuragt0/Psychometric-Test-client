@@ -200,7 +200,7 @@ const Login = () => {
             return
         }
 
-        // Check if the mobile is already registered
+        // Check if the mobile is not registered
         const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
             method: 'POST',
             headers: {
@@ -348,7 +348,12 @@ const Login = () => {
             const token = response1.token;
             if(response1.success){
                 localStorage.setItem("token", token);
-                navigate("/test/result");
+                if(localStorage.getItem("testProgress")){
+                    navigate("/test/result");
+                }
+                else{
+                    navigate("/");
+                }
             }
             setLoading(false);
         }

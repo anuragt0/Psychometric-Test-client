@@ -228,7 +228,7 @@ const Navbar = () => {
                   <option className="nav-item active" value="hi">  हिन्दी  </option>
                   <option className="nav-item active" value="od">  ଓଡ଼ିଆ  </option>
                   <option className="nav-item active" value="ma">  मराठी  </option>
-                  <option className="nav-item active" value="ba" disabled>  বাংলা  </option>
+                  <option className="nav-item active" value="ba">  বাংলা  </option>
                   <option className="nav-item active" value="gu" disabled>  ગુજરાતી  </option>
                   <option className="nav-item active" value="ta" disabled> தமிழ்  </option>
                   <option className="nav-item active" value="ko" disabled>  कोंकणी  </option>

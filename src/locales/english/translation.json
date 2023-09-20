@@ -422,57 +422,67 @@
       "msg3A": "Fantastic progress! You're 50% done",
       "msg3B": "keep it up!",
       "wellcome_75per": "Well Done! You have completed more than 75% of the quiz",
-      "justFinish": "You're about to finish..."
+      "justFinish": "You're about to finish...",
+      "completed":"SUCCESSFULLY COMPLETED THE TEST!"
     }
   },
   "result": {
     "main": {
       "main_heading1": "Psychometric Test Results",
       "download": "Download Result",
-      "text_heading": "Psychometric Test  Results",
-      "text1": "Congratulations! Here are the results of your psychometric test taken on",
-      "text2": ". The test assessed your personality traits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your strengths and areas for development, helping you understand yourself better."
+      "congratulations": "Congratulations!",
+      "congo_text1": "You have successfully",
+      "congo_text2": "completed the Udyam Uplift Test",
+      "text1": "Here are the results of your psychometric test taken on",
+      "text2": ". The test assessed your personality \ntraits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your \nstrengths and areas for development, helping you understand yourself better.",
+      "person_text1":"YOU ARE AN ",
+      "person_text2":" PERSON",
+      "yourQualities":"YOUR QUALITIES"
     },
     "graph": {
       "text_content": {
         "Information_Driven": {
+          "name": "Information Driven",
           "description": "You are an Information driven person. You have a strong desire to go for what you think and believe is right. You tend to feel low social pressure but may feel somewhat  high compliance pressure . You have an inclination to find facts through your own efforts and may even go on to learn if you need clarity on a topic. You may not be affected by what others are doing if you are sure what you are doing is the correct way accomplish a task. You are not intimidated by society and do not regret rejecting someone's idea or even say a NO to favours offered to you if it does not feel right. If you get the right knowledge, you can utilise it very well to become an extremely compliant individual.",
           "qualities": [
-            "Information driven",
-            "Strong desire to do what is right",
-            "Low Social Pressure",
-            "High Compliance Pressure",
-            "OK to say NO if they fee it is right"
+            "Information \ndriven",
+            "Strong desire to \n do what is right",
+            "Low Social \n Pressure",
+            "High Compliance \n Pressure",
+            "OK to say NO if \n they feel it is right"
           ]
         },
         "Ideal_Normative": {
+          "name": "Ideal Normative",
           "description": "You are an Ideal Normative person. You have a strong desire for approval from society. You tend to feel high social pressure and high compliance pressure. You like to follow the path carved out by the society from past several years and hesitate to take a different road. When someone asks you for favours more than once, you have a difficulty saying the word NO even if you get uncomfortable. While you are an ideal citizen and want to be compliant at all costs, you must also be open to seek guidance/ counseling from any available sources rather than considering the society as right [point blank]",
           "qualities": [
             "Ideal Normative",
-            "strong desire for approval from society",
-            "High Social Pressure",
-            "High Compliance Pressure",
-            "Difficulty saying NO when others ask you for a favour"
+            "strong desire for\n approval from society",
+            "High Social \n Pressure",
+            "High Compliance \n Pressure",
+            "Difficulty saying NO \n when others ask you for a favour"
           ]
         },
         "Friendly_Follower": {
+          "name": "Friendly\nFollower",
           "description": "You are a Friendly Follower person. You have a strong desire to listen, learn and adapt from others because you are flexible and believe that there is always something you can learn from others. You may feel high Social pressure at times but  low compliance pressure. If given a chance, you like to improve yourself by learning from anyone who is willing to offer you the help. When someone asks you for a favour, you have a tendency to help them to make their life better if it is in your capacity. You are not  rigid and quickly learn/adopt better compliance habits.",
           "qualities": [
             "Friendly Follower",
-            "strong desire to listen and learn from others",
-            "High Social Pressure",
-            "Low Compliance Pressure",
-            "Somewhat uncomfortable saying NO"
+            "strong desire to \nlisten and learn from others",
+            "High Social \n Pressure",
+            "Low Compliance \n Pressure",
+            "Somewhat uncomfortable \n saying NO"
           ]
         },
         "Individualist_Rebellion": {
+          "name": "Individualist Rebellion",
           "description": "You are an Individualist Rebellion person. You have a very strong desire to stick to your individuality and protect it. You tend to feel low or no social as well as compliance pressure. You have an inclination to never let the majority wipe out your or some minority's point of view or opinion. You are not affected by what society may think of you and sometimes even take a contrarian approach in doing things. While it is okay to protect your individuality, it mmay not hurt so much to follow the someone where can help you be a better compliant person without putting the pressure to do all by yourself.",
           "qualities": [
-            "Individualist Rebellion",
-            "strong desire to stick to your individuality",
-            "Low Social Pressure",
-            "Low Compliance Pressure",
-            "Do not hesitate to say NO"
+            "Individualist \n Rebellion",
+            "strong desire to \nstick to your individuality",
+            "Low Social \n Pressure",
+            "Low Compliance \n Pressure",
+            "Do not hesitate \n to say NO"
           ]
         }
       },
@@ -489,7 +499,7 @@
     },
     "pie": {
       "heading": "PieChart Example",
-      "sub_heading": "Social Influence Breakdown",
+      "sub_heading": "SOCIAL INFLUENCE BREAKDOWN",
       "text_heading": "Pie Chart",
       "text_content": {
         "confirmity": "Confirmity is the lowest form of social pressure. Since you are most affected by confirmity social influence, you are sincere and get quickly affected by the social influences around you. You may even feel compelled to do things even if nobody is forcing them upon you.",
@@ -505,7 +515,7 @@
     },
     "radialBar": {
       "heading": "RadialBarChart Example",
-      "sub_heading": "Influence factor on decision making",
+      "sub_heading": "INFLUENCE FACTOR ON DECISION MAKING",
       "text_heading": "Radial Bar Chart",
       "text_content": {
         "group_size_or_unanimity?": {

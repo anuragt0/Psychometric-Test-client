@@ -30,28 +30,28 @@ function RadialBarChartComponent({ responses , onRadialData }) {
   const rawData = [
     {
       name: t('label1'),
-      score: ((8 - (responses[1-1]-1)*2) + (8 - (responses[2-1]-1)*2)) , 
+      score: ((8 - (responses[1-1]-1)*2) + (8 - (responses[2-1]-1)*2)) , fill: '#70855f'
     },
     {
       name: t('label2'),
-      score: ((8 - (responses[3-1]-1)*2) + (8 - (responses[4-1]-1)*2)), 
+      score: ((8 - (responses[3-1]-1)*2) + (8 - (responses[4-1]-1)*2)), fill: '#57674a'
     },
     {
       name: t('label3'),
-      score: ((8 - (responses[15-1]-1)*2) + (8 - (responses[16-1]-1)*2)), 
+      score: ((8 - (responses[15-1]-1)*2) + (8 - (responses[16-1]-1)*2)), fill: '#25501e'
     },
     {
       name: t('label4'),
-      score: ((8 - (responses[17-1]-1)*2) + (8 - (responses[18-1]-1)*2)), 
+      score: ((8 - (responses[17-1]-1)*2) + (8 - (responses[18-1]-1)*2)), fill: '#294826'
     },
     {
       name: t('label5'),
-      score: ((8 - (responses[21-1]-1)*2) + (8 - (responses[22-1]-1)*2)), 
+      score: ((8 - (responses[21-1]-1)*2) + (8 - (responses[22-1]-1)*2)), fill: '#30402e'
     },
     { name: t('label6'), 
-      score: ((8 - (responses[25-1]-1)*2) + (8 - (responses[26-1]-1)*2)),  },
+      score: ((8 - (responses[25-1]-1)*2) + (8 - (responses[26-1]-1)*2)), fill: '#789896' },
 
-    { name: 'Max', score: 18.2 }, // Maximum Possible  value
+    { name: 'Max', score: 18.2 ,fill: '#fdfbf1' }, // Maximum Possible  value
   ];
 
   useEffect(() => {
@@ -76,24 +76,33 @@ function RadialBarChartComponent({ responses , onRadialData }) {
     onRadialData(textCalcData);
   }, []);
 
-
-
-
+  // const sortedData = rawData;
   const sortedData = rawData.sort((a, b) => a.score - b.score);
 
-  const colorArray = [
-    { fill: '#213766' },
-    { fill: '#ff5286' },
-    { fill: '#753ba4' },
-    { fill: '#547835' },
-    { fill: '#d78c00' },
-    { fill: '#df6000' },
-    { fill: '#f7f7f7' },
-  ];
+  // const colorArray = [
+  //   { fill: '#213766' },
+  //   { fill: '#ff5286' },
+  //   { fill: '#753ba4' },
+  //   { fill: '#547835' },
+  //   { fill: '#d78c00' },
+  //   { fill: '#df6000' },
+  //   { fill: '#fdfbf1' },
+  // ];
 
-  sortedData.forEach((data, index) => {
-    sortedData[index].fill = colorArray[index].fill;
-  });
+  // const colorArray = [
+  //   { fill: '#70855f' },
+  //   { fill: '#57674a' },
+  //   { fill: '#25501e' },
+  //   { fill: '#294826' },
+  //   { fill: '#30402e' },
+  //   { fill: '#bbcbca' },
+  //   { fill: '#fdfbf1' },
+  // ];
+
+
+  // sortedData.forEach((data, index) => {
+  //   sortedData[index].fill = colorArray[index].fill;
+  // });
 
 // console.log(sortedData);
 
@@ -108,7 +117,7 @@ function RadialBarChartComponent({ responses , onRadialData }) {
     >
       <RadialBar
         background
-        dataKey="score"
+        dataKey="score" 
       />
       <Legend 
         iconSize={15} 

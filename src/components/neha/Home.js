@@ -58,7 +58,7 @@ const Home = () => {
     {
       value: "বাংলা",
       key: "ba",
-      disabled: true,
+      disabled: false,
     },
     {
       value: "ગુજરાતી",
