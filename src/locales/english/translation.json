@@ -423,7 +423,7 @@
       "msg3B": "keep it up!",
       "wellcome_75per": "Well Done! You have completed more than 75% of the quiz",
       "justFinish": "You're about to finish...",
-      "completed":"SUCCESSFULLY COMPLETED THE TEST!"
+      "completed": "SUCCESSFULLY COMPLETED THE TEST!"
     }
   },
   "result": {
@@ -431,13 +431,27 @@
       "main_heading1": "Psychometric Test Results",
       "download": "Download Result",
       "congratulations": "Congratulations!",
-      "congo_text1": "You have successfully",
+      "congo_text1": "You have successfully ",
       "congo_text2": "completed the Udyam Uplift Test",
       "text1": "Here are the results of your psychometric test taken on",
       "text2": ". The test assessed your personality \ntraits, cognitive abilities, and emotional intelligence. The test results provide valuable insights into your \nstrengths and areas for development, helping you understand yourself better.",
-      "person_text1":"YOU ARE AN ",
-      "person_text2":" PERSON",
-      "yourQualities":"YOUR QUALITIES"
+      "person_text1": "YOU ARE AN ",
+      "person_text2": " PERSON",
+      "yourQualities": "YOUR QUALITIES",
+      "month": {
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December"
+      }
     },
     "graph": {
       "text_content": {

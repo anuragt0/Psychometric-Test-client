@@ -111,7 +111,7 @@ function RadialBarChartComponent({ responses , onRadialData }) {
     <RadialBarChart
       width={400} height={570} //size of div
       cx={200} cy={190} // coordinates of origin or centre
-      innerRadius={40} outerRadius={220}
+      innerRadius={40} outerRadius={170}
       startAngle={90} endAngle={-270} data={sortedData} barSize={50}
 
     >

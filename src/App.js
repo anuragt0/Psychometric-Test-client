@@ -12,10 +12,14 @@ import About from './components/About.js';
 
 import Instructions from './components/Instructions';
 import Quiz from './components/Quiz';
+import Footer from "./components/neha/Footer.js"
+import PrivacyPolicy from "./components/PrivacyPolicy.js";
+import Disclaimer from './components/Disclaimer';
 
 import Analytics from "./components/Admin/Analytics";
 import AdminQuestions from "./components/Admin/AdminQuestions";
 import AdminUsers from "./components/Admin/AdminUsers";
+
 
 function App() {
 
@@ -34,7 +38,10 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/test/result" element={<Result/>} />
           <Route path="/test/submit" element={<Congrats/>} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/about" element={<> <About/> <Footer/></>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+          <Route path="/disclaimer" element={<Disclaimer/>} />
+
         
 
           {/* Admin */}

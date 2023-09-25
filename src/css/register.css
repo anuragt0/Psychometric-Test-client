@@ -108,4 +108,22 @@
       margin-top: 15px;
     }
   }
+
+
+  /* Privacy Policy Note */
+.privacy-policy-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #888; /* You can adjust the color */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Adjust styles for smaller screens if needed */
+    .privacy-policy-note {
+      font-size: 12px; /* Adjust font size for smaller screens */
+      margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+  }
   

@@ -59,6 +59,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   box-sizing: border-box;
   background-color: #63c62a;
+  /* overflow: break-word; */
   text-align: justify;
   padding: 8px 15px;
   font-size: 1.0rem;
@@ -107,6 +108,7 @@
 #prev-button:hover {
   background-color: #38a038;
 }
+
 
 .submit-button:hover {
   background-color: #389738;

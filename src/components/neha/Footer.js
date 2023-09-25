@@ -12,7 +12,7 @@ import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import '../../library/i18n';
 
-export const Footer = () => {
+const Footer = () => {
   //? Language Functionality Starts ............................................................
 
   const { t } = useTranslation("translation", { keyPrefix: 'footer' });
@@ -67,3 +67,5 @@ export const Footer = () => {
     </div>
   )
 }
+
+export default Footer;

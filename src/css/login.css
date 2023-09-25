@@ -174,8 +174,8 @@
 
 
 /* Media Query for Mobile View */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .login-form {
-    margin: 50% auto;
-  }
-}
+    /* margin: 5 auto; */
+  /* } */
+/* } */ 

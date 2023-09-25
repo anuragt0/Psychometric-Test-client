@@ -208,7 +208,7 @@ const Navbar = () => {
         <ul className="navbar-nav ms-auto">
           {/* Language Buttons Starts hit and try  */}
 
-          {pathname !== '/test/start' && (
+          {( pathname !== '/test/start' && pathname !== '/test/result' ) && (
 
             <li className="nav-item active">
               {/* <motion.div

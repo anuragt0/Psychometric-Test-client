@@ -465,7 +465,14 @@ const RegistrationPage = () => {
                     </div>
                     {!passwordMatch && <p className="error-message">{t('PasswordNotMatch')}</p>}
 
-
+                    {/* Privacy Policy Note */}
+        <div className="privacy-policy-note">
+          By registering, you agree to our{" "}
+          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </a>
+          .
+        </div>
 
                     <button type="submit" >{t('register')} <FontAwesomeIcon icon={faUnlock} /></button>
                 </form>
@@ -482,7 +489,7 @@ const RegistrationPage = () => {
                 <p style={{ color: "#1A5D1A" }}>Discover a deeper understanding of yourself, <em> just a step away</em></p></h3>
             </div>
 
-            {componentState === 1 && EnterPhoneComponent()}
+            {componentState === 1 && RegisterComponent()}
             {componentState === 2 && EnterOTPComponent()}
             {componentState === 3 && RegisterComponent()}
 
