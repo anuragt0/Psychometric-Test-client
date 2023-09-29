@@ -35,6 +35,7 @@ function Quiz() {
   const { t } = useTranslation("translation", { keyPrefix: 'quiz' });
   const { userTestResponses, setUserTestResponses } = useLanguage();
   const location = useLocation(); // Get the current route path
+  const [loading, setLoading] = useState(false);
 
 
   // when Page Refreshes
@@ -222,15 +223,21 @@ function Quiz() {
     //* check if the user is already logged in, if yes, then save progress now
     //* Update the responses
     if (localStorage.getItem("token")) {
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
+        setLoading(true);
       const responseUpdate = await fetch(`${server_origin}/api/user/update-response`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': localStorage.getItem("token")
+          'auth-token': localStorage.getItem("token"),
+          "Authorization": `Basic ${basicAuth}`,
         },
         body: JSON.stringify({ responses: result })
       });
       let response2 = await responseUpdate.json();
+      setLoading(false);
       if (response2.success === false) {
         localStorage.removeItem("token");
       }

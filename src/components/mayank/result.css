@@ -64,11 +64,14 @@ body {
     font-size: 16px;
     border-radius: 25px;
     width: 200px;
+    margin-left: 10px;
+    margin-top: 0px;
   }
 
   .inner-flex {
     display: flex;
   }
+  
 }
 
 /* CONGARTULATIONS ENDS */
@@ -283,6 +286,12 @@ body {
 
   .down-btn {
     width: 200px; 
+  }
+  .you-are{
+    font-size: 18px;
+  }
+  .para-top{
+    font-size: 15px;
   }
   /* CONGS END  */
 

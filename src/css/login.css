@@ -6,6 +6,11 @@
   height: 100vh;
 }
 
+.component-slide{
+  height: 100vh;  
+  /* margin-top: 150px; */
+}
+
 .login-form {
   width: 80%;
   max-width: 400px;

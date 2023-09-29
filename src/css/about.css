@@ -1,4 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans:wght@300&display=swap");
+
+.u-about-page-outer-div {
+    margin-top: 0rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #e5e2d3;
+}
+
+.u-about-page-landing-div {
+    max-width: 100%;
+    height: 60vh;
+    display: flex;
+    margin-bottom: 5rem;
+    /* background-image: url("../images/aboutBg.svg"); */
+}
+.u-about-page-landing-div img{
+  display: flex;
+  height: 60vh;
+  position: absolute;
+  width: 100%;
+  /* display: none; */
+}
+
+.u-about-page-main {
+    width: 100%;
+}
+
+.u-about-page-landing-div-left {
+    z-index: 1;
+}
+
+.u-about-page-landing-slogan {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 4rem;
+    margin-left: 5rem;
+    color: rgb(8, 50, 5);
+}
+.u-about-page-landing-about {
+    margin-left: 5rem;
+    margin-top: 2rem;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "NOTO" sans;
+    color: white;
+}
+.bg {
+    position: absolute;
+    background: linear-gradient(to right, #434343 0%, black 100%);
+    opacity: 0.7;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    z-index: 0;
+}
+.u-about-page-landing-hero {
+    width: 100%;
+    display: flex;
+    border-radius: 0.4rem;
+    margin: 4rem auto;
+    color: white;
+    max-width: 95%;
+    height: 400px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow: hidden;
+}
+
+.u-about-page-landing-hero-heading {
+    font-size: 2.2rem;
+    color: rgb(8, 50, 5);
+}
+
+.u-about-page-landing-hero-subheading {
+    font-size: 1.2rem;
+    color: black;
+}
+
+/* .u-about-page-landing-hero-left, */
+/* .u-about-page-landing-hero-right { */
+/* width: 50%; */
+/* flex: 1; */
+/* } */
+
+.u-about-page-landing-hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 1.8rem 2.7rem;
+    flex-basis: auto;
+}
+
+.u-about-page-landing-hero-right {
+    display: flex;
+    /* justify-content: flex-end; */
+    height: 100%;
+    flex: 0 0 40%;
+    padding: 1.8rem 2.7rem;
+}
+
+.u-about-page-hero-img {
+    max-width: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .u-about-page-landing-hero {
+        flex-direction: column;
+        width: 100%;
+        color: white;
+        max-width: 90%;
+        height: auto;
+        align-items: center;
+    }
+
+    .u-about-page-hero-img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .u-about-page-landing-slogan,
+    .u-about-page-landing-about {
+        margin: 1rem;
+    }
+    .u-about-page-landing-about{
+      font-size: 12.5px;
+      padding-top: 2rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .u-about-page-landing-slogan{
+      font-size: 33px;
+      text-align: center;
+    }
+    .u-about-page-landing-div,
+    .bg,
+    .u-about-page-landing-div img{
+      height: 55vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Charmonman&family=Noto+Sans:wght@300&display=swap');
 
 .u-about-page-outer-div {
   margin-top: 0rem;
@@ -12,44 +181,37 @@
   height: 60vh;
   display: flex;
   margin-bottom: 5rem;
-  background-image: linear-gradient( to top left, white , #71BF44 90%);
+  background-image: url("../images/aboutBg.svg");
 }
 
-.u-about-page-landing-div-right {
-  position: relative;
+.u-about-page-landing-div-left{
+  z-index: 1;
 }
 
 .u-about-page-landing-slogan {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 900;
   font-family:Arial, Helvetica, sans-serif;
   margin-top: 4rem;
   margin-left: 5rem;
   color: rgb(8, 50, 5);
-  /* text-align: center; */
 }
 .u-about-page-landing-about{
   margin-left: 5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 20px;
-  font-family: noto sans;
-  color: rgb(63, 62, 62);
-}
-
-.u-about-page-landing-slogan-bg {
-  position: absolute;
-  width: 450px;
-  top: 200px;
-  left: 120px;
+  line-height: 1.5;
+  font-family: 'NOTO' sans;
+  color: white;
 }
 .bg{
     position: absolute;
-    background-image: linear-gradient(black, grey);
-    height: 254px;
-    width: 450px;
-    top: 200px;
-    left: 120px;
-    opacity: 0.4;
+    background-image: linear-gradient(to top left, black , grey );
+    opacity: 0.6;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    z-index: 0;
   }
 .u-about-page-landing-hero {
   display: flex;
@@ -100,87 +262,4 @@
   height: 400px;
   background-color: white;
 }
-
-@media only screen and (max-width: 750px) {
-  .u-about-page-outer-div {
-    margin-left: 0rem;
-    margin-right: 0rem;
-    margin-top: 6rem;
-  }
-
-  .u-about-page-landing-div {
-    flex-direction: column;
-    margin-bottom: 13rem;
-    height: 0vh;
-    background-image: none;
-  }
-
-  .u-page-page-landing-heading {
-    font-size: 1.6rem;
-  }
-
-  .u-about-page-landing-slogan {
-    font-size: 2rem;
-    position: absolute;
-    text-align:center;
-    margin-left: 2.5rem;
-    color: white;
-    Margin-top:0rem;
-    z-index: 999;
-  }
-
-  .bg{
-    position: absolute;
-    background-image: linear-gradient(black, #71BF44);
-    width: 90%;
-    height: 250px;
-    top: -80px;
-    left: 20px;
-    opacity: 0.4;
-  }
-
-  .u-about-page-landing-slogan-bg {
-    width: 90%;
-    height: 250px;
-    top: -80px;
-    left: 20px;
-    /* opacity: 0.8; */
-  }
-
-  .u-about-page-landing-hero {
-    flex-direction: column;
-    height: 100%;
-    margin: 3rem 2rem;
-  }
-
-  .u-about-page-landing-hero-left,
-  .u-about-page-landing-hero-right {
-    width: 100%;
-    flex: 1;
-  }
-
-  .u-about-page-landing-hero-left {
-    padding: 1.2rem 2.1rem;
-  }
-
-  .u-about-page-landing-hero-right {
-    flex-direction: column;
-  }
-
-  .u-about-page-hero-img {
-    height: 95%;
-  }
-
-  .u-about-page-landing-hero-heading {
-    font-size: 1.2rem;
-    
-  }
-
-  .u-about-page-landing-hero-subheading {
-    font-size: 1rem;
-  }
-  .u-about-page-landing-about{
-    display: none;
-  }
-  
-}
+ */

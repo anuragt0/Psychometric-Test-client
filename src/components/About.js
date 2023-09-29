@@ -6,7 +6,8 @@ import { useTranslation } from 'react-i18next';
 import aboutImg from '../images/about-img.svg'
 import wepLogo from '../images/wep-logo.svg';
 import caXpert from '../images/caXpert.svg';
-import aboutBg from '../images/aboutBg.png';
+import aboutBg from '../images/aboutBg.svg';
+import aboutmobile from '../images/aboutBgmobile.png';
 import "../css/about.css";
 
 const AboutPage = () => {
@@ -22,19 +23,13 @@ const AboutPage = () => {
   return (
     <div className="u-about-page-outer-div">
       <div className="u-about-page-landing-div">
+        <img src={aboutmobile}></img>
+      <div className="bg"></div>
         <div className="u-about-page-landing-div-left">
           <p className="u-about-page-landing-slogan">{t('weAre')}<br></br> {t('udyamUplift')} </p>
           <p className="u-about-page-landing-about">Do not let psychological barriers hold you back.<br></br>
                                                     Take the Compliance Self Help Test and gain personalized <br></br>
                                                     insights to overcome obstacles and excel in your business ventures.</p>
-        </div>
-        <div className="u-about-page-landing-div-right">
-          <img
-            src={aboutBg}
-            alt=""
-            className="u-about-page-landing-slogan-bg"
-          />
-          <div className="bg"></div>
         </div>
       </div>
       <div>

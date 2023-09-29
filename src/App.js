@@ -32,18 +32,17 @@ function App() {
         <Routes>
         {/* User */}
           <Route path="/" element={<Home />} />
-          <Route path="/test/instructions" element={<Instructions/>} />
+          <Route path="/test/instructions" element={<><Instructions/> <Footer/></>} />
           <Route path="/test/start" element={<Quiz/>} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/test/result" element={<Result/>} />
-          <Route path="/test/submit" element={<Congrats/>} />
+          <Route path="/register" element={<><Register/> <Footer/> </>} />
+          <Route path="/login" element={<><Login/> <Footer/> </>} />
+          <Route path="/test/result" element={<><Result/> <Footer/></>} />
+          <Route path="/test/submit" element={<><Congrats/> <Footer/></>} />
           <Route path="/about" element={<> <About/> <Footer/></>} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-          <Route path="/disclaimer" element={<Disclaimer/>} />
+          <Route path="/privacy-policy" element={<><PrivacyPolicy/> <Footer/></>} />
+          <Route path="/disclaimer" element={<><Disclaimer/> <Footer/></>} />
 
         
-
           {/* Admin */}
           <Route path="/admin/analytics" element={<Analytics />} />
           <Route path="/admin/questions" element={<AdminQuestions />} />

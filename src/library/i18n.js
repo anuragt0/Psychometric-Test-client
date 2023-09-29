@@ -9,7 +9,6 @@ import tMarathi from '../locales/marathi/translation.json';
 import tBangla from '../locales/bangla/translation.json';
 
 
-import tGujarati from '../locales/gujarati/translation.json';
 
 
 i18n
@@ -34,9 +33,7 @@ i18n
       ba: {
         translation: tBangla
       },
-      gu: {
-        translation: tGujarati
-      }
+
     },
     lng: "en", // if you're using a language detector, do not define the lng option
     fallbackLng: "en",

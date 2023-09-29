@@ -20,11 +20,15 @@ const AdminQuestions = () => {
 
     const verifyUser = async()=>{
         if(localStorage.getItem('token')){
+            const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
             const response = await fetch(`${server_origin}/api/user/verify-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('token')
+                    'auth-token': localStorage.getItem('token'),
+                    "Authorization": `Basic ${basicAuth}`,
                 },
             });
     
@@ -37,11 +41,15 @@ const AdminQuestions = () => {
 
 
     const getQuestions = async ()=>{
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
         const response = await fetch(`${server_origin}/api/user/get-questions`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'auth-token': localStorage.getItem('token'),
+                "Authorization": `Basic ${basicAuth}`,
             },
         });
         const result = await response.json()
@@ -63,12 +71,16 @@ const AdminQuestions = () => {
         }
 
         //!TODO: Check if any question or options are empty or not entered by the admin
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
 
         const response = await fetch(`${server_origin}/api/admin/add-question`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'auth-token': localStorage.getItem('token'),
+                "Authorization": `Basic ${basicAuth}`,
             },
             body: JSON.stringify(newQuestion)
         });
@@ -98,11 +110,15 @@ const AdminQuestions = () => {
 
     const handleDelete = async (question)=>{
         if(window.confirm(`Are you sure to delete this question - ${question.questionText.length>50?question.questionText.substring(0,50)+"...":question.questionText}`)){
-                const response = await fetch(`${server_origin}/api/admin/delete-question/${question._id}`, {
+            const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);   
+            const response = await fetch(`${server_origin}/api/admin/delete-question/${question._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('token')
+                    'auth-token': localStorage.getItem('token'),
+                    "Authorization": `Basic ${basicAuth}`,
                 },
                 });
                 const result = await response.json();
@@ -130,11 +146,15 @@ const AdminQuestions = () => {
             ]
         }
         console.log(clickedQuestion._id);
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
         const response = await fetch(`${server_origin}/api/admin/update-question/${clickedQuestion._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'auth-token': localStorage.getItem('token'),
+                "Authorization": `Basic ${basicAuth}`,
             },
             body: JSON.stringify(updatedQuestion)
         });

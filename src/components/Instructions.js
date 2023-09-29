@@ -68,7 +68,7 @@ function InstructionsPage() {
       onChange={handlePrivacyPolicyCheck}
     />
     <span className="checkmark"></span>
-    I agree to the <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/disclaimer">Terms and Conditions</Link>.
+    {t("iAgreeToThe")}<Link to="/privacy-policy">{t("privacyPolicy")}</Link> {t("and")} <Link to="/disclaimer">{t("termsAndConditions")}</Link>.
   </label>
 </div>
 {/* <div className="privacy-policy-link">

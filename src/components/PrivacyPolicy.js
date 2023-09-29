@@ -1,60 +1,79 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/privacypolicy.css"
 
+//IMPORTS FOR Language change Functionality
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
+
 const PrivacyPolicy = () => {
+  //? Language Functionality Starts ......................................................................
+
+  const { t } = useTranslation("translation", { keyPrefix: 'privacyPolicy' });
+
+  //used to get language Stored in LocalStorage //*should be in every Page having Language Functionality 
+  useEffect(() => {
+    let currentLang = localStorage.getItem('lang');
+    i18n.changeLanguage(currentLang);
+
+    // console.log(t('array'  , { returnObjects: true }));
+  }, []);
+
+
+  //? Language Functionality Ends .................................................................
+
   return (
     <div className="privacy-policy-container">
       <header className="privacy-policy-header">
-        <h1>Privacy Policy</h1>
+        <h1>{t('heading')}</h1>
       </header>
       <section className="privacy-policy-section">
         <ol>
           <li>
-            <strong>Information We Collect:</strong>
-            <p>We collect various types of personal information, including but not limited to:</p>
+            <strong>{t('informationCollectHeader')}</strong>
+            <p>{t('informationTypesHeader')}</p>
             <ul>
-              <li><strong>Name:</strong> We collect your name to personalize your experience on our platform.</li>
-              <li><strong>Email Address:</strong> We collect your email address for communication and account-related notifications.</li>
-              <li><strong>Test Responses:</strong> We collect your responses to psychometric tests to provide you with personalized insights.</li>
-              <li><strong>User Inputs:</strong> We gather information provided by you during interactions on our platform.</li>
-              <li><strong>Activities on the Website:</strong> We track your activities on our website for analytics and personalization.</li>
-              <li><strong>IP Addresses:</strong> We collect IP addresses for security and location-based services.</li>
-              <li><strong>Cookies:</strong> We use cookies to enhance your experience and offer personalized content.</li>
+              <li><strong>{t('name')}:</strong> {t('nameDescription')}</li>
+              <li><strong>{t('emailAddress')}:</strong> {t('emailAddressDescription')}</li>
+              <li><strong>{t('testResponses')}:</strong> {t('testResponsesDescription')}</li>
+              <li><strong>{t('userInputs')}:</strong> {t('userInputsDescription')}</li>
+              <li><strong>{t('activitiesOnWebsite')}:</strong> {t('activitiesOnWebsiteDescription')}</li>
+              <li><strong>{t('ipAddresses')}:</strong> {t('ipAddressesDescription')}</li>
+              <li><strong>{t('cookies')}:</strong> {t('cookiesDescription')}</li>
             </ul>
           </li>
           <li>
-            <strong>How We Collect Information:</strong>
-            <>We collect information through registration forms when users create accounts on our website. This information helps us create your user account and provide you with personalized content and services.</>
+            <strong>{t('howWeCollectInfo')}:</strong>
+            <>{t('howWeCollectInfoDescription')}</>
           </li>
           <li>
-            <strong>How We Use Information:</strong>
-            <>We use the collected information to create and personalize user accounts. This allows us to offer a tailored experience, including customized test results and recommendations.</>
+            <strong>{t('howWeUseInfo')}:</strong>
+            <>{t('howWeUseInfoDescription')}</>
           </li>
           <li>
-            <strong>Sharing of Information:</strong>
-            <>We do not share user data with third parties. Your information is kept confidential and used only for providing services on our platform.</>
+            <strong>{t('sharingOfInfo')}:</strong>
+            <>{t('sharingOfInfoDescription')}</>
           </li>
           <li>
-            <strong>Cookies and Tracking:</strong>
-            <>We use cookies for personalization purposes. Cookies help us enhance your experience by remembering your preferences and providing personalized content.</>
+            <strong>{t('cookiesAndTracking')}:</strong>
+            <>{t('cookiesAndTrackingDescription')}</>
           </li>
           <li>
-            <strong>Security:</strong>
-            <>We take data security seriously. We protect user data using encryption and secure servers to ensure your information is safe and confidential.</>
+            <strong>{t('security')}:</strong>
+            <>{t('securityDescription')}</>
           </li>
           <li>
-            <strong>User Rights:</strong>
-            <>Users have the right to access their data. If you have any questions or concerns about your data, please contact us at <a href="mailto:udyamuplift@gmail.com">udyamuplift@gmail.com</a>.</>
+            <strong>{t('userRights')}:</strong>
+            <>{t('userRightsDescription')}</>
           </li>
           {/* Add more sections as needed */}
         </ol>
       </section>
       <footer className="privacy-policy-footer">
         <p>
-          This Privacy Policy was last updated on 25/09/2023.
+          {t('lastUpdated')}
         </p>
         <p>
-          If you have any questions or concerns, please contact us at{" "}
+          {t('contactUs')} {" "}
           <a href="mailto:udyamuplift@gmail.com">udyamuplift@gmail.com</a>.
         </p>
       </footer>

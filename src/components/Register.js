@@ -186,13 +186,15 @@ const RegistrationPage = () => {
 
     const handleSendOtpClick = async () => {
         setLoading(true);
-
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
         // Check if the mobile is already registered
         const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-
+                "Authorization": `Basic ${basicAuth}`,
             },
             body: JSON.stringify({ mobile: mobileNumber })
         });
@@ -230,10 +232,15 @@ const RegistrationPage = () => {
         updatedCreds["testResponse"] = userTestResponses;
         updatedCreds["lastTestDate"] = Date.now();
 
+        const userId = process.env.REACT_APP_USER_ID;
+        const userPassword = process.env.REACT_APP_USER_PASSWORD;
+        const basicAuth = btoa(`${userId}:${userPassword}`);
+
         const response = await fetch(`${server_origin}/api/user/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                "Authorization": `Basic ${basicAuth}`,
             },
             body: JSON.stringify(updatedCreds)
         });
@@ -344,7 +351,7 @@ const RegistrationPage = () => {
                         <label htmlFor="name">
                             <FontAwesomeIcon icon={faUser} />
                             &nbsp;
-                            Name
+                            {t('name')}
                             <span style={{ color: "red" }}>*</span>
                         </label>
                         <input
@@ -361,7 +368,7 @@ const RegistrationPage = () => {
                         <label htmlFor="email">
                             <FontAwesomeIcon icon={faEnvelope} />
                             &nbsp;
-                            Email
+                            {t('email')}
                         </label>
                         <input
                             type="email"
@@ -377,7 +384,7 @@ const RegistrationPage = () => {
                         <label htmlFor="gender">
                             <FontAwesomeIcon icon={faMars} />
                             &nbsp;
-                            Gender
+                            {t('gender')}
                             <span style={{ color: "red" }}>*</span>
                         </label>
                         <select
@@ -387,10 +394,10 @@ const RegistrationPage = () => {
                             onChange={handleChange}
                             required
                         >
-                            <option value={0}>{"Select Gender"}</option>
+                            <option value={0}>{t('select_gender')}</option>
                             <option value={1}>{t('male')}</option>
                             <option value={2}>{t('female')}</option>
-                            <option value={3}>{"Other"}</option>
+                            <option value={3}>{t('other')}</option>
                         </select>
                     </div>
 
@@ -398,7 +405,7 @@ const RegistrationPage = () => {
                         <label htmlFor="age">
                             <FontAwesomeIcon icon={faCalendarAlt} />
                             &nbsp;
-                            Age
+                            {t('age')}
                             <span style={{ color: "red" }}>*</span>
                         </label>
                         <input
@@ -416,7 +423,7 @@ const RegistrationPage = () => {
                         <label htmlFor="city">
                             <FontAwesomeIcon icon={faCity} />
                             &nbsp;
-                            City
+                            {t('city')}
                         </label>
                         <input
                             type="text"
@@ -433,7 +440,7 @@ const RegistrationPage = () => {
                         <label htmlFor="password">
                             <FontAwesomeIcon icon={faLock} />
                             &nbsp;
-                            Password
+                            {t("passwordPlaceholder")}
                             <span style={{ color: "red" }}>*</span>
                         </label>
                         <input
@@ -450,7 +457,7 @@ const RegistrationPage = () => {
                         <label htmlFor="password">
                             <FontAwesomeIcon icon={faLock} />
                             &nbsp;
-                            Confirm Password
+                            {t('confirmPasswordPlaceholder')}
                             <span style={{ color: "red" }}>*</span>
                         </label>
                         <input
@@ -467,9 +474,9 @@ const RegistrationPage = () => {
 
                     {/* Privacy Policy Note */}
         <div className="privacy-policy-note">
-          By registering, you agree to our{" "}
+          {t('registerAgree')} {" "}
           <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-            Privacy Policy
+          {t('privacyPolicy')}
           </a>
           .
         </div>
@@ -484,12 +491,12 @@ const RegistrationPage = () => {
         <div className='register-outer-div'>
             <div id="recaptcha-container"></div>
             <div className="registration-heading">
-                <h1 style={{textDecoration: "underline"}}>Register</h1>
-                <h3 style={{color: "#5b564e"}}>Unlock Your Personalized Personality Insights Report
-                <p style={{ color: "#1A5D1A" }}>Discover a deeper understanding of yourself, <em> just a step away</em></p></h3>
+                <h1 style={{textDecoration: "underline"}}>{t('register')}</h1>
+                <h3 style={{color: "#5b564e"}}>{t('unlockPersonalityInsights')}
+                <p style={{ color: "#1A5D1A" }}>{t('discoverUnderstanding')} <em>{t('justStepAway')}</em></p></h3>
             </div>
 
-            {componentState === 1 && RegisterComponent()}
+            {componentState === 1 && EnterPhoneComponent()}
             {componentState === 2 && EnterOTPComponent()}
             {componentState === 3 && RegisterComponent()}
 
