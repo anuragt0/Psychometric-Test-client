@@ -108,36 +108,42 @@ function Result_M() {
         const userId = process.env.REACT_APP_USER_ID;
         const userPassword = process.env.REACT_APP_USER_PASSWORD;
         const basicAuth = btoa(`${userId}:${userPassword}`);
-        const response = await fetch(`${server_origin}/api/user/get-user`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": localStorage.getItem("token"),
-                "Authorization": `Basic ${basicAuth}`,
-            },
-        });
-        let response1 = await response.json();
-        // console.log("response1asdfasdfasd: ", response1);
-
-        if (response1.success === false) {
-            toast.error(t("toast.errorFetchResult"));
-            navigate("/login");
-            return;
+        try {
+            const response = await fetch(`${server_origin}/api/user/get-user`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": localStorage.getItem("token"),
+                    "Authorization": `Basic ${basicAuth}`,
+                },
+            });
+            let response1 = await response.json();
+            // console.log("response1asdfasdfasd: ", response1);
+    
+            if (response1.success === false) {
+                toast.error(t("toast.errorFetchResult"));
+                navigate("/login");
+                return;
+            }
+            // console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
+            if (
+                !response1.userDoc.testResponse ||
+                response1.userDoc.testResponse.length !== 26
+            ) {
+                toast.error(t("toast.inCompleteTest"));
+                navigate("/test/instructions");
+                return;
+            }
+            setResponses(response1.userDoc.testResponse);
+            setTestDate(formatDateWithCustomTime(response1.userDoc.lastTestDate));
+            setUserName(response1.userDoc.name);
+            // console.log(formatDateWithCustomTime(response1.userDoc.lastTestDate));
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+            toast.error("Some error occured. Please try again later");
+            console.log(error.message);
         }
-        // console.log("asdflkjasldkfjaskldfjl", response1.userDoc);
-        if (
-            !response1.userDoc.testResponse ||
-            response1.userDoc.testResponse.length !== 26
-        ) {
-            toast.error(t("toast.inCompleteTest"));
-            navigate("/test/instructions");
-            return;
-        }
-        setResponses(response1.userDoc.testResponse);
-        setTestDate(formatDateWithCustomTime(response1.userDoc.lastTestDate));
-        setUserName(response1.userDoc.name);
-        // console.log(formatDateWithCustomTime(response1.userDoc.lastTestDate));
-        setLoading(false);
     };
 
   //* Download Functionallity Start*//

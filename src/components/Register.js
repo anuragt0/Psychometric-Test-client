@@ -186,30 +186,35 @@ const RegistrationPage = () => {
 
     const handleSendOtpClick = async () => {
         setLoading(true);
-        const userId = process.env.REACT_APP_USER_ID;
-        const userPassword = process.env.REACT_APP_USER_PASSWORD;
-        const basicAuth = btoa(`${userId}:${userPassword}`);
-        // Check if the mobile is already registered
-        const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                "Authorization": `Basic ${basicAuth}`,
-            },
-            body: JSON.stringify({ mobile: mobileNumber })
-        });
-        let response1 = await response.json();
-        if (response1.success === true) {
-            // Already registered
-            // Render Password check component
-            toast.success(t('toast.mobileNo_already_register'));
-            navigate("/login");
-            return;
+        try {
+            const userId = process.env.REACT_APP_USER_ID;
+            const userPassword = process.env.REACT_APP_USER_PASSWORD;
+            const basicAuth = btoa(`${userId}:${userPassword}`);
+            // Check if the mobile is already registered
+            const response = await fetch(`${server_origin}/api/user/check-mobile-registered`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": `Basic ${basicAuth}`,
+                },
+                body: JSON.stringify({ mobile: mobileNumber })
+            });
+            let response1 = await response.json();
+            if (response1.success === true) {
+                // Already registered
+                // Render Password check component
+                toast.success(t('toast.mobileNo_already_register'));
+                navigate("/login");
+                return;
+            }
+            // Not registered before
+            // Render EnterOTP component
+            setLoading(false);
+            onSignup();
+        } catch (error) {
+            console.log(error.message);
+            toast.error("Some error occured. Please try again later")
         }
-        // Not registered before
-        // Render EnterOTP component
-        setLoading(false);
-        onSignup();
     };
 
     const handleRegister = async (e) => {
@@ -236,28 +241,34 @@ const RegistrationPage = () => {
         const userPassword = process.env.REACT_APP_USER_PASSWORD;
         const basicAuth = btoa(`${userId}:${userPassword}`);
 
-        const response = await fetch(`${server_origin}/api/user/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                "Authorization": `Basic ${basicAuth}`,
-            },
-            body: JSON.stringify(updatedCreds)
-        });
-        let response1 = await response.json();
-        if (response1.success == true) {
-            localStorage.setItem("token", response1.token);
-            toast.success(t('toast.registered'));
-            if(localStorage.getItem('testProgress')){
-                navigate("/test/result");
-                localStorage.removeItem("testProgress");
-                return;
+        try {
+            const response = await fetch(`${server_origin}/api/user/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": `Basic ${basicAuth}`,
+                },
+                body: JSON.stringify(updatedCreds)
+            });
+            let response1 = await response.json();
+            if (response1.success == true) {
+                localStorage.setItem("token", response1.token);
+                toast.success(t('toast.registered'));
+                if(localStorage.getItem('testProgress')){
+                    navigate("/test/result");
+                    localStorage.removeItem("testProgress");
+                    return;
+                }
+                navigate("/");
             }
-            navigate("/");
+            else {
+                toast.error(t('toast.not_register'));
+            }
+        } catch (error) {
+            console.log(error.message);
+            toast.error("Some error occured. Please try again later")
         }
-        else {
-            toast.error(t('toast.not_register'));
-        }
+
 
     };
 

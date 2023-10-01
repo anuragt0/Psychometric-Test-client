@@ -227,20 +227,26 @@ function Quiz() {
         const userPassword = process.env.REACT_APP_USER_PASSWORD;
         const basicAuth = btoa(`${userId}:${userPassword}`);
         setLoading(true);
-      const responseUpdate = await fetch(`${server_origin}/api/user/update-response`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'auth-token': localStorage.getItem("token"),
-          "Authorization": `Basic ${basicAuth}`,
-        },
-        body: JSON.stringify({ responses: result })
-      });
-      let response2 = await responseUpdate.json();
-      setLoading(false);
-      if (response2.success === false) {
-        localStorage.removeItem("token");
-      }
+        try {
+            const responseUpdate = await fetch(`${server_origin}/api/user/update-response`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem("token"),
+                "Authorization": `Basic ${basicAuth}`,
+              },
+              body: JSON.stringify({ responses: result })
+            });
+            let response2 = await responseUpdate.json();
+            setLoading(false);
+            if (response2.success === false) {
+              localStorage.removeItem("token");
+            }
+        } catch (error) {
+            setLoading(false);
+            toast.error("Some error occured. Please try again later");
+            console.log(error.message);
+        }
     }
 
     setUserTestResponses(result);
@@ -364,14 +370,14 @@ function Quiz() {
           {showMsg && (
             <div className="msg">
               <p className="animate-charcter">{t('progressBar.msg1A')}<br></br>{t('progressBar.msg1B')}</p>
-              <img src={image2} className="startImage" ></img>
+              <img src={image2} className="startImage" alt="img6" ></img>
             </div>
           )}
 
           {showMsg2 && (
             <div className="msg2">
               <p className="animate-charcter">{t('progressBar.msg2A')} <br></br>{t('progressBar.msg2B')}</p>
-              <img src={image3} className="startImage"></img>
+              <img src={image3} className="startImage" alt="img2"></img>
             </div>
           )}
 
@@ -385,7 +391,7 @@ function Quiz() {
                 />
               </div>
               <p className="animate-charcter">{t('progressBar.msg3A')}<br></br>{t('progressBar.msg2B')}</p>
-              <img src={image4} className="startImage"></img>
+              <img src={image4} className="startImage" alt="img1"></img>
             </div>
           )}
           {showMsg31 && (
@@ -397,22 +403,22 @@ function Quiz() {
                            numberOfPieces={100}
                         /> */}
               </div>
-              <p className="animate-charcter">{t('progressBar.msg1A')}<br></br>{t('progressBar.msg1B')}</p>
-              <img src={image2} className="startImage"></img>
+              <p className="animate-charcter">{t('progressBar.msg3A')}<br></br>{t('progressBar.msg2B')}</p>
+              <img src={image2} className="startImage" alt="img2"></img>
             </div>
           )}
 
           {showMsg4 && (
             <div className="msg3">
               <p className="animate-charcter">{t('progressBar.wellcome_75per')}<br></br>{t('progressBar.justFinish')} </p>
-              <img src={image3} className="startImage"></img>
+              <img src={image3} className="startImage" alt="img3"></img>
             </div>
           )}
 
           {showMsg5 && (
             <div className="msg4">
               <p className="animate-charcter">{t('progressBar.completed')}</p>
-              <img src={image5} className="startImage"></img>
+              <img src={image5} className="startImage" alt="img5"></img>
             </div>
           )}
 

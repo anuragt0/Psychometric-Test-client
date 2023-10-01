@@ -74,27 +74,33 @@ const Navbar = () => {
 
     const verifyUser = async () => {
         if (localStorage.getItem('token')) {
-            const userId = process.env.REACT_APP_USER_ID;
-            const userPassword = process.env.REACT_APP_USER_PASSWORD;
-            const basicAuth = btoa(`${userId}:${userPassword}`);
-            const response = await fetch(`${server_origin}/api/user/verify-user`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('token'),
-                    "Authorization": `Basic ${basicAuth}`,
-                },
-            });
-
-            const result = await response.json()
-            if (result.isAdmin === true) {
-                setIsAdmin(true);
+            try {
+                const userId = process.env.REACT_APP_USER_ID;
+                const userPassword = process.env.REACT_APP_USER_PASSWORD;
+                const basicAuth = btoa(`${userId}:${userPassword}`);
+                const response = await fetch(`${server_origin}/api/user/verify-user`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'auth-token': localStorage.getItem('token'),
+                        "Authorization": `Basic ${basicAuth}`,
+                    },
+                });
+    
+                const result = await response.json()
+                if (result.isAdmin === true) {
+                    setIsAdmin(true);
+                }
+                if (result.success === true) {
+                    setLoggedIn(true);
+                    return true;
+                }
+                return false;
+            } catch (error) {
+                console.log(error.message);
+                toast.error("Connection error");
+                return false;
             }
-            if (result.success === true) {
-                setLoggedIn(true);
-                return true;
-            }
-            return false;
         }
         return false;
     }

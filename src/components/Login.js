@@ -225,57 +225,64 @@ const Login = () => {
     //login user
 
     // handleCheckPasswordButtonClick();
-    
-    const responsee = await fetch(`${server_origin}/api/user/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Basic ${basicAuth}`,
-      },
-      body: JSON.stringify({ mobile: mobileNumber, password: password }),
-    });
-    const responsee1 = await responsee.json();
-    if (responsee1.success === false) {
-      toast.error(t("toast.wrongPasswordToast"));
-      setLoading(false);
-      return;
-    }
-
-    //* Password is correct
-    const token = responsee1.token;
-    localStorage.setItem("token", token);
-
-    //* Update the responses only if test is given already (testProgress is in localStorage)
-    if (localStorage.getItem("testProgress")) {
-        const userId = process.env.REACT_APP_USER_ID;
-        const userPassword = process.env.REACT_APP_USER_PASSWORD;
-        const basicAuth = btoa(`${userId}:${userPassword}`);
-      const responseUpdate = await fetch(
-        `${server_origin}/api/user/update-response`,
-        {
-          method: "PUT",
+    try {
+        const responsee = await fetch(`${server_origin}/api/user/login`, {
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "auth-token": token,
             "Authorization": `Basic ${basicAuth}`,
           },
-          body: JSON.stringify({ responses: userTestResponses }),
+          body: JSON.stringify({ mobile: mobileNumber, password: password }),
+        });
+        const responsee1 = await responsee.json();
+        if (responsee1.success === false) {
+          toast.error(t("toast.wrongPasswordToast"));
+          setLoading(false);
+          return;
         }
-      );
-      let response2 = await responseUpdate.json();
-      if (response2.success === false) {
-        toast.error(t("toast.tryAgain"));
+    
+        //* Password is correct
+        const token = responsee1.token;
+        localStorage.setItem("token", token);
+    
+        // * Update the responses only if test is given already (testProgress is in localStorage)
+        if (localStorage.getItem("testProgress")) {
+            const userId = process.env.REACT_APP_USER_ID;
+            const userPassword = process.env.REACT_APP_USER_PASSWORD;
+            const basicAuth = btoa(`${userId}:${userPassword}`);
+          const responseUpdate = await fetch(
+            `${server_origin}/api/user/update-response`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+                "Authorization": `Basic ${basicAuth}`,
+              },
+              body: JSON.stringify({ responses: userTestResponses }),
+            }
+          );
+          let response2 = await responseUpdate.json();
+          if (response2.success === false) {
+            toast.error(t("toast.tryAgain"));
+            setLoading(false);
+            return;
+          }
+    
+          localStorage.removeItem("testProgress");
+          toast.success(t("toast.loggedInToast"));
+          setLoading(false);
+          navigate("/test/result");
+          return;
+        }
+        navigate("/");
+        
+    } catch (error) {
         setLoading(false);
-        return;
-      }
-
-      localStorage.removeItem("testProgress");
-      toast.success(t("toast.loggedInToast"));
-      setLoading(false);
-      navigate("/test/result");
-      return;
+        console.log(error.message);
+        toast.error("Some error occured. Please try again later");
     }
-    navigate("/");
+    
     setLoading(false);
   };
 
