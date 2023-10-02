@@ -74,7 +74,7 @@ const RegistrationPage = () => {
     //*
 
     //* Checkers
-    const [otpSent, setOTPSent] = useState(false);
+    // const [otpSent, setOTPSent] = useState(false);
     const [loading, setLoading] = useState(false);
     const [otpVerified, setOtpVerified] = useState(false);
     const [otpError, setOtpError] = useState(null);
@@ -251,7 +251,7 @@ const RegistrationPage = () => {
                 body: JSON.stringify(updatedCreds)
             });
             let response1 = await response.json();
-            if (response1.success == true) {
+            if (response1.success === true) {
                 localStorage.setItem("token", response1.token);
                 toast.success(t('toast.registered'));
                 if(localStorage.getItem('testProgress')){
@@ -313,7 +313,7 @@ const RegistrationPage = () => {
                         disabled={loading}
                         onClick={handleSendOtpClick}
                     >
-                        {loading ? t('waitButton') : "Send OTP"}
+                        {loading ? t('waitButton') : t('sendOtp')}
                     </button>
 
                 </div>

@@ -4,10 +4,10 @@ import { server_origin } from "../../utilities/constants";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 
-import { FiDownload, FiBarChart2 } from "react-icons/fi"; // Import the FiDownload and FiBarChart2 icons from react-icons
+// import { FiDownload, FiBarChart2 } from "react-icons/fi"; // Import the FiDownload and FiBarChart2 icons from react-icons
 import { toast } from "react-hot-toast";
 import { SyncLoader } from "react-spinners"; // Import the ClipLoader from "react-spinners"
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Graph from "./charts/Graph";
 import PieChart from "./charts/PieChart";
 import RadialBarChartComponent from "./charts/RadialBarChart";
@@ -99,7 +99,7 @@ function Result_M() {
 
     useEffect(() => {
         getResult();
-    }, []);
+    });
 
     //!Make separate functions for fetching results and validation
 
@@ -142,7 +142,7 @@ function Result_M() {
         } catch (error) {
             setLoading(false);
             toast.error("Some error occured. Please try again later");
-            console.log(error.message);
+            // console.log(error.message);
         }
     };
 
@@ -209,7 +209,7 @@ function Result_M() {
         const amPm = hour >= 12 ? "PM" : "AM";
         const formattedTime = `${hour % 12 || 12}:${minute} ${amPm}`;
 
-        return `${day}${getDaySuffix(day)} ${month} ${year}, ${formattedTime}`;
+        return `${day}${getDaySuffix(day)} ${t('main.month.'+month)} ${year}, ${formattedTime}`;
     }
 
   return (
@@ -333,7 +333,7 @@ function Result_M() {
                     <div className="half-2">
                         <div className="inner-4">
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label1")} </p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>
@@ -345,7 +345,7 @@ function Result_M() {
                             </p>
 
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label2")}</p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>
@@ -357,7 +357,7 @@ function Result_M() {
                             </p>
 
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label3")}</p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>
@@ -365,7 +365,7 @@ function Result_M() {
                             </p>
 
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label4")}</p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>
@@ -377,7 +377,7 @@ function Result_M() {
                             </p>
 
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label5")}</p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>
@@ -385,7 +385,7 @@ function Result_M() {
                             </p>
 
                             <div className="inner-star">
-                                <img src={t1} className="star"></img>
+                                <img src={t1} className="star" alt="star"></img>
                                 <p style={{ fontSize: "18px" }}> {t("radialBar.label6")}</p>
                             </div>
                             <p className="p1" style={{ fontSize: "16px" }}>

@@ -31,10 +31,10 @@ function InstructionsPage() {
       if (privacyPolicyChecked) {
         // User has accepted the privacy policy, navigate to the test start page
         navigate("/test/start");
-        toast.success("Test has been started. All the best.")
+        toast.success(t('toast.testStartedMessage'))
       } else {
         // Display an error message or alert to indicate that the privacy policy must be accepted
-        toast("Please accept our terms and condition to continue")
+        toast(t('toast.acceptTermsMessage'))
       }
     };
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useLanguage } from '../context/LanguageContext';
+// import { useLanguage } from '../context/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import { server_origin } from '../utilities/constants';
 
-import useWindowSize from "@rooks/use-window-size";
+// import useWindowSize from "@rooks/use-window-size";
 import Confetti from 'react-confetti'
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 //IMPORTS FOR Language change Functionality
 import i18n from "i18next";
@@ -30,7 +30,7 @@ const Congrats = () => {
     verifyUser();
     setLoading(false);
 
-  }, [])
+  })
   const verifyUser = async () => {
     if (localStorage.getItem('token')) {
         const userId = process.env.REACT_APP_USER_ID;
@@ -87,7 +87,7 @@ useEffect(()=>{
 //? Language Functionality Ends .................................................................
 
 
-  const { width, height } = useWindowSize()
+  // const { width, height } = useWindowSize()
 
   return (
     <div className="congrats">

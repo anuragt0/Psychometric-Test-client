@@ -8,15 +8,12 @@ import "./graph.css";
 import {
   XAxis,
   YAxis,
-  CartesianGrid,
   // Line,
   Label, LabelList,
   Scatter,
   ScatterChart,
   ReferenceLine,
   ReferenceArea,
-  Rectangle,
-  ResponsiveContainer,
   // Rectangle
 } from 'recharts';
 // import { BsAspectRatio } from 'react-icons/bs';
@@ -39,10 +36,10 @@ const Graph = ({ responses, onGraphData }) => {
     // Simulated personality name for demonstration
     var personalityName = '';
 
-    if (maxOption == 1) personalityName = 'Ideal_Normative';
-    else if (maxOption == 2) personalityName = 'Friendly_Follower'
-    else if (maxOption == 3) personalityName = 'Information_Driven'
-    else if (maxOption == 4) personalityName = 'Individualist_Rebellion'
+    if (maxOption === 1) personalityName = 'Ideal_Normative';
+    else if (maxOption === 2) personalityName = 'Friendly_Follower'
+    else if (maxOption === 3) personalityName = 'Information_Driven'
+    else if (maxOption === 4) personalityName = 'Individualist_Rebellion'
 
     // Call the parent's callback function with the personality name
     onGraphData(personalityName);
@@ -96,7 +93,7 @@ const Graph = ({ responses, onGraphData }) => {
         <YAxis className="chart-label" type="number" dataKey="y" domain={[0, 10]} tickCount={11}>
           <Label className="chart-label" value={t('Yaxis_label')} angle={-90} position="insideLeft bottom" offset={25} />
         </YAxis>
-        //! for Single Quadrant
+        {/* //! for Single Quadrant */}
         {/* Creating the rectangles with dotted border */}
 
         {maxOption === 1 ?
@@ -174,42 +171,42 @@ export default Graph;
 
 //! for all the quadrant
 
-{/* Creating the rectangles with dotted border */ }
+// {/* Creating the rectangles with dotted border */ }
 
 
-{/* <ReferenceArea
-        x1={0+0.09} y1={5+0.09}
-        x2={5-0.09} y2={10-0.09}
-        stroke="dotted"
-        strokeOpacity={0.7}
-        fill={maxOption === 1 ? "#800080" : "#6b7dab"}
-        fillOpacity={0.3}
-        />
+// {/* <ReferenceArea
+//         x1={0+0.09} y1={5+0.09}
+//         x2={5-0.09} y2={10-0.09}
+//         stroke="dotted"
+//         strokeOpacity={0.7}
+//         fill={maxOption === 1 ? "#800080" : "#6b7dab"}
+//         fillOpacity={0.3}
+//         />
         
-        <ReferenceArea
-        x1={5+0.09} y1={5+0.09}
-        x2={10-0.09} y2={10-0.09}
-        stroke="dotted"
-        strokeOpacity={0.7}
-        fill={maxOption === 2 ? "#800080" : "#6b7dab"}
-        fillOpacity={0.3}
-        />
+//         <ReferenceArea
+//         x1={5+0.09} y1={5+0.09}
+//         x2={10-0.09} y2={10-0.09}
+//         stroke="dotted"
+//         strokeOpacity={0.7}
+//         fill={maxOption === 2 ? "#800080" : "#6b7dab"}
+//         fillOpacity={0.3}
+//         />
 
-        <ReferenceArea
-        x1={5+0.09} y1={0+0.09}
-        x2={10-0.09} y2={5-0.09}
-        stroke="dotted"
-        strokeOpacity={0.7}
-        fill={maxOption === 3 ? "#800080" : "#6b7dab"}
-        fillOpacity={0.3}
-        />
+//         <ReferenceArea
+//         x1={5+0.09} y1={0+0.09}
+//         x2={10-0.09} y2={5-0.09}
+//         stroke="dotted"
+//         strokeOpacity={0.7}
+//         fill={maxOption === 3 ? "#800080" : "#6b7dab"}
+//         fillOpacity={0.3}
+//         />
 
-        <ReferenceArea
-        x1={0+0.09} y1={0+0.09}
-        x2={5-0.09} y2={5-0.09}
-        stroke="dotted"
-        strokeOpacity={0.7}
-        fill={maxOption === 4 ? "#800080" : "#6b7dab"}
-        fillOpacity={0.3}
-        /> */}
+//         <ReferenceArea
+//         x1={0+0.09} y1={0+0.09}
+//         x2={5-0.09} y2={5-0.09}
+//         stroke="dotted"
+//         strokeOpacity={0.7}
+//         fill={maxOption === 4 ? "#800080" : "#6b7dab"}
+//         fillOpacity={0.3}
+//         /> */}
 

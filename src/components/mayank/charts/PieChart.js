@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import {
   PieChart,
   Pie,
-  Cell, Label,
+  Cell,
   Legend,ResponsiveContainer
 } from 'recharts';
 
@@ -79,19 +79,17 @@ function PieChartCom({ responses, onPieData }) {
     if (compliance >= 40) count_40++;
     if (obedience >= 40) count_40++;
 
-    if (count_40 == 1) { //clear winner
+    if (count_40 === 1) { //clear winner
       if (confirimity >= 40) categoryName = 'confirmity';
       else if (compliance >= 40) categoryName = 'compliance';
       else if (obedience >= 40) categoryName = 'Obedience';
     }
     else { // unclear winner thus we will find loser
       const min_value = Math.min(confirimity, compliance, obedience);
-      if (min_value == obedience) categoryName = 'notObedience';
-      else if (min_value == compliance) categoryName = 'notCompliance';
-      else if (min_value == confirimity) categoryName = 'notConfirmity';
+      if (min_value === obedience) categoryName = 'notObedience';
+      else if (min_value === compliance) categoryName = 'notCompliance';
+      else if (min_value === confirimity) categoryName = 'notConfirmity';
     }
-
-
 
     // Call the parent's callback function with the personality name
     onPieData(categoryName);

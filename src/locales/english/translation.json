@@ -35,7 +35,9 @@
   },
   "instruction": {
     "toast": {
-      "loginToContinue": "Please Login to continue"
+      "loginToContinue": "Please Login to continue",
+      "testStartedMessage": "Test has been started. All the best.",
+      "acceptTermsMessage": "Please accept our terms and condition to continue"
     },
     "testInstructions": "Test Instructions",
     "welcomeMessage": "Welcome to the test! This test contains 26 questions, and for each question, you'll have four options to choose from.",
@@ -52,7 +54,7 @@
     "note": "Note:",
     "noteMessage": " If you accidentally exit full-screen mode during the test, you can click the \"Go Full Screen\" button again to re-enable it.",
     "startTestButton": "Start Test",
-    "iAgreeToThe": "I agree to the",
+    "iAgreeToThe": "I agree to the ",
     "privacyPolicy": "Privacy Policy",
     "and": "and",
     "termsAndConditions": "Terms and Conditions"
@@ -209,7 +211,8 @@
     "privacyPolicy": "Privacy Policy",
     "unlockPersonalityInsights": "Unlock Your Personalized Personality Insights Report",
     "discoverUnderstanding": "Discover a deeper understanding of yourself",
-    "justStepAway": "just a step away"
+    "justStepAway": "just a step away",
+    "sendOtp": "Send OTP"
   },
   "quiz": {
     "toast": {
@@ -471,9 +474,9 @@
     "progressBar": {
       "msg1A": " Hey! Finish the complete quiz and I will ",
       "msg1B": "back to you with your Report card.",
-      "msg2A": "Great! You have completed 25% of the quiz ",
+      "msg2A": "Great! You have completed more than 25% of the quiz ",
       "msg2B": "keep doing... ",
-      "msg3A": "Fantastic progress! You're 50% done",
+      "msg3A": "Fantastic progress! You're more than 50% done",
       "msg3B": "keep it up!",
       "wellcome_75per": "Well Done! You have completed more than 75% of the quiz",
       "justFinish": "You're about to finish...",
@@ -637,11 +640,14 @@
   "about": {
     "weAre": "We Are",
     "udyamUplift": "UDYAM UPLIFT",
+    "textL1": "Do not let psychological barriers hold you back.",
+    "textL2": "Take the Compliance Self Help Test and gain personalized",
+    "textL3": "insights to overcome obstacles and excel in your business ventures.",
     "aboutWord": "ABOUT",
     "discoverComplianceMindset": "Discover your compliance mindset and receive personalized\nstrategies to overcome barriers and achieve success. Our\ncomprehensive test and insightful PDF report will empower you to\nreach new heights in your entrepreneurial journey. Reduce drop-out\nrates and unlock your true potential with Compliance Self Help Test.",
     "aboutWEP": "ABOUT WEP",
     "WEPNetworkPartners": "WEP has a strong network of partners who provide\nsupport in various areas, including community growth,\ncontent creation, platform development, and outreach\nprograms and events. With the help of these partners,\nWEP aims to create a robust entrepreneurship\necosystem for women entrepreneurs.",
     "partnerWith": "PARTNER WITH",
-    "caxpertDescription": "CAXPERT is an accounting start-up focussed on shifting\nthe book-keeping and tax filing needs of individual.\nfocussed on shifting the book-keeping and tax filing\nneeds of individual. focussed on shifting the book-\nkeeping and tax filing needs of individual."
+    "caxpertDescription": "CAXPERT is an accounting start-up focussed on shifting\nthe book-keeping and tax filing needs of individual."
   }
 }

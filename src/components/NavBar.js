@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { server_origin } from '../utilities/constants';
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
-import Select from 'react-select';
+// import Select from 'react-select';
 
 
 // My css
@@ -20,14 +20,14 @@ import { useTranslation } from "react-i18next";
 import '../library/i18n';
 import { useLanguage } from '../context/LanguageContext';
 
-const options = [
-    { value: 'en', label: 'English' },
-    { value: 'od', label: 'ଓଡ଼ିଆ' },
-    { value: 'ma', label: 'मराठी' },
-    { value: 'ba', label: 'বাংলা' },
-    { value: 'gu', label: 'ગુજરાતી' },
-    { value: 'ko', label: 'कोंकणी' },
-  ];
+// const options = [
+//     { value: 'en', label: 'English' },
+//     { value: 'od', label: 'ଓଡ଼ିଆ' },
+//     { value: 'ma', label: 'मराठी' },
+//     { value: 'ba', label: 'বাংলা' },
+//     { value: 'gu', label: 'ગુજરાતી' },
+//     { value: 'ko', label: 'कोंकणी' },
+//   ];
 
 
 const Navbar = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
 
     const [loggedIn, setLoggedIn] = useState(false);
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    // const [selectedOption, setSelectedOption] = useState(null);
     const { selectedLanguage, setSelectedLanguage, resetLanguage } = useLanguage();
 
 
@@ -108,9 +108,9 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const handleLoginClick = (e) => {
-        navigate("/login");
-    };
+    // const handleLoginClick = (e) => {
+    //     navigate("/login");
+    // };
 
     const handleLogoutClick = (e) => {
         localStorage.removeItem("token");
@@ -259,21 +259,12 @@ const Navbar = () => {
                                     {/* Add more options for other languages */}
 
                                 </select>
-
-                                {/* <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-      /> */}
-
-
-
                             </div>
                         </li>
                     )}
                     {/* Language Buttons Ends   */}
 
-                    <li>
+                    {/* <li> */}
                         {localStorage.getItem("token") ? (
                             <li className="nav-item active" onClick={handleLogoutClick}>
                                     <motion.div
@@ -287,11 +278,9 @@ const Navbar = () => {
                                             
                                             style={{
                                                 color: "#333", fontWeight: "bold", textDecoration: 'none',
-                                                color: '#333',
                                                 borderRadius: '15px',
                                                 width: "fit-content",
                                                 // background: 'linear-gradient(45deg, #beed6c, #3e950c)',
-                                                fontWeight: 'bold',
                                             }}
                                         >
                                             {t('Logout')}
@@ -311,11 +300,11 @@ const Navbar = () => {
                                             to={"/login"}
                                             style={{
                                                 color: "#333", fontWeight: "bold", textDecoration: 'none',
-                                                color: '#333',
+                        
                                                 borderRadius: '15px',
                                                 width: "fit-content",
                                                 // background: 'linear-gradient(45deg, #beed6c, #3e950c)',
-                                                fontWeight: 'bold',
+                                             
                                             }}
                                         >
                                             {t('Login')}
@@ -325,7 +314,7 @@ const Navbar = () => {
 
                             </div>
                         )}
-                    </li>
+                    {/* </li> */}
                 </ul>
             </div>
         </nav>

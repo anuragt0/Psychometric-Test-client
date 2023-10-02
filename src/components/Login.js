@@ -3,7 +3,7 @@ import { server_origin } from "../utilities/constants";
 // import { useLanguage } from '../context/LanguageContext';
 
 import { useNavigate } from "react-router-dom";
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import "../css/login.css";
 
 // Firebase for OTP
@@ -34,7 +34,7 @@ const Login = () => {
   //*
 
   //* Checkers
-  const [otpSent, setOTPSent] = useState(false);
+  // const [otpSent, setOTPSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const [otpError, setOtpError] = useState(null);

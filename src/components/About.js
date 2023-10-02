@@ -26,10 +26,10 @@ const AboutPage = () => {
       <div className="bg"></div>
         <div className="u-about-page-landing-div-left">
           <p className="u-about-page-landing-slogan">{t('weAre')}<br></br> {t('udyamUplift')} </p>
-          <p className="u-about-page-landing-about">Do not let psychological barriers hold you back.<br></br>
-                                                    Take the Compliance Self Help Test and gain personalized <br></br>
-                                                    insights to overcome obstacles and excel in your business ventures.</p>
-        </div>
+          <p className="u-about-page-landing-about">{t('textL1')}<br></br>
+                                                    {t('textL2')} <br></br>
+                                                    {t('textL3')}</p>
+      </div>
       </div>
       <div>
       </div>

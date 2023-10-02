@@ -56,7 +56,7 @@ function RadialBarChartComponent({ responses , onRadialData }) {
 
   useEffect(() => {
     function blockChecker(score){
-      if(score==5) return "equalto_5"; 
+      if(score===5) return "equalto_5"; 
       else if(score < 5) return "lessthan_5" ;
       else if(score > 5) return "morethan_5" ;
     }
@@ -74,7 +74,7 @@ function RadialBarChartComponent({ responses , onRadialData }) {
 
     // Call the parent's callback function with the personality name
     onRadialData(textCalcData);
-  }, []);
+  });
 
   // const sortedData = rawData;
   const sortedData = rawData.sort((a, b) => a.score - b.score);

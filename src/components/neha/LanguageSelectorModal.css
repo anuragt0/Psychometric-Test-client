@@ -24,8 +24,9 @@
 
 .language-list {
   list-style: none;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
+
 
 .language-option {
   cursor: pointer;
@@ -66,16 +67,21 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
   z-index: 1; /* Ensure it's below the modal */
 }
 
 .checkbox-label {
   display: flex;
+  /* justify-content: space-around; */
   align-items: center;
-  gap: 8px; /* Adjust the gap as needed */
+  gap: 8px;
+}
+
+.checkbox-label input[type="radio"] {
+  margin-right: 10px; /* Adjust the margin to control the space */
 }
 
 .disabled {
@@ -84,8 +90,13 @@
   pointer-events: none; /* Prevent interactions with disabled labels */
 }
 
-/* @media screen and (max-width: 767px){
-  .language-option {
-   
+@media screen and (max-width: 768px) {
+  .modal-container{
+    width: 70vw;
+    padding-left: 10px;
   }
-} */
+
+  .language-option {
+   padding: 8px 0;
+  }
+}
