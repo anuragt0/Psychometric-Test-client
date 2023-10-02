@@ -244,7 +244,7 @@ const Navbar = () => {
                                 <select
                                     className={`language-select ${css.languageSelect} ${css.btnStyle}`}
                                     style={{ cursor: "pointer", fontWeight: "bold", color: "#333" }}
-                                    value={selectedLanguage}
+                                    value={selectedLanguage!==null?selectedLanguage:"en"}
                                     onChange={(e) => handleLanguageChange(e.target.value)}
                                 >
                                     <option className="nav-item active" value="en">English</option>

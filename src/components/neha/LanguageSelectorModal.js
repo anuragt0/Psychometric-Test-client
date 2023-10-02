@@ -16,7 +16,7 @@ const LanguageSelectorModal = ({ languages, onSelect }) => {
     let currentLang = selectedLanguage ;
     localStorage.setItem('lang' , currentLang);
     i18n.changeLanguage(currentLang);
-  });
+  }, []);
 
   const { selectedLanguage , setSelectedLanguage} = useLanguage();
   const handleLanguageClick = (language_key) => {

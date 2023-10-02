@@ -99,7 +99,7 @@ function Result_M() {
 
     useEffect(() => {
         getResult();
-    });
+    }, []);
 
     //!Make separate functions for fetching results and validation
 
@@ -148,6 +148,7 @@ function Result_M() {
 
   //* Download Functionallity Start*//
   const handleDownloadClick = async () => {
+    setDownloading(true);
     // Create a new jsPDF instance
     const customWidth = 500; // Replace with your desired width in millimeters
 
@@ -159,11 +160,11 @@ function Result_M() {
 
     // Get all the elements you want to include in the PDF
     const elementsToCapture = document.querySelectorAll('.element-to-capture');
-    console.log('Number of elements to capture:', elementsToCapture.length);
+    // console.log('Number of elements to capture:', elementsToCapture.length);
 
     // Loop through each element and add it as a new page in the PDF
     for (const element of elementsToCapture) {
-        console.log('Capturing element:', element);
+        // console.log('Capturing element:', element);
         // Capture the content of the element as an image using html2canvas
         const canvas = await html2canvas(element, {scale: 1.5});
         const imgData = canvas.toDataURL('image/jpeg', 0.7);
@@ -178,6 +179,7 @@ function Result_M() {
     }
     // Save the PDF with a specific filename
     pdf.save('Result.pdf');
+    setDownloading(false);
 };
   
   //* Download Functionallity Ends *//
@@ -397,7 +399,7 @@ function Result_M() {
                             <div className="endbtn">
                                 <button
                                     className="rounded-btn"
-                                    onClick={handlePrint}
+                                    onClick={handleDownloadClick}
                                     disabled={downloading}
                                 >
                                     {downloading ? t("toast.pleaseWait") : t("main.download")}
