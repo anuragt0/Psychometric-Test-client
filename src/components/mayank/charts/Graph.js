@@ -32,9 +32,11 @@ import {
 
 const Graph = ({ responses, onGraphData }) => {
 
+
   useEffect(() => {
     // Simulated personality name for demonstration
     var personalityName = '';
+    // console.log("Graph.js: ", maxOption);
 
     if (maxOption === 1) personalityName = 'Ideal_Normative';
     else if (maxOption === 2) personalityName = 'Friendly_Follower'
@@ -43,7 +45,7 @@ const Graph = ({ responses, onGraphData }) => {
 
     // Call the parent's callback function with the personality name
     onGraphData(personalityName);
-  }, [onGraphData]);
+  }, []);
 
 
   const { t } = useTranslation("translation", { keyPrefix: 'result.graph' });
@@ -125,7 +127,7 @@ const Graph = ({ responses, onGraphData }) => {
             stroke="dotted"
             strokeOpacity={1}
             fill="#294826"
-            fillOpacity={1.8}
+            fillOpacity={10.8}
           /> : <ReferenceArea x1={0.7} y1={7} x2={4.5} y2={8} fill="#294826" fillOpacity={1} />
         }
 

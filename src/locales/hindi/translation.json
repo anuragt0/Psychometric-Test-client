@@ -36,7 +36,7 @@
   "instruction": {
     "toast": {
       "loginToContinue": "कृपया जारी रखने के लिए लॉगिन करें",
-      "testStartedMessage": "परीक्षण शुरू कर दिया गया है. शुभकामनाएं।",
+      "testStartedMessage": "परीक्षण शुरू हो गया है। सबसे अच्छा बोलते हैं।",
       "acceptTermsMessage": "कृपया हमारे नियम और शर्तों को स्वीकार करें ताकि जारी रख सकें।"
     },
     "testInstructions": " टेस्ट से संबंधित निर्देश",
