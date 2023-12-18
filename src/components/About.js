@@ -39,8 +39,8 @@ const AboutPage = () => {
                     {/* <div className="u-about-page-section-1-bg"></div> */}
                     <div className="u-about-page-section-1-heading">
                         <div>
-                            <h1>UDYAM UPLIFT</h1>
-                            <span>Navchetna Se Nayi Pragati</span>
+                            <h1>{t('UDYAM_UPLIFT')}</h1>
+                            <span>{t('UDYAM_UPLIFT')}</span>
                             <div className="horizontal-line"></div>
                         </div>
                         <div className="u-about-page-section-1-heading-img">
@@ -49,28 +49,13 @@ const AboutPage = () => {
                     </div>
                     <div className="u-about-page-section-1-heading-p">
                         <p>
-                            Udyam Uplift is an empirical framework designed as a
-                            self assessment test that helps women entrepreneurs
-                            (WE) prioritise compliance by leveraging principles
-                            of compliance psychology and social influence.
+                            {t('UDYAM_UPLIFT_DESCRIPTION')}
                         </p>
                         <p>
-                            Udyam Uplift uses a 26-question test to assess an
-                            entrepreneur's susceptibility to various compliance
-                            traps, including conformity, compliance, and
-                            obedience. The test results are used to classify the
-                            entrepreneur into one of four quadrants: Ideal
-                            Normative, Friendly Follower, Information Driven, or
-                            Individualist Rebellion.
+                            {t('UDYAM_UPLIFT_QUESTION_TEST')}
                         </p>
                         <p>
-                            Udyam Uplift also provides a donut chart that
-                            reveals the percentage of influence from each social
-                            pressure factor: conformity, compliance, and
-                            obedience. Additionally, Udyam Uplift closely
-                            evaluates the entrepreneur's responses to identify
-                            which compliance trap techniques they are most
-                            susceptible to.
+                            {t('UDYAM_UPLIFT_DONUT_CHART')}
                         </p>
                     </div>
                 </div>
@@ -78,67 +63,53 @@ const AboutPage = () => {
             {/* --------------------- Section 2 --------------------- */}
             <div className="u-about-page-section-2">
                 <div>
-                    <h2>UDYAM UPLIFT CAN HELP ENTREPRENEURS TO</h2>
+                    <h2>{t('UDYAM_UPLIFT_CAN_HELP_ENTREPRENEURS')}</h2>
                     <div className="horizontal-line"></div>
                 </div>
                 <ul>
                     <li>
                         <div className="circle"></div>
-                        Understand their susceptibility to various compliance
-                        traps
+                        {t('UNDERSTAND_SUSCEPTIBILITY')}
                     </li>
                     <li>
                         {" "}
                         <div className="circle"></div>
-                        Identify areas where they need to improve their
-                        compliance posture
+                        {t('IDENTIFY_AREAS_FOR_IMPROVEMENT')}
                     </li>
                     <li>
                         {" "}
                         <div className="circle"></div>
-                        Develop strategies to mitigate their compliance risks
+                        {t('DEVELOP_STRATEGIES_TO_MITIGATE_RISKS')}
                     </li>
                     <li>
                         {" "}
-                        <div className="circle"></div>Create a more compliant
-                        workplace culture
+                        <div className="circle"></div>
+                        {t('CREATE_COMPLIANT_WORKPLACE_CULTURE')}
                     </li>
                 </ul>
             </div>
             {/* --------------------- Section 3 --------------------- */}
             <div className="u-about-page-section-3">
                 <div>
-                    <h2>WHAT DOES A COMPLIANCE TRAP FOR A WE LOOK LIKE?</h2>
+                    <h2>{t('WHAT_IS_COMPLIANCE_TRAP_FOR_WE')}</h2>
                     <div className="horizontal-line"></div>
                 </div>
                 <div>
                     <p>
-                        A compliance trap is a situation in which an individual
-                        or organization is incentivized to comply with a rule or
-                        regulation, even though doing so may be harmful or
-                        unethical. Compliance traps can be created by a variety
-                        of factors, such as social pressure, authority, and
-                        reciprocity.
+                        {t('DEFINITION_OF_COMPLIANCE_TRAP')}
                     </p>
                     <p>
-                        In the context of Udyam Uplift, a compliance trap could
-                        be something like:
+                        {t('EXAMPLES_OF_COMPLIANCE_TRAP')}
                     </p>
                     <div className="u-about-page-section-3__boxes">
                         <div className="u-about-page-section-3__box">
-                            WE is pressured by her peers to sign a contract with
-                            a supplier who has a history of non-compliance.
+                            {t('EXAMPLE_1_OF_COMPLIANCE_TRAP')}
                         </div>
                         <div className="u-about-page-section-3__box">
-                            WE is afraid of being penalized by a regulator if
-                            she does not comply with a new regulation, even
-                            though she does not understand the regulation or why
-                            it is necessary.
+                            {t('EXAMPLE_2_OF_COMPLIANCE_TRAP')}
                         </div>
                         <div className="u-about-page-section-3__box">
-                            WE feels obligated to return a favor to a colleague
-                            by signing a contract, even though the contract
-                            contains terms that are not in her best interests.
+                            {t('EXAMPLE_3_OF_COMPLIANCE_TRAP')}
                         </div>
                     </div>
                 </div>
@@ -147,7 +118,7 @@ const AboutPage = () => {
 
             <div className="u-about-page-section-4">
                 <div>
-                    <h2>THE PROCESS</h2>
+                    <h2>{t('THE_PROCESS')}</h2>
                     <div className="horizontal-line"></div>
                 </div>
                 <img src={asset1} alt="" />
@@ -160,74 +131,54 @@ const AboutPage = () => {
             <div className="u-about-page-section-6">
                 <div className="u-about-page-section-6__sub">
                     <p>
-                        Udyam Uplift is a valuable tool for lending
-                        organizations that are looking to reduce their risk,
-                        improve their performance, and build a more compliant
-                        business ecosystem Udyam Uplift can help lending
-                        organizations to:
+                        {t('UDYAM_UPLIFT_FOR_LENDING_ORGANIZATIONS')}
                     </p>
                     <div className="u-about-page-section-6__boxes">
                         <div className="u-about-page-section-6__box">
-                            Reduce the risk of defaults by identifying
-                            compliance risks in borrowers.
+                            {t('REDUCE_RISK_OF_DEFAULTS')}
                         </div>
                         <div className="u-about-page-section-6__box">
-                            Improve the quality of their loan portfolios by
-                            selecting borrowers who are more likely to be
-                            successful
+                            {t('IMPROVE_LOAN_PORTFOLIO_QUALITY')}
                         </div>
                         <div className="u-about-page-section-6__box">
-                            Make better lending decisions by providing insights
-                            into borrowers' motivation and behavior.
+                            {t('MAKE_BETTER_LENDING_DECISIONS')}
                         </div>
                         <div className="u-about-page-section-6__box">
-                            Enhance their reputation by demonstrating their
-                            commitment to compliance.
+                            {t('ENHANCE_REPUTATION')}
                         </div>
                     </div>
                     <p>
-                        Here is a specific use case of how Udyam Uplift can be
-                        used by lending organizations to reduce the risk of
-                        defaults:
+                        {t('USE_CASE_FOR_UDYAM_UPLIFT_FOR_LENDING_ORGS')}
                     </p>
                     <div className="u-about-page-section-6__sub-flowchart">
                         <img src={flowchart3} alt="" />
                     </div>
                     <p>
-                        For example, a borrower who is classified as an
-                        "Individualist Rebellion" may be more likely to ignore
-                        or disregard compliance requirements, which could lead
-                        to regulatory penalties and disruptions to their
-                        business.
+                        {t('EXAMPLE_OF_DEFAULT_RISK')}
                     </p>
                     <p>
-                        Udyam Uplift can help lending organizations to make more
-                        informed lending decisions and to reduce the risk of
-                        defaults.
+                        {t('REDUCE_RISK_AND_MAKE_INFORMED_DECISIONS')}
                     </p>
                     <div></div>
                     <div className="u-about-page-section-6__metrics">
-                        <h3>Metrics to Track:</h3>
+                        <h3>{t('METRICS_TO_TRACK')}</h3>
                         <div className="u-about-page-section-6__metrics-box">
                             <div>
                                 <img src={metric1} alt="" />
                                 <span>
-                                    Reduction in default rate due to Udyan
-                                    Uplift
+                                    {t('REDUCTION_IN_DEFAULT_RATE')}
                                 </span>
                             </div>
                             <div>
                                 <img src={metric2} alt="" />
                                 <span>
-                                    Improvement in loan portfolio quality due to
-                                    Udyam Uplift
+                                    {t('IMPROVEMENT_IN_LOAN_PORTFOLIO_QUALITY')}
                                 </span>
                             </div>
                             <div>
                                 <img src={metric3} alt="" />
                                 <span>
-                                    Improvement in lending decision-making
-                                    accuracy due to Udyam Uplift
+                                    {t('IMPROVEMENT_IN_LENDING_DECISION_MAKING')}
                                 </span>
                             </div>
                         </div>
@@ -235,46 +186,29 @@ const AboutPage = () => {
                 </div>
                 <div className="u-about-page-section-6__sub">
                     <p>
-                        Udyam Uplift is greatly beneficial, to identify the
-                        compliance champions from a community. By identifying
-                        and engaging compliance champions, impact consultants
-                        can help their clients to create a more culture of
-                        compliance within their communities. . This can help to
-                        reduce the risk of compliance violations and improve the
-                        overall social and environmental performance of the
-                        community.
+                        {t('UDYAM_UPLIFT_FOR_COMPLIANCE_CHAMPIONS')}
                     </p>
                     <p>
-                        Here is a use case of how an impact consultant could use
-                        Udyam Uplift to identify and engage compliance
-                        champions:
+                        {t('USE_CASE_FOR_UDYAM_UPLIFT_FOR_IMPACT_CONSULTANTS')}
                     </p>
 
                     <p>
-                        The impact consultant provides training on compliance
-                        best practices to the potential compliance champions.
-                        The impact consultant also empowers the compliance
-                        champions to contribute through knowledge and
-                        connectedness that they bring to their communities,
-                        ensuring verified information dissemination. By
-                        recognizing and rewards compliance champions for their
-                        contributions to improving the company's compliance
-                        posture.
+                        {t('TRAINING_FOR_COMPLIANCE_CHAMPIONS')}
                     </p>
                     <div className="u-about-page-section-6__sub-flowchart">
                         <img src={flowchart2} alt="" />
                     </div>
                     <div className="u-about-page-section-6__metrics">
-                        <h3>Metrics to Track:</h3>
+                        <h3>{t('METRICS_TO_TRACK_FOR_IMPACT_CONSULTANTS')}</h3>
                         <div className="u-about-page-section-6__metrics-box">
                             <div>
                                 <img src={staruser} alt="" />
-                                <span>Impact of Udyam Uplift clients</span>
+                                <span>{t('IMPACT_OF_UDYAM_UPLIFT_CLIENTS')}</span>
                             </div>
                             <div>
-                                <img src={barrupee} alt="" />
+                                <img src={barrupee} alt="FINANCIAL_IMPACT_OF_UDYAM_UPLIFT" />
                                 <span>
-                                    Financial impact of Udyam Uplift on clients
+                                    {t('FINANCIAL_IMPACT_OF_UDYAM_UPLIFT')}
                                 </span>
                             </div>
                         </div>
@@ -284,22 +218,22 @@ const AboutPage = () => {
             {/* Section 7 */}
             <div className="u-about-page-section-7">
                 <div>
-                    <h2>FEATURES OF UDYAM UPLIFT</h2>
+                    <h2>{t('FEATURES_OF_UDYAM_UPLIFT')}</h2>
                     <div className="horizontal-line"></div>
                 </div>
                 <div className="u-about-page-section-7__metrics-box">
                     <div>
                         <img src={handphone} alt="" />
-                        <span>Mobile-First Design</span>
+                        <span>{t('MOBILE_FIRST_DESIGN')}</span>
                     </div>
                     <div>
                         <img src={india} alt="" />
-                        <span>Functionality in Eight Different Languages</span>
+                        <span>{t('FUNCTIONALITY_IN_EIGHT_LANGUAGES')}</span>
                     </div>
                     <div>
                         <img src={smiley} alt="" />
                         <span>
-                            Valuable & Comprehensive Feedback in 15 mins
+                            {t('VALUABLE_COMPREHENSIVE_FEEDBACK')}
                         </span>
                     </div>
                 </div>
@@ -308,29 +242,20 @@ const AboutPage = () => {
             <div className="u-about-page-section-8">
                 <div className="u-about-page-section-8__heading">
                     <div className="u-about-page-section-8__head">
-                        <h2>ABOUT</h2>
+                        <h2>{t('ABOUT_CAXPERT')}</h2>
                         <img src={caXpert} alt="" />
                     </div>
                     <div className="horizontal-line"></div>
                 </div>
                 <div>
                     <p>
-                        CAxpert offers accounting services, specifically
-                        tailored for small businesses, with an emphasis on
-                        integrating third-party technologies with accounting
-                        programs for safe and smooth data exchange.
+                        {t('CAXPERT_ACCOUNTING_SERVICES')}
                     </p>
                     <p>
-                        Delivering hands-on services, CAxpert provides a
-                        comprehensive solution for accounting and
-                        compliance-related concerns as well as basic financial
-                        requirements. This allows businesses to focus on
-                        expansion without worrying about the intricacies of
-                        financial management.
+                        {t('CAxpert_HANDS_ON_SERVICES')}
                     </p>
                     <p>
-                        Small business owners are the engines of growth for our
-                        economy and their books should reflect that too.
+                        {t('SMALL_BUSINESS_OWNERS_ENGINE_OF_GROWTH')}
                     </p>
                 </div>
             </div>
