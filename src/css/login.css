@@ -30,7 +30,6 @@
   /* Center the form horizontally */
 }
 
-
 .login-input,
 .otp-input {
   width: 100%;
@@ -99,7 +98,7 @@
 /* Styling for the password mismatch error message */
 .error-message {
   color: #FF0000;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 /* Styling for the "Save and continue" button */

@@ -62,6 +62,7 @@ const RegistrationPage = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordMatch, setPasswordMatch] = useState(true);
     // const [showPassword, setShowPassword] = useState(false);
+    const [wepUser, setWepUser] = useState("true");
 
     //* componentState = 1 means EnterPhoneComponent
     //* componentState = 2 means EnterOtpComponent
@@ -231,6 +232,11 @@ const RegistrationPage = () => {
             toast.error(t('toast.atleast5CharPass'));
             return;
         }
+        // console.log("here: ", wepUser);
+        if(wepUser ==="none"){
+            toast.error("Please choose an option");
+            return;
+        }
         const updatedCreds = credentials;
         updatedCreds["password"] = password;
         updatedCreds["mobile"] = mobileNumber;
@@ -282,18 +288,20 @@ const RegistrationPage = () => {
         setPasswordMatch(event.target.value === password);
     };
 
-
-
     const handleChange = (e) => {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+        setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
     const handleVerifyOtpClick = () => {
         //* When OTP is verified show set password component
         onOTPVerify();
     };
 
-    //* COMPONENTS
+    const handleChangeWepUser = (e) =>{
+        // console.log(e.target.value);
+        setWepUser(e.target.value);
+    }
 
+    //* COMPONENTS
     //Component 1
     const EnterPhoneComponent = () => {
         return (
@@ -483,7 +491,28 @@ const RegistrationPage = () => {
                     </div>
                     {!passwordMatch && <p className="error-message">{t('PasswordNotMatch')}</p>}
 
-                    {/* Privacy Policy Note */}
+                    <div className="input-field">
+        <label htmlFor="wepUser">
+          Are you a WEP user?
+        </label>
+        <select
+          id="wepUser"
+          name="wepUser"
+          onChange={handleChangeWepUser}
+          required
+        >
+          <option value="none">Select an Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        {wepUser==="no" && (
+        <div>
+            Register now on <a href='https://wep.gov.in/'>https://wep.gov.in</a>
+        </div>
+        )}
+      </div>
+
+        {/* Privacy Policy Note */}
         <div className="privacy-policy-note">
           {t('registerAgree')} {" "}
           <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
